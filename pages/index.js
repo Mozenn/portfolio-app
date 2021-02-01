@@ -1,65 +1,96 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import styles from "../styles/Home.module.scss";
+import Layout from "../components/layout";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+    <Layout>
+      <section className={styles.landing}>
+        <div>
+          <h1 className={styles.landingName}>Cassany Gauthier</h1>
+          <h2 className={styles.landingSubtitle}>
+            Software Engineering Student, Indie Game Developer
+          </h2>
         </div>
-      </main>
+      </section>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+      <section className={styles.about} id='about'>
+        <h2 className='section-about__title'>About</h2>
+        <div className='section-about__story'>
+          <p>
+            I am Gauthier, a 22 years old software engineering student and indie
+            game developer living in Toulouse, France. <br />
+            I love creating things, from games to software to world bulding and
+            much more. <br />I am currently working on a game since a year and a
+            half as a solo developer.{" "}
+          </p>
+        </div>
+        <div className='section-about__stack'>
+          <p>
+            I have tinkered with many technologies but here is what I am most
+            familiar with :{" "}
+          </p>
+        </div>
+      </section>
+
+      <section className='section-projects' id='projects'>
+        <h2 className='section-projects__title'>Projects</h2>
+        <div className='projects-container'>
+          <div className='projects-container__el'>
+            <h3 className='projects-container__el__title'>
+              PC Game : To be announced
+            </h3>
+            <div className='projects-container__el__content'>
+              <p>
+                I have been thinking about this game since june 2018 and have
+                been actively working on it since november 2018. <br />
+                Since then, i have been learning about 3d art, marketing,
+                product management, game design, level design, unreal engine and
+                much more. <br />
+                It takes me most of my free time and there is still a lot to be
+                done, but I hope I will be able to make the annoucement soon.{" "}
+              </p>
+              <img src='images/GameScreen_lowRes.png' alt='Game Screenshot' />
+            </div>
+            <p className='projects-container__el__stack'>
+              Unreal Engine 4, C++, Blender, Substance Painter, Krita
+            </p>
+          </div>
+          <div className='projects-container__el'>
+            <h3 className='projects-container__el__title'>SL Textual</h3>
+            <div className='projects-container__el__content'>
+              <p>
+                Small engine to make textual games.
+                <br />
+                It is quite rudimentary, but it alloweded me to be more
+                comfortable with C++.
+              </p>
+              <img src='images/SL.PNG' alt='Game Screenshot' />
+            </div>
+            <p className='projects-container__el__stack'>C++, WPF</p>
+          </div>
+          <div className='projects-container__el'>
+            <h3 className='projects-container__el__title'>SL Textual</h3>
+            <div className='projects-container__el__content'>
+              <p>
+                Small engine to make textual games.
+                <br />
+                It is quite rudimentary, but it alloweded me to be more
+                comfortable with C++.
+              </p>
+              <img src='images/SL.PNG' alt='Game Screenshot' />
+            </div>
+            <p className='projects-container__el__stack'>C++, WPF</p>
+          </div>
+        </div>
+      </section>
+
+      <section className='section-blog' id='blog'>
+        <h2 className='section-blog__title'>Blog</h2>
+        <div className='section-blog__content'>
+          <p>Coming Soon</p>
+        </div>
+      </section>
+    </Layout>
+  );
 }
