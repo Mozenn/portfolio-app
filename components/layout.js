@@ -1,7 +1,8 @@
 import Head from "next/head";
+import Link from "next/link";
 import styles from "./layout.module.scss";
 
-export default function Layout({ children, home }) {
+const Layout = ({ children }) => {
   return (
     <div>
       <Head>
@@ -11,21 +12,29 @@ export default function Layout({ children, home }) {
 
       <header>
         <div className={`${styles.header} ${styles.sticky}`}>
-          <img
-            className={styles.headerLogo}
-            src='images/Logo256.svg'
-            alt='Logo'
-          />
+          <Link href='/'>
+            <img
+              className={styles.headerLogo}
+              src='/images/Logo256.svg'
+              alt='Logo'
+            />
+          </Link>
           <nav className={styles.headerNavbarContainer}>
             <ul className={styles.headerNavbar}>
               <li className={styles.headerNavbarElement}>
-                <a href='#home'>Home</a>
+                <Link href='/'>
+                  <a>Home</a>
+                </Link>
               </li>
               <li className={styles.headerNavbarElement}>
-                <a href='#projects'>Projects</a>
+                <Link href='/projects'>
+                  <a>Projects</a>
+                </Link>
               </li>
               <li className={styles.headerNavbarElement}>
-                <a href='#blog'>Blog</a>
+                <Link href='/posts'>
+                  <a>Blog</a>
+                </Link>
               </li>
             </ul>
           </nav>
@@ -43,7 +52,7 @@ export default function Layout({ children, home }) {
               <a href='https://github.com/Mozenn'>
                 <img
                   className={styles.contactListIcon}
-                  src='images/github.svg'
+                  src='/images/github.svg'
                   alt='github icon'
                 />
               </a>
@@ -52,7 +61,7 @@ export default function Layout({ children, home }) {
               <a href='https://www.linkedin.com/in/gauthier-cassany-8a370b175/'>
                 <img
                   className={styles.contactListIcon}
-                  src='images/linkedin.svg'
+                  src='/images/linkedin.svg'
                   alt='linkedIn icon'
                 />
               </a>
@@ -61,7 +70,7 @@ export default function Layout({ children, home }) {
               <a href='https://twitter.com/GCassany'>
                 <img
                   className={styles.contactListIcon}
-                  src='images/twitter.svg'
+                  src='/images/twitter.svg'
                   alt='twitter icon'
                 />
               </a>
@@ -75,7 +84,7 @@ export default function Layout({ children, home }) {
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                <img src='images/Flag.svg' alt='French Flag icon' />
+                <img src='/images/Flag.svg' alt='French Flag icon' />
               </a>
             </li>
             <li className={styles.resumeListIcon}>
@@ -84,7 +93,7 @@ export default function Layout({ children, home }) {
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                <img src='images/UKFlag.svg' alt='UK Flag icon' />
+                <img src='/images/UKFlag.svg' alt='UK Flag icon' />
               </a>
             </li>
           </ul>
@@ -93,4 +102,6 @@ export default function Layout({ children, home }) {
       </footer>
     </div>
   );
-}
+};
+
+export default Layout;
