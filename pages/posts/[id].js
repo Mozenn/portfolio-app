@@ -1,6 +1,1 @@
-
-
-
-export async function getStaticPaths(){
-  
-}
+export const getStaticPaths = async () => {};
