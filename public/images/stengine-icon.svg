@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 490 358" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-20.2256,-95.4898)">
+        <g transform="matrix(1,0,0,1,-73.5146,-24.7217)">
+            <text x="88.152px" y="396.849px" style="font-family:'Raleway-Bold', 'Raleway';font-weight:700;font-size:386.905px;fill:rgb(47,47,47);">ST</text>
+        </g>
+        <g transform="matrix(1,0,0,1,-11.385,0)">
+            <g transform="matrix(1.04255,-0.228879,0.233925,1.06553,-111.792,-15.9446)">
+                <rect x="44.564" y="414.414" width="183.461" height="28.625" style="fill:rgb(47,47,47);"/>
+            </g>
+            <g transform="matrix(0.731632,0.273293,-0.381734,1.02194,348.452,-62.2663)">
+                <rect x="44.564" y="414.414" width="183.461" height="28.625" style="fill:rgb(47,47,47);"/>
+            </g>
+            <g transform="matrix(0.0896602,0.529769,-2.59899,0.439863,1601.81,61.7866)">
+                <path d="M295.36,426.125L327.563,494.435L263.156,494.435L295.36,426.125Z" style="fill:rgb(47,47,47);"/>
+            </g>
+        </g>
+    </g>
+</svg>
