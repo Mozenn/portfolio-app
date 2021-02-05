@@ -27,6 +27,7 @@ export const Project = ({ projectFullData }) => {
     priority,
     imageName,
     iconName,
+    stack,
     githubUrl,
     accessUrl,
     content,
@@ -46,7 +47,10 @@ export const Project = ({ projectFullData }) => {
           <h2 className={styles.headingTitle}>{title}</h2>
         </div>
         <div className={styles.content}>
-          <div dangerouslySetInnerHTML={{ __html: content }} />
+          <div
+            className={styles.contentText}
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
           <img
             className={styles.contentImage}
             src={`/images/${imageName}`}
@@ -54,6 +58,7 @@ export const Project = ({ projectFullData }) => {
           />
         </div>
         <div className={styles.links}>
+          <p>{`Stack: ${stack}`}</p>
           {githubUrl && <AccessLink iconName='github.svg' url={githubUrl} />}
           {accessUrl && <AccessLink iconName='link.svg' url={accessUrl} />}
         </div>

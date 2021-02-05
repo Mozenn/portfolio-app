@@ -19,7 +19,7 @@ const Home = ({ projectsToShow }) => {
     <Layout>
       <section className={styles.landing}>
         <div>
-          <h1 className={styles.landingName}>Cassany Gauthier</h1>
+          <h1 className={styles.landingName}>Gauthier Cassany</h1>
           <h2 className={styles.landingSubtitle}>
             Software Engineering Student, Indie Game Developer
           </h2>
@@ -30,17 +30,19 @@ const Home = ({ projectsToShow }) => {
         <h2 className={styles.aboutTitle}>About</h2>
         <div className={styles.aboutStory}>
           <p>
-            I am Gauthier, a 22 years old software engineering student and indie
+            I am Gauthier, a 23 years old software engineering student and indie
             game developer living in Toulouse, France. <br />
             I love creating things, from games to software to world bulding and
-            much more. <br />I am currently working on a game since a year and a
-            half as a solo developer.{" "}
+            much more. <br />I am currently working on a game since more than
+            two years as a solo developer.{" "}
           </p>
         </div>
         <div className={styles.aboutStack}>
           <p>
-            I have tinkered with many technologies but here is what I am most
-            familiar with :{" "}
+            I have tinkered with many technologies and can be defined as a
+            jack-of-all-trades, but I am more attracted to backend technologies
+            like the Java ecosystem and DevOps technologies and practices such
+            as CI/CD, Docker and more
           </p>
         </div>
       </section>
@@ -60,7 +62,7 @@ const Home = ({ projectsToShow }) => {
           })}
         </div>
         <div className={styles.projectsLinkContainer}>
-          <Link href='#'>
+          <Link href='/projects'>
             <a className={styles.projectsLink}>See more ...</a>
           </Link>
         </div>

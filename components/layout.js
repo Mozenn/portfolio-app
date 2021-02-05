@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
           <Link href='/'>
             <img
               className={styles.headerLogo}
-              src='/images/Logo256.svg'
+              src='/images/logo.svg'
               alt='Logo'
             />
           </Link>
@@ -79,21 +79,13 @@ const Layout = ({ children }) => {
           <ul className={styles.resumeList}>
             <h3 className={styles.resumeListText}>Resume</h3>
             <li className={styles.resumeListIcon}>
-              <a
-                href='data/resume.pdf'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <img src='/images/Flag.svg' alt='French Flag icon' />
+              <a href='/data/resume-fr.pdf' target='_blank'>
+                <img src='/images/frflag.svg' alt='French Flag icon' />
               </a>
             </li>
             <li className={styles.resumeListIcon}>
-              <a
-                href='data/resume.pdf'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <img src='/images/UKFlag.svg' alt='UK Flag icon' />
+              <a href='/data/resume-fr.pdf' target='_blank'>
+                <img src='/images/ukflag.svg' alt='UK Flag icon' />
               </a>
             </li>
           </ul>

@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.container a {
+  cursor: pointer;
+}
+
+.icon {
+  width: 1.7rem;
+  height: auto;
+}
+
+.link {
+  margin-left: 1rem;
+  text-decoration: underline;
+  transition: color 0.5s;
+  font-size: 1rem;
+
+  &:hover {
+    transition: color 0.5s;
+    color: rgba(151, 151, 151, 1);
+  }
+}

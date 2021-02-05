@@ -6,10 +6,11 @@
   display: flex;
   align-items: center;
   padding-top: 7rem;
+  margin-left: 4rem;
 }
 
 .headingIcon {
-  height: 3rem;
+  height: 5rem;
   // background-color: rgba(61, 61, 61, 1);
   // border-radius: 10px;
 }
@@ -17,4 +18,36 @@
 .headingTitle {
   margin-left: 1rem;
   text-decoration: underline;
+  font-size: 2rem;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin: 2rem 4rem;
+}
+
+.contentText {
+  width: 50rem;
+  margin: 0rem 1rem;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.contentImage {
+  max-width: 100%;
+  max-height: 100%;
+  width: 50rem;
+}
+
+.links p {
+  font-size: 1.1rem;
+}
+
+@media only screen and (max-width: 1360px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
 }
