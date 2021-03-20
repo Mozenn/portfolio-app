@@ -1,10 +1,12 @@
 import Head from "next/head";
 import Link from "next/link";
 import styles from "./layout.module.scss";
+import GoogleAnalytics from "./google-analytics";
 
 const Layout = ({ children }) => {
   return (
     <div>
+      <GoogleAnalytics />
       <Head>
         <title>Gauthier Cassany</title>
         <link rel='icon' href='/favicons/favicon.ico' />
