@@ -3,12 +3,12 @@ import Head from "next/head";
 const GoogleAnalytics = () => {
   return (
     <>
-      {console.log(process.env.MEASUREMENT_ID)}
+      {console.log(process.env.NEXT_PUBLIC_MEASUREMENT_ID)}
       {process.env.NODE_ENV === "production" && process.browser ? (
         <Head>
           <script
             async
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.MEASUREMENT_ID}`}
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_MEASUREMENT_ID}`}
           ></script>
           <script
             async
@@ -17,7 +17,7 @@ const GoogleAnalytics = () => {
                 function gtag(){dataLayer.push(arguments);}
                 gtag("js", new Date());
 
-                gtag("config", "${process.env.MEASUREMENT_ID}");`,
+                gtag("config", "${process.env.NEXT_PUBLIC_MEASUREMENT_ID}");`,
             }}
           />
         </Head>
