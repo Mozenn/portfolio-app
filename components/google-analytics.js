@@ -3,7 +3,6 @@ import Head from "next/head";
 const GoogleAnalytics = () => {
   return (
     <>
-      {console.log(process.env.NEXT_PUBLIC_MEASUREMENT_ID)}
       {process.env.NODE_ENV === "production" && process.browser ? (
         <Head>
           <script
