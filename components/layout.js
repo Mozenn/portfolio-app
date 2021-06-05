@@ -6,7 +6,9 @@ import GoogleAnalytics from "./google-analytics";
 const Layout = ({ children }) => {
   return (
     <div>
-      <GoogleAnalytics />
+      {process.env.NODE_ENV === "production" && process.browser && (
+        <GoogleAnalytics />
+      )}
       <Head>
         <title>Gauthier Cassany</title>
         <link rel='icon' href='/favicons/favicon.ico' />
