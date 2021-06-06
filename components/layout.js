@@ -80,8 +80,8 @@ const Layout = ({ children }) => {
               </a>
             </li>
           </ul>
+          <h3 className={styles.resumeListText}>Resume</h3>
           <ul className={styles.resumeList}>
-            <h3 className={styles.resumeListText}>Resume</h3>
             <li className={styles.resumeListIcon}>
               <a href='/data/resume-fr.pdf' target='_blank'>
                 <img src='/images/frflag.svg' alt='French Flag icon' />

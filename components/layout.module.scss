@@ -19,6 +19,7 @@
 
 .headerLogo {
   height: 4em;
+  width: auto;
   margin: 0.8em 0.8em 0.8em 2em;
   cursor: pointer;
 }
@@ -108,10 +109,15 @@
   align-items: center;
   justify-content: center;
   font-size: 1.1rem;
+  padding-left: 0;
 }
 
 .resumeListText {
   font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
 }
 
 .resumeListIcon {
