@@ -88,9 +88,17 @@ const Layout = ({ children }) => {
               </a>
             </li>
             <li className={styles.resumeListIcon}>
-              <a href='/data/resume-fr.pdf' target='_blank'>
+              <a href='/data/resume-en.pdf' target='_blank'>
                 <img src='/images/ukflag.svg' alt='UK Flag icon' />
               </a>
+            </li>
+            <li className={styles.resumeListIcon}>
+              <a href='/data/resume-en-no-picture.pdf' target='_blank'>
+                <img src='/images/ukflag.svg' alt='UK Flag icon' />
+              </a>
+            </li>
+            <li>
+              <label>without picture</label>
             </li>
           </ul>
         </div>

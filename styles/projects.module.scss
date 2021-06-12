@@ -1,8 +1,20 @@
 .container {
   text-align: center;
-  padding: 15% 0;
+  padding: 10% 0;
 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
   gap: 2rem;
+}
+
+@media only screen and (max-width: 920px) {
+  .container {
+    margin-top: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .container {
+    margin-top: 4rem;
+  }
 }

@@ -4,6 +4,11 @@
   background-color: rgba(221, 221, 221, 1);
   text-align: center;
   padding: 30% 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .landingName {
@@ -34,6 +39,7 @@
   padding: 20px;
   height: auto;
   line-height: 1.4rem;
+  font-size: 1.3rem;
 }
 
 .aboutStory p {
@@ -47,6 +53,7 @@
   display: block;
   height: auto;
   line-height: 1.4em;
+  font-size: 1.3rem;
 }
 
 .aboutStack p {
