@@ -1,11 +1,13 @@
 import Head from "next/head";
 import Link from "next/link";
+import { GetStaticProps } from 'next'
 import styles from "../styles/home.module.scss";
 import Layout from "../components/layout";
 import ProjectCapsule from "../components/project-capsule";
 import { getProjectsDataByPriority } from "../lib/projects";
+import {Project} from "../types/project"; 
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const projectsToShow = getProjectsDataByPriority(2);
   return {
     props: {
@@ -14,7 +16,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const Home = ({ projectsToShow }) => {
+const Home = ({ projectsToShow } : {projectsToShow: Project[]} ) => {
   return (
     <Layout>
       <section className={styles.landing}>
@@ -50,7 +52,7 @@ const Home = ({ projectsToShow }) => {
       <section className={styles.projects} id='projects'>
         <h2 className={styles.projectsTitle}>Projects</h2>
         <div className={styles.projectsContainer}>
-          {projectsToShow.map((project) => {
+          {projectsToShow.map((project: Project) => {
             return (
               <ProjectCapsule
                 key={project.id}

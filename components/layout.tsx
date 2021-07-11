@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "./layout.module.scss";
 import GoogleAnalytics from "./google-analytics";
 
-const Layout = ({ children }) => {
+const Layout = ({ children } : { children: any}) => {
   return (
     <div>
       {process.env.NODE_ENV === "production" && process.browser && (

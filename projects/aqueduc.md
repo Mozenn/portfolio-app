@@ -7,5 +7,5 @@ stack: Python
 githubUrl: https://github.com/Mozenn/Aqueduc
 ---
 
-Aqueduc is a small script used to move or copy files and folders using preconfigured parameters.  
-It is usefull to automate recurring file transfers.
+Aqueduc is a small script that moves or copies files and folders using JSON configuration files.  
+It can be used to automate recurring file transfers for example.

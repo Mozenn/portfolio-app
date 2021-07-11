@@ -7,7 +7,7 @@ const GoogleAnalytics = () => {
   const router = useRouter();
 
   useEffect(() => {
-    const handleRouteChange = (url) => {
+    const handleRouteChange = (url: URL) => {
       logPageView(url);
     };
 

@@ -1,6 +1,6 @@
 import styles from "./access-link.module.scss";
 
-const AccessLink = ({ iconName, url }) => {
+const AccessLink = ({ iconName , url } : {iconName: string, url: string}) => {
   return (
     <div>
       <a className={styles.container} href={url} target='_blank'>

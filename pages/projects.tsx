@@ -1,9 +1,11 @@
+import { GetStaticProps } from 'next'
 import Layout from "../components/layout";
 import { getAllProjectsData } from "../lib/projects";
 import styles from "../styles/projects.module.scss";
 import ProjectCapsule from "../components/project-capsule";
+import { Project } from "../types/project";
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const projects = getAllProjectsData();
   return {
     props: {
@@ -12,11 +14,11 @@ export const getStaticProps = async () => {
   };
 };
 
-const Projects = ({ projects }) => {
+const Projects = ({ projects } : {projects: Project[]}) => {
   return (
     <Layout>
       <div className={styles.container}>
-        {projects.map((project) => {
+        {projects.map((project: Project) => {
           return (
             <ProjectCapsule
               key={project.id}
