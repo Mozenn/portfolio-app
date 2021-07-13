@@ -8,6 +8,8 @@ import { title } from "process";
 const projectsDirectory = path.join(process.cwd(), "projects");
 const md = new MarkdownIt();
 
+const getKeys = Object.keys as <T extends object>(obj: T) => Array<keyof T>
+
 export const getProjectsDataByPriority = (count: number) => {
   if (count < 1) {
     throw new Error("cout must be at least 1");
@@ -33,8 +35,16 @@ export const getAllProjectsData = () : Project[] => {
     const fileContent = fs.readFileSync(filePath, "utf8");
     const id = fileName.replace(/\.md$/, "");
 
-    const { title,priority,imageName,iconName,stack } = matter(fileContent).data;
-    return { id, title,priority,imageName,iconName,stack };
+    const { title,priority,imageName,iconName,stack,githubUrl,accessUrl } = matter(fileContent).data;
+
+    const res = {
+      id,
+      title,priority,imageName,iconName,stack,githubUrl,accessUrl
+    } ; 
+  
+    getKeys(res).forEach(key=> res[key] === undefined && delete res[key]);
+    
+    return res;
   });
 };
 
@@ -45,13 +55,22 @@ export const getProjectFullData = (id: string): Project => {
   const matterResult = matter(fileContent);
 
   const content = md.render(matterResult.content);
-  const { title,priority,imageName,iconName,stack } = matterResult.data;
+  const { title,priority,imageName,iconName,stack,githubUrl,accessUrl } = matterResult.data;
 
-  return {
+  const res = {
     content,
     id,
-    title,priority,imageName,iconName,stack
-  };
+    title,priority,imageName,iconName,stack,githubUrl,accessUrl
+  } ; 
+
+  getKeys(res).forEach(key=> res[key] === undefined && delete res[key]);
+  
+  return res;
+  // return {
+  //   content,
+  //   id,
+  //   title,priority,imageName,iconName,stack,githubUrl,accessUrl
+  // };
 };
 
 export const getAllProjectIds = () => {

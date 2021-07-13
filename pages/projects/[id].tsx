@@ -18,6 +18,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const {id} = context.params as IdParams
   const projectFullData = getProjectFullData(id);
+
   return {
     props: {
       projectFullData,
