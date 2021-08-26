@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;600&display=swap");
 
+:root {
+  --color-primary: rgb(231, 231, 231);
+  --color-primary-dark: rgb(221, 221, 221);
+  --color-secondary: rgb(61, 61, 61);
+  --color-secondary-light: rgb(121, 121, 121);
+
+  background-color: var(--color-background);
+  color: var(--color-primary-dark);
+}
+
 html,
 body {
   padding: 0;

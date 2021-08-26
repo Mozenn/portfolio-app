@@ -1,10 +1,36 @@
 .container {
-  padding: 20% 0%;
+  padding: 15% 0% 20% 0%;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--color-primary);
 }
 
 .container p {
   font-size: 1.5rem;
+}
+
+.tagContainer {
+  position: fixed;
+  left: 3%;
+  top: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+div.tagContainer > button {
+  margin-bottom: 1rem;
+}
+
+.postContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+div.postContainer > div {
+  margin-top: 4rem;
 }

@@ -3,7 +3,6 @@ import path from "path";
 import matter from "gray-matter";
 import MarkdownIt from "markdown-it";
 import {Project} from "../types/project";
-import { title } from "process";
 
 const projectsDirectory = path.join(process.cwd(), "projects");
 const md = new MarkdownIt();
@@ -66,11 +65,6 @@ export const getProjectFullData = (id: string): Project => {
   getKeys(res).forEach(key=> res[key] === undefined && delete res[key]);
   
   return res;
-  // return {
-  //   content,
-  //   id,
-  //   title,priority,imageName,iconName,stack,githubUrl,accessUrl
-  // };
 };
 
 export const getAllProjectIds = () => {

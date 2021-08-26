@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem 1rem;
+  width: auto;
+
+  border: 2px solid var(--color-secondary);
+  background-color: var(--color-primary);
+}
+
+.title {
+  text-decoration: underline;
+  transition: color 0.3s;
+  font-size: 1.5rem;
+
+  &:hover {
+    color: rgba(151, 151, 151, 1);
+  }
+}
+
+.bottomContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tagContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  label {
+    border: 2px solid var(--color-secondary);
+    background-color: var(--color-primary-dark);
+    padding: 0.3rem;
+    font-size: 1rem;
+    margin-right: 0.8rem;
+  }
+}
+
+.date {
+  font-size: 1rem;
+  margin-right: 0rem;
+  margin-left: auto;
+}

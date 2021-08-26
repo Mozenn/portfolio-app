@@ -43,7 +43,7 @@ export const ProjectPage = ({ projectFullData } : {projectFullData : Project}) =
       <Head>
         <title>{title}</title>
       </Head>
-      <article className={styles.container}>
+      <div className={styles.container}>
         <div className={styles.heading}>
           <img
             className={styles.headingIcon}
@@ -68,7 +68,7 @@ export const ProjectPage = ({ projectFullData } : {projectFullData : Project}) =
           {githubUrl && <AccessLink iconName='github.svg' url={githubUrl} />}
           {accessUrl && <AccessLink iconName='link.svg' url={accessUrl} />}
         </div>
-      </article>
+      </div>
     </Layout>
   );
 };

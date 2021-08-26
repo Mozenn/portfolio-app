@@ -1,0 +1,17 @@
+.button {
+  font-size: 1.2rem;
+  font-weight: 400;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  border: 2px solid var(--color-secondary);
+  padding: 0.3rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.selected {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}

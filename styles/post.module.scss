@@ -1,0 +1,27 @@
+.container {
+  padding: 6rem 28% 0.5rem 28%;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.tagContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 0.8rem;
+
+  label {
+    border: 2px solid var(--color-secondary);
+    padding: 0.2rem;
+    font-size: 1rem;
+    margin-right: 0.8rem;
+    margin-top: 0.2rem;
+  }
+}
+
+.contentText {
+  margin: 4rem 2% 6rem 2%;
+}

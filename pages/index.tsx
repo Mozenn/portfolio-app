@@ -4,19 +4,25 @@ import { GetStaticProps } from 'next'
 import styles from "../styles/home.module.scss";
 import Layout from "../components/layout";
 import ProjectCapsule from "../components/project-capsule";
+import PostCapsule from "../components/posts/post-capsule";
 import { getProjectsDataByPriority } from "../lib/projects";
+import { getPostsDataByPriority } from "../lib/posts";
 import {Project} from "../types/project"; 
+import { Post } from "../types/post";
 
 export const getStaticProps: GetStaticProps = async () => {
   const projectsToShow = getProjectsDataByPriority(2);
+  const postsToShow = getPostsDataByPriority(2);
+
   return {
     props: {
       projectsToShow,
+      postsToShow
     },
   };
 };
 
-const Home = ({ projectsToShow } : {projectsToShow: Project[]} ) => {
+const Home = ({ projectsToShow, postsToShow } : {projectsToShow: Project[], postsToShow: Post[]} ) => {
   return (
     <Layout>
       <section className={styles.landing}>
@@ -63,17 +69,29 @@ const Home = ({ projectsToShow } : {projectsToShow: Project[]} ) => {
             );
           })}
         </div>
-        <div className={styles.projectsLinkContainer}>
+        <div className={styles.LinkContainer}>
           <Link href='/projects'>
-            <a className={styles.projectsLink}>See more ...</a>
+            <a className={styles.Link}>See more ...</a>
           </Link>
         </div>
       </section>
-
+        
       <section className={styles.blog} id='blog'>
         <h2 className={styles.blogTitle}>Blog</h2>
         <div className={styles.blogContainer}>
-          <p>Coming Soon</p>
+        {postsToShow.map((post: Post) => {
+            return (
+              <PostCapsule
+                key={post.id}
+                postData={post}
+              />
+            );
+          })}
+        </div>
+        <div className={styles.LinkContainer}>
+          <Link href='/posts'>
+            <a className={styles.Link}>See more ...</a>
+          </Link>
         </div>
       </section>
     </Layout>

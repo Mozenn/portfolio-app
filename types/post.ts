@@ -1,5 +1,9 @@
-export interface Post { //TODO to complete
+export interface Post {
   id: string
-  content: string,
+  content?: string,
   title: string,
+  priority: number,
+  tags: Array<string>,
+  author: string,
+  date: string
 }
