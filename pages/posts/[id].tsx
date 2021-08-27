@@ -33,7 +33,10 @@ const PostPage = ({ postFullData }: { postFullData: Post }) => {
       </Head>
       <div className={styles.container}>
         <h1 className={styles.title}>{postFullData.title}</h1>
-        <label className={styles.infos}>{`${postFullData.author} | ${postFullData.date}`}</label>
+        <div className={styles.infoContainer}>
+          <label className={styles.infos}>{`${postFullData.author} | ${postFullData.date}`}</label>
+          <label className={styles.timeEstimate}>{`${postFullData.timeEstimate} min read`}</label>
+        </div>
         <div className={styles.tagContainer}>
           {postFullData.tags.map((tag) => {
             return <label>{tag}</label>;

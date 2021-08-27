@@ -16,7 +16,6 @@ export const getPostsDataByPriority = (count: number) => {
 
   return getAllPostsData()
     .sort((pa: Post, pb: Post) => {
-      console.log("posts")
       if (pa.priority < pb.priority) {
         return -1;
       } else if (pa.priority > pb.priority) {
@@ -35,9 +34,13 @@ export const getAllPostsData = (): Post[] => {
     const fileContent = fs.readFileSync(filePath, "utf8");
     const id = fileName.replace(/\.md$/, "");
 
-    const { title, priority, tags, author, date } = matter(fileContent).data;
+    const matterResult = matter(fileContent);
 
-    const res = { id, title, priority, tags, author, date };
+    const { title, priority, tags, author, date } = matterResult.data;
+    const content = md.render(matterResult.content);
+    const timeEstimate = computeTimeEstimateInMinutes(content);
+
+    const res = { id, title, priority, tags, author, date , timeEstimate};
 
     getKeys(res).forEach((key) => res[key] === undefined && delete res[key]);
 
@@ -65,6 +68,7 @@ export const getPostFullData = (id: string): Post => {
 
   const content = md.render(matterResult.content);
   const { title, priority, tags, author, date } = matterResult.data;
+  const timeEstimate = computeTimeEstimateInMinutes(content);
 
   const res = {
     content,
@@ -74,6 +78,7 @@ export const getPostFullData = (id: string): Post => {
     author,
     tags,
     date,
+    timeEstimate
   };
 
   getKeys(res).forEach((key) => res[key] === undefined && delete res[key]);
@@ -92,3 +97,21 @@ export const getAllPostIds = () => {
     };
   });
 };
+
+const computeTimeEstimateInMinutes = (content: string) : number => {
+
+  const wordsPerMinute = 250;
+  const imageTimeMinutes = 0.25;
+  let imageCount = 0;
+  const wordRegex = /\w/
+  const wordCount = content.split(' ').filter(word => {
+    if (word.includes('<img')) {
+      imageCount += 1
+    }
+    return wordRegex.test(word)
+  }).length;
+
+  const timeMinutes = Math.ceil((wordCount/wordsPerMinute) + imageTimeMinutes * imageCount);
+  
+  return timeMinutes;
+}

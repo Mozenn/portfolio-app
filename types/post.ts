@@ -5,5 +5,6 @@ export interface Post {
   priority: number,
   tags: Array<string>,
   author: string,
-  date: string
+  date: string,
+  timeEstimate: number
 }

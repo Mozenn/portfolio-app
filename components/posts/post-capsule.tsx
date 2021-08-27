@@ -13,7 +13,7 @@ const PostCapsule = ({postData} : {postData: Post}) => {
       <div className={styles.bottomContainer}>
         <div className={styles.tagContainer}>
           {postData.tags.map((tag: string) => {
-            return <label>{tag}</label>;
+            return <label key={tag}>{tag}</label>;
           })}
         </div>
         <label className={styles.date}>{postData.date}</label>
