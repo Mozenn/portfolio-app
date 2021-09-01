@@ -9,7 +9,7 @@ date: 01 September 2021
 
 ## The context
 
-It has been 6 months since I have started my internship at Lyra Network as a software engineer, and 3 months since my internship turned into a real software engineering job. In this period, you are expected to know little or nothing about the job, and thus, asking questions is mandatory. I would like to share some hints that I have picked up during this period.
+It has been 6 months since I have started my internship at Lyra Network as a software engineer, and 3 months since my internship turned into a real software engineering job. During this period, you are expected to know little or nothing about the job, and thus, asking questions is mandatory. I would like to share some hints that I have picked up during this period.
 
 ## Why asking questions is hard and why you should do it
 
@@ -98,7 +98,7 @@ Here is the step-by-step process :
 
 In this way, you will be prepared and the person will have an easier time understanding your thought process and might even predict your next questions.
 
-## Use asynchronous communication
+### Use asynchronous communication
 
 If you feel more comfortable asking questions by text, go for it.
 
