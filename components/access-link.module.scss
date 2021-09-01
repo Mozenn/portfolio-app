@@ -20,6 +20,6 @@
 
   &:hover {
     transition: color 0.5s;
-    color: rgba(151, 151, 151, 1);
+    color: var(--color-secondary-lighter);
   }
 }

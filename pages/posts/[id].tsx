@@ -1,5 +1,15 @@
 import Head from "next/head";
 import { GetStaticProps, GetStaticPaths } from "next";
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  RedditShareButton,
+  TwitterShareButton,
+  FacebookIcon,
+  LinkedinIcon,
+  RedditIcon,
+  TwitterIcon,
+} from "react-share";
 import styles from "../../styles/post.module.scss";
 import Layout from "../../components/layout";
 import { getAllPostIds, getPostFullData } from "../../lib/posts";
@@ -26,6 +36,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 const PostPage = ({ postFullData }: { postFullData: Post }) => {
+  const shareIconSize = "2.5rem";
+  const pageUrl = typeof window !== 'undefined' ? String(window.location) : "";
+  
   return (
     <Layout>
       <Head>
@@ -34,18 +47,41 @@ const PostPage = ({ postFullData }: { postFullData: Post }) => {
       <div className={styles.container}>
         <h1 className={styles.title}>{postFullData.title}</h1>
         <div className={styles.infoContainer}>
-          <label className={styles.infos}>{`${postFullData.author} | ${postFullData.date}`}</label>
-          <label className={styles.timeEstimate}>{`${postFullData.timeEstimate} min read`}</label>
+          <label
+            className={styles.infos}
+          >{`${postFullData.author} | ${postFullData.date}`}</label>
+          <label
+            className={styles.timeEstimate}
+          >{`${postFullData.timeEstimate} min read`}</label>
         </div>
         <div className={styles.tagContainer}>
           {postFullData.tags.map((tag) => {
-            return <label>{tag}</label>;
+            return <label key={tag}>{tag}</label>;
           })}
         </div>
         <div
           className={styles.contentText}
           dangerouslySetInnerHTML={{ __html: postFullData.content as string }}
         />
+        <span className={styles.shareBorder}></span>
+        <div className={styles.shareContainer}>
+          <label>Share</label>
+          <FacebookShareButton
+            url={pageUrl}
+            quote={postFullData.title}
+          >
+            <FacebookIcon size={shareIconSize}/>
+          </FacebookShareButton>
+          <TwitterShareButton url={pageUrl} title={postFullData.title}>
+            <TwitterIcon size={shareIconSize}/>
+          </TwitterShareButton>
+          <LinkedinShareButton url={pageUrl} title={postFullData.title}>
+            <LinkedinIcon size={shareIconSize}/>
+          </LinkedinShareButton>
+          <RedditShareButton url={pageUrl} title={postFullData.title}>
+            <RedditIcon size={shareIconSize}/>
+          </RedditShareButton>
+        </div>
       </div>
     </Layout>
   );

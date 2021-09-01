@@ -1,10 +1,10 @@
 ---
 id: asking-questions
-title: Asking for help as a software engineer
+title: Asking questions as a software engineer
 priority: 1
 tags: ["Soft Skill"]
 author: Gauthier
-date: 25 August 2021
+date: 01 September 2021
 ---
 
 ## The context
@@ -19,13 +19,13 @@ First, It shows that we don't know something, and usually, we don't like not kno
 
 One of the problems with asking questions is that the period where you should ask lots of questions (ie when you enter a new work environment) is when you are the least comfortable doing so.
 
-The number of questions you ask should be inversely proportional to your knowledge about a specific topic.
-
 ### The more you know, the least questions you need to ask
+
+The number of questions you ask should be inversely proportional to your knowledge about a specific topic.
 
 But you also have to avoid the trap of not asking any questions because you are supposed to know the topic and be an expert.
 
-And that brings us to another pain point about asking questions :
+And that brings us to another pain point about asking questions.
 
 ### It is easier to ask questions when you are expected to
 
@@ -80,7 +80,7 @@ Before firing your questions at anyone close to you, think about which coworker 
 
 Your first try is usually one of your teammates, but you might be redirected to several persons before getting to the right one.
 
-If you know that there is someone that, you should go directly to that person.
+If you know someone knowledgeable about the topic you are wondering about, you should go directly to that person.
 
 This process gets easier when you start to know more people and get a sense of who knows what in the company.
 
@@ -110,7 +110,8 @@ The downside is that you will have to wait to get your answer, but that is part 
 
 Asking a question for the first time is normal, asking a question for a second time is fine, but if you keep asking the same question over and over again, the problem might be on your side.
 To avoid this situation, make sure that you will remember what you have been told by taking notes.
-TODO IMPROVE
+As the amount of notes you take grows, you will start to structure them, and it will help you create a mental model of how things work globally.
+On top of that, you can use your notes to improve the shared documentation if you see it is lacking on a specific topic covered by your notes.
 
 ### Do not ask
 

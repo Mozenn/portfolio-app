@@ -1,6 +1,6 @@
 .capsule {
-  background-color: rgba(231, 231, 231, 1);
-  border: solid 2px rgba(61, 61, 61, 1);
+  background-color: var(--color-primary);
+  border: solid 2px var(--color-secondary);
   padding: 1rem 1rem 1rem 1rem;
   width: auto;
   margin: 1rem 1rem;
@@ -16,7 +16,7 @@
 }
 
 .capsuleTitle:hover {
-  color: rgba(151, 151, 151, 1);
+  color: var(--color-secondary-lighter);
   transition: color 0.5s;
 }
 

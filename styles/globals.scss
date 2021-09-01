@@ -4,7 +4,9 @@
   --color-primary: rgb(231, 231, 231);
   --color-primary-dark: rgb(221, 221, 221);
   --color-secondary: rgb(61, 61, 61);
+  --color-secondary-dark: rgb(51, 51, 51);
   --color-secondary-light: rgb(121, 121, 121);
+  --color-secondary-lighter: rgb(151, 151, 151);
 
   background-color: var(--color-background);
   color: var(--color-primary-dark);
@@ -15,8 +17,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Raleway", "Roboto", "Arial", sans-serif;
-  background-color: rgba(231, 231, 231, 1);
-  color: rgba(61, 61, 61, 1);
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
   font-size: 18px;
   font-weight: 400;
   font-display: auto;

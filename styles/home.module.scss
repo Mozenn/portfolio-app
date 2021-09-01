@@ -1,7 +1,7 @@
 /*   LANDING  */
 
 .landing {
-  background-color: rgba(221, 221, 221, 1);
+  background-color: var(--color-primary-dark);
   text-align: center;
   padding: 30% 0;
   height: 100vh;
@@ -24,7 +24,7 @@
 /*  ABOUT */
 
 .about {
-  background-color: rgba(231, 231, 231, 1);
+  background-color: var(--color-primary);
   padding: 5% 10% 10% 10%;
 }
 
@@ -63,7 +63,7 @@
 /*   PROJECTS */
 
 .projects {
-  background-color: rgba(221, 221, 221, 1);
+  background-color: var(--color-primary-dark);
   padding: 5% 10% 10% 10%;
 }
 
@@ -83,7 +83,7 @@
 /*   BLOG  */
 
 .blog {
-  background-color: rgba(231, 231, 231, 1);
+  background-color: var(--color-primary);
   padding: 5% 10% 10% 10%;
 }
 
@@ -114,7 +114,7 @@
 }
 
 .Link:hover {
-  color: rgba(121, 121, 121, 1);
+  color: var(--color-secondary-light);
   text-decoration: underline;
   transition: color 0.5s;
 }
