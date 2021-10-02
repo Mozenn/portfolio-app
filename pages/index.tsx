@@ -49,7 +49,7 @@ const Home = ({ projectsToShow, postsToShow } : {projectsToShow: Project[], post
           <p>
             I have tinkered with many technologies and can be defined as
             a T-shaped engineer. I am currently more focused on backend technologies like the Java ecosystem,
-            DevOps technologies and practices such as CI/CD or automation, and Cloud Native Applications, but I can work my way through anything if I take the time to master it.
+            DevOps technologies and practices such as CI/CD or automation, and Cloud Native Applications, but I am ready to work my way through anything.
           </p>
         </div>
       </section>
