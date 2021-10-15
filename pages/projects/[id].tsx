@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from 'next/image';
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { IdParams } from '../../types/IdParams'
 import Layout from "../../components/layout";
@@ -45,7 +46,7 @@ export const ProjectPage = ({ projectFullData } : {projectFullData : Project}) =
       </Head>
       <div className={styles.container}>
         <div className={styles.heading}>
-          <img
+          <Image
             className={styles.headingIcon}
             src={`/images/${iconName}`}
             alt={`${title.toLowerCase()} icon`}
@@ -57,7 +58,7 @@ export const ProjectPage = ({ projectFullData } : {projectFullData : Project}) =
             className={styles.contentText}
             dangerouslySetInnerHTML={{ __html: content as string}}
           />
-          <img
+          <Image
             className={styles.contentImage}
             src={`/images/${imageName}`}
             alt={`${title.toLowerCase()} image`}

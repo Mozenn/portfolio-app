@@ -1,5 +1,6 @@
 import styles from "./project-capsule.module.scss";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ProjectCapsule({ id, title, imageName } : {id: string, title: string, imageName: string}) {
   return (
@@ -9,7 +10,7 @@ export default function ProjectCapsule({ id, title, imageName } : {id: string, t
           <h3 className={styles.capsuleTitle}>{title}</h3>
         </a>
       </Link>
-      <img
+      <Image
         className={styles.capsuleImage}
         src={`/images/${imageName}`}
         alt='capsule image'

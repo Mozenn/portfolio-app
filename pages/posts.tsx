@@ -39,7 +39,7 @@ const Posts = ({ posts, tags } : {posts: Post[], tags: string[]}) => {
         return post.tags.some(tag => activeTags.includes(tag));
       }))
     }
-  }, [activeTags]);
+  }, [activeTags,posts]);
 
   return (
     <Layout>
