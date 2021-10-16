@@ -1,11 +1,10 @@
 import styles from "./access-link.module.scss";
-import Image from 'next/image';
 
 const AccessLink = ({ iconName , url } : {iconName: string, url: string}) => {
   return (
     <div>
       <a className={styles.container} href={url} target='_blank' rel='noreferrer'>
-        <Image
+        <img
           className={styles.icon}
           src={`/images/${iconName}`}
           alt={`${iconName} icon`}

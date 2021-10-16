@@ -2,7 +2,6 @@ import Head from "next/head";
 import Link from "next/link";
 import styles from "./layout.module.scss";
 import GoogleAnalytics from "./google-analytics";
-import Image from 'next/image';
 
 const Layout = ({ children } : { children: any}) => {
   return (
@@ -18,7 +17,7 @@ const Layout = ({ children } : { children: any}) => {
       <header>
         <div className={`${styles.header} ${styles.sticky}`}>
           <Link href='/' passHref>
-            <Image
+            <img
               className={styles.headerLogo}
               src='/images/logo.svg'
               alt='Logo'
@@ -55,7 +54,7 @@ const Layout = ({ children } : { children: any}) => {
           <ul className={styles.contactList}>
             <li>
               <a href='https://github.com/Mozenn'>
-                <Image
+                <img
                   className={styles.contactListIcon}
                   src='/images/github.svg'
                   alt='github icon'
@@ -64,7 +63,7 @@ const Layout = ({ children } : { children: any}) => {
             </li>
             <li>
               <a href='https://www.linkedin.com/in/gauthier-cassany-8a370b175/'>
-                <Image
+                <img
                   className={styles.contactListIcon}
                   src='/images/linkedin.svg'
                   alt='linkedIn icon'
@@ -73,7 +72,7 @@ const Layout = ({ children } : { children: any}) => {
             </li>
             <li>
               <a href='https://twitter.com/GCassany'>
-                <Image
+                <img
                   className={styles.contactListIcon}
                   src='/images/twitter.svg'
                   alt='twitter icon'
@@ -85,17 +84,17 @@ const Layout = ({ children } : { children: any}) => {
           <ul className={styles.resumeList}>
             <li className={styles.resumeListIcon}>
               <a href='/data/resume-fr.pdf' target='_blank'>
-                <Image src='/images/frflag.svg' alt='French Flag icon' />
+                <img src='/images/frflag.svg' alt='French Flag icon' />
               </a>
             </li>
             <li className={styles.resumeListIcon}>
               <a href='/data/resume-en.pdf' target='_blank'>
-                <Image src='/images/ukflag.svg' alt='UK Flag icon' />
+                <img src='/images/ukflag.svg' alt='UK Flag icon' />
               </a>
             </li>
             <li className={styles.resumeListIcon}>
               <a href='/data/resume-en-no-picture.pdf' target='_blank'>
-                <Image src='/images/ukflag.svg' alt='UK Flag icon' />
+                <img src='/images/ukflag.svg' alt='UK Flag icon' />
               </a>
             </li>
             <li>
