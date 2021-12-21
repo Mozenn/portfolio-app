@@ -27,13 +27,13 @@ We use Docker compose to ease our multi-container setup by defining the PostgreS
 version: "3.9"
 services:
   postgres:
-		 container_name: postgres_blog
-	   image: "postgres:13.2"
-	   volumes:
-	     - ./db-data:/var/lib/postgresql/data/
-	     - ./sql:/docker-entrypoint-initdb.d/:ro
+    container_name: postgres_blog
+    image: "postgres:13.2"
+    volumes:
+      - ./db-data:/var/lib/postgresql/data/
+      - ./sql:/docker-entrypoint-initdb.d/:ro
     env_file:
-	    - ./database.dev.env
+     - ./database.dev.env
     networks:
       - backend
     ports:
@@ -53,7 +53,7 @@ There are several things going on here. Let's explain them one by one.
 
 We first define volumes to mount data into the container as well as to persist data on the host.
 
-Here, we provide both a source and a target path, making those volumes bind mounts. This type of volume is fine for a dev environment, but using named volumes or copying files directly in the container is more advised for production environment, expect if you want full control of your filesystem, and apply modifications outside docker.
+Here, we provide both a source and a target path, making those volumes bind mounts. This type of volume is fine for a dev environment, but using named volumes or copying files directly in the container is more advised for production environment, except if you want full control of your filesystem, and apply modifications outside docker.
 
 The first bind mount is used to persist data even if the container is stopped. The second one mounts files to initialize the Keycloak and application databases.
 
@@ -102,7 +102,7 @@ the second script is more straightforward. It simply initializes the application
 ```bash
 #!/bin/bash
 
-psql -U dev -tc "SELECT 1 FROM pg_database WHERE datname = 'my_db'" \
+psql -U dev -tc "SELECT 1 FROM pg_database WHERE datname = 'keycloak'" \
 | grep -q 1 || psql -U dev -c "CREATE DATABASE keycloak"
 
 psql -U dev -c "CREATE USER keycloak WITH PASSWORD 'kc'"
