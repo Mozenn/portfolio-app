@@ -227,23 +227,23 @@ docker ps
 
 We can now access the Keycloak back office through the port mapped in the docker-compose.yml file and by using the login previously defined in our .env file.
 
-![keycloak_login.PNG](/images/post/setup-keycloak-docker/keycloak_login.png)
+![keycloak_login.PNG](/images/post/setup-keycloak-docker/keycloak_login.PNG)
 
 Once logged in, we can customize our realm by creating users, defining clients, and many other actions. I let you check the official Keycloak documentation to get a grasp of all the features that Keycloak provides.
 
-![keycloak_home.PNG](/images/post/setup-keycloak-docker/keycloak_home.png)
+![keycloak_home.PNG](/images/post/setup-keycloak-docker/keycloak_home.PNG)
 
 We can also access the PostgreSQL database using pgAdmin :
 
-![pgAdmin_login.PNG](/images/post/setup-keycloak-docker/pgAdmin_login.png)
+![pgAdmin_login.PNG](/images/post/setup-keycloak-docker/pgAdmin_login.PNG)
 
 We then need to set up the connection to the PostgreSQL database :
 
-![pgAdmin_connection.PNG](/images/post/setup-keycloak-docker/pgAdmin_connection.png)
+![pgAdmin_connection.PNG](/images/post/setup-keycloak-docker/pgAdmin_connection.PNG)
 
 And finally, we can access our application schema :
 
-![pgAdmin_query.PNG](/images/post/setup-keycloak-docker/pgAdmin_query.png)
+![pgAdmin_query.PNG](/images/post/setup-keycloak-docker/pgAdmin_query.PNG)
 
 The repository containing all configuration files is available here: [https://github.com/Mozenn/setup-keycloak-with-docker-and-postgresql](https://github.com/Mozenn/setup-keycloak-with-docker-and-postgresql)
 
