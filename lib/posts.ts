@@ -65,7 +65,7 @@ export const getPostFullData = (id: string): Post => {
   const fileContent = fs.readFileSync(filePath, "utf8");
 
   const matterResult = matter(fileContent);
-
+  
   const content = md.render(matterResult.content);
   const { title, priority, tags, author, date } = matterResult.data;
   const timeEstimate = computeTimeEstimateInMinutes(content);
