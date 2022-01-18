@@ -13,7 +13,7 @@ Spring Boot provides a pagination feature integrated into the spring data JPA li
 
 Let’s check this out!
 
-# Project setup
+## Project setup
 
 This section is dedicated to the project setup. You can skip this part and go straight to the implementation if you are not interested.
 
@@ -49,7 +49,7 @@ We explicitly set the port at which our application can be reached. The default 
 
 Spring boot will automatically detect that we use an h2 two database by scanning the dependency, so no need to specify anything about the driver, the database platform, or the dialect.
 
-# Defining the data model
+## Defining the data model
 
 We first define the model for the entity.
 
@@ -133,7 +133,7 @@ We define a JPA entity and skip any form of validation constraints that we could
 
 We also do not consider any domain-driven design constraint given the simplicity of the project.
 
-# Defining the data layer
+## Defining the data layer
 
 For the data layer, we make use of the spring JPA repository provided by the `spring-boot-starter-data-jpa` dependency.
 
@@ -153,7 +153,7 @@ The PagingAndSortingRepository is a generic interface, with the first generic re
 
 Check out the official Spring documentation to have a complete overview of what Spring JPA Repositories are capable of [https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.repositories](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.repositories).
 
-# Defining the business layer
+## Defining the business layer
 
 We then define the service that represents the business layer of the application.
 
@@ -241,7 +241,7 @@ Be aware that the property selected as key must be unique, otherwise you can rec
 
 Coming back to the PlantService, we inject the PlantRepository defined earlier, and make use of the findAll method to get a Page instance containing the list of Plants for the requested page, as well as other useful properties such as the total amount of elements, the total amount of pages, and many more.
 
-# Defining the web layer
+## Defining the web layer
 
 Finally, let’s create the web layer and expose the endpoint to fetch a page of plants by creating a Spring Controller.
 
@@ -311,7 +311,7 @@ public class PageToPageDTOMapper<T> {
 
 Using this mapper, we only return what is needed by the client of the API. This part is optional, and we could directly return the Page object, but I like to clearly define what is returned and have control over the contract of the API.
 
-# Putting it all together
+## Putting it all together
 
 We use the ApplicationRunner functional interface to initialize the sample data.
 
