@@ -3,9 +3,17 @@ import MarkdownIt from "markdown-it";
 import fs from "fs";
 import matter from "gray-matter";
 import { Post } from "../types/post";
+import hljs from "highlight.js";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 const md = new MarkdownIt();
+md.set({highlight: (str: string, lang: string, attrs: string) => {
+  if(lang && hljs.getLanguage(lang)){
+    return hljs.highlight(str, {language: lang, ignoreIllegals: true}).value
+  }
+
+  return str;
+}})
 
 const getKeys = Object.keys as <T extends object>(obj: T) => Array<keyof T>;
 
