@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "script/rss-generator.js"  ],
   "exclude": [
     "node_modules"
   ]

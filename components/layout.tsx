@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "./layout.module.scss";
 import GoogleAnalytics from "./google-analytics";
 
-const Layout = ({ children } : { children: any}) => {
+const Layout = ({ children }: { children: any }) => {
   return (
     <div>
       {process.env.NODE_ENV === "production" && process.browser && (
@@ -78,6 +78,15 @@ const Layout = ({ children } : { children: any}) => {
                   alt='twitter icon'
                 />
               </a>
+            </li>
+            <li>
+              <Link href='/rss.xml' passHref>
+                <img
+                  className={styles.contactListIcon}
+                  src='/images/rss.svg'
+                  alt='rss icon'
+                />
+              </Link>
             </li>
           </ul>
           <h3 className={styles.resumeListText}>Resume</h3>

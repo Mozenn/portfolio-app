@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+  <rss
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    version="2.0"
+  >
+    <channel>
+        <title><![CDATA[Software engineering articles by Gauthier Cassany]]></title>
+        <link>https://gauthier-cassany.com</link>
+        <description>
+          <![CDATA[Blog posts about Software Engineering by Gauthier Cassany]]>
+        </description>
+        <language>en</language>
+        <lastBuildDate>26 January 2022</lastBuildDate>
+        
+    <item>
+      <title><![CDATA[Asking questions as a software engineer]]></title>
+      <link>https://gauthier-cassany.com/posts/asking-questions</link>
+      <pubDate>01 September 2021</pubDate>
+      <guid isPermaLink="false">https://gauthier-cassany.com/posts/asking-questions</guid>
+      <description>
+      <![CDATA[It has been 6 months since I have started my internship at Lyra Network as a software engineer, and 3 months since my internship turned into a real software engineering job. During this period, you are expected to know little or nothing about the job, and thus, asking questions is mandatory. I would like to share some hints that I have picked up during this period.]]>
+      </description>
+    </item>
+    <item>
+      <title><![CDATA[How to set up Keycloak with Docker and PostgreSQL]]></title>
+      <link>https://gauthier-cassany.com/posts/setup-keycloak-docker</link>
+      <pubDate>15 December 2021</pubDate>
+      <guid isPermaLink="false">https://gauthier-cassany.com/posts/setup-keycloak-docker</guid>
+      <description>
+      <![CDATA[In this blog post, we are going to learn how to run Keycloak inside docker, using a dedicated PostgreSQL database also running in a docker container.]]>
+      </description>
+    </item>
+    <item>
+      <title><![CDATA[Build a Spring Boot REST API with Pagination and Sorting]]></title>
+      <link>https://gauthier-cassany.com/posts/spring-boot-pagination-and-sorting</link>
+      <pubDate>26 January 2022</pubDate>
+      <guid isPermaLink="false">https://gauthier-cassany.com/posts/spring-boot-pagination-and-sorting</guid>
+      <description>
+      <![CDATA[Pagination is an important feature for REST API, and is used for many use cases where we want to fetch only a small part of an entire dataset. It might be for performance reasons, and fetch only the data needed at that time. It can also be used by the frontend to display items using a paginated view type of UI such as infinite scrolling.]]>
+      </description>
+    </item>
+    </channel>
+  </rss>

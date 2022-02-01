@@ -5,6 +5,7 @@ priority: 2
 tags: ["Java", "Spring"]
 author: Gauthier
 date: 26 January 2022
+description: Pagination is an important feature for REST API, and is used for many use cases where we want to fetch only a small part of an entire dataset. It might be for performance reasons, and fetch only the data needed at that time. It can also be used by the frontend to display items using a paginated view type of UI such as infinite scrolling.
 ---
 
 Pagination is an important feature for REST API, and is used for many use cases where we want to fetch only a small part of an entire dataset. It might be for performance reasons, and fetch only the data needed at that time. It can also be used by the frontend to display items using a paginated view type of UI such as infinite scrolling.
