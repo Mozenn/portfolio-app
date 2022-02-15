@@ -12,7 +12,7 @@
           <![CDATA[Blog posts about Software Engineering by Gauthier Cassany]]>
         </description>
         <language>en</language>
-        <lastBuildDate>26 January 2022</lastBuildDate>
+        <lastBuildDate>15 February 2022</lastBuildDate>
         
     <item>
       <title><![CDATA[Asking questions as a software engineer]]></title>
@@ -21,6 +21,15 @@
       <guid isPermaLink="false">https://gauthier-cassany.com/posts/asking-questions</guid>
       <description>
       <![CDATA[It has been 6 months since I have started my internship at Lyra Network as a software engineer, and 3 months since my internship turned into a real software engineering job. During this period, you are expected to know little or nothing about the job, and thus, asking questions is mandatory. I would like to share some hints that I have picked up during this period.]]>
+      </description>
+    </item>
+    <item>
+      <title><![CDATA[Build a .jar file inside a Docker container with Maven]]></title>
+      <link>https://gauthier-cassany.com/posts/build-jar-inside-docker</link>
+      <pubDate>15 February 2022</pubDate>
+      <guid isPermaLink="false">https://gauthier-cassany.com/posts/build-jar-inside-docker</guid>
+      <description>
+      <![CDATA[Containers have become very popular during the last few years thanks to the rise of Docker. The most common use case is to run an application in isolation, be it in a development environment or a production environment. But it can also be used for more specific use cases. In this article, we are going to build a jar file inside a docker container.]]>
       </description>
     </item>
     <item>
