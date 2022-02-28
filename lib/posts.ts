@@ -35,6 +35,22 @@ export const getPostsDataByPriority = (count: number) => {
     .slice(0, count);
 };
 
+export const getPostsDataByDate = () => {
+
+  return getAllPostsData()
+    .sort((pa: Post, pb: Post) => {
+      const dateA = new Date(pa.date);
+      const dateB = new Date(pb.date);
+      if (dateA < dateB) {
+        return 1;
+      } else if (dateA > dateB) {
+        return -1;
+      } else {
+        return pa.title.localeCompare(pb.title) * -1;
+      }
+    })
+};
+
 export const getAllPostsData = (): Post[] => {
   const fileNames = fs.readdirSync(postsDirectory);
   return fileNames.map((fileName: string): Post => {
