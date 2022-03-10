@@ -6,24 +6,36 @@ const postsDirectory = path.join(process.cwd(), "posts");
 
 const getAllPostsData = () => {
   const fileNames = fs.readdirSync(postsDirectory);
-  return fileNames.map((fileName) => {
-    const filePath = path.join(postsDirectory, fileName);
-    const fileContent = fs.readFileSync(filePath, "utf8");
-    const id = fileName.replace(/\.md$/, "");
+  return fileNames
+    .map((fileName) => {
+      const filePath = path.join(postsDirectory, fileName);
+      const fileContent = fs.readFileSync(filePath, "utf8");
+      const id = fileName.replace(/\.md$/, "");
 
-    const matterResult = matter(fileContent);
+      const matterResult = matter(fileContent);
 
-    const { title, priority, tags, author, date, description } =
-      matterResult.data;
+      const { title, priority, tags, author, date, description } =
+        matterResult.data;
 
-    const res = { id, title, priority, tags, author, date, description };
+      const res = { id, title, priority, tags, author, date, description };
 
-    Object.keys(res).forEach(
-      (key) => res[key] === undefined && delete res[key]
-    );
+      Object.keys(res).forEach(
+        (key) => res[key] === undefined && delete res[key]
+      );
 
-    return res;
-  });
+      return res;
+    })
+    .sort((pa, pb) => {
+      const dateA = new Date(pa.date);
+      const dateB = new Date(pb.date);
+      if (dateA < dateB) {
+        return 1;
+      } else if (dateA > dateB) {
+        return -1;
+      } else {
+        return pa.title.localeCompare(pb.title) * -1;
+      }
+    });
 };
 
 const postsDataToXml = (postsData) => {

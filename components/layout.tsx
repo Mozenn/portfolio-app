@@ -111,7 +111,7 @@ const Layout = ({ children }: { children: any }) => {
             </li>
           </ul>
         </div>
-        <p>© Copyright 2021 Gauthier Cassany</p>
+        <p>© Copyright 2022 Gauthier Cassany</p>
       </footer>
     </div>
   );

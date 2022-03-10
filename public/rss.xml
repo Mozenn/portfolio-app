@@ -12,15 +12,15 @@
           <![CDATA[Blog posts about Software Engineering by Gauthier Cassany]]>
         </description>
         <language>en</language>
-        <lastBuildDate>15 February 2022</lastBuildDate>
+        <lastBuildDate>10 March 2022</lastBuildDate>
         
     <item>
-      <title><![CDATA[Asking questions as a software engineer]]></title>
-      <link>https://gauthier-cassany.com/posts/asking-questions</link>
-      <pubDate>01 September 2021</pubDate>
-      <guid isPermaLink="false">https://gauthier-cassany.com/posts/asking-questions</guid>
+      <title><![CDATA[Build a paginated list in React with SWR and Styled Components]]></title>
+      <link>https://gauthier-cassany.com/posts/build-paginated-list-react-swr</link>
+      <pubDate>10 March 2022</pubDate>
+      <guid isPermaLink="false">https://gauthier-cassany.com/posts/build-paginated-list-react-swr</guid>
       <description>
-      <![CDATA[It has been 6 months since I have started my internship at Lyra Network as a software engineer, and 3 months since my internship turned into a real software engineering job. During this period, you are expected to know little or nothing about the job, and thus, asking questions is mandatory. I would like to share some hints that I have picked up during this period.]]>
+      <![CDATA[In a previous blog post, we have learned how to build an API with pagination. In this blog post, we are focusing on how to consume such an API by building a paginated list using React, the most popular javascript frontend framework at the moment.]]>
       </description>
     </item>
     <item>
@@ -33,6 +33,15 @@
       </description>
     </item>
     <item>
+      <title><![CDATA[Build a Spring Boot REST API with Pagination and Sorting]]></title>
+      <link>https://gauthier-cassany.com/posts/spring-boot-pagination-and-sorting</link>
+      <pubDate>26 January 2022</pubDate>
+      <guid isPermaLink="false">https://gauthier-cassany.com/posts/spring-boot-pagination-and-sorting</guid>
+      <description>
+      <![CDATA[Pagination is an important feature for REST API, and is used for many use cases where we want to fetch only a small part of an entire dataset. It might be for performance reasons, and fetch only the data needed at that time. It can also be used by the frontend to display items using a paginated view type of UI such as infinite scrolling.]]>
+      </description>
+    </item>
+    <item>
       <title><![CDATA[How to set up Keycloak with Docker and PostgreSQL]]></title>
       <link>https://gauthier-cassany.com/posts/setup-keycloak-docker</link>
       <pubDate>15 December 2021</pubDate>
@@ -42,12 +51,12 @@
       </description>
     </item>
     <item>
-      <title><![CDATA[Build a Spring Boot REST API with Pagination and Sorting]]></title>
-      <link>https://gauthier-cassany.com/posts/spring-boot-pagination-and-sorting</link>
-      <pubDate>26 January 2022</pubDate>
-      <guid isPermaLink="false">https://gauthier-cassany.com/posts/spring-boot-pagination-and-sorting</guid>
+      <title><![CDATA[Asking questions as a software engineer]]></title>
+      <link>https://gauthier-cassany.com/posts/asking-questions</link>
+      <pubDate>01 September 2021</pubDate>
+      <guid isPermaLink="false">https://gauthier-cassany.com/posts/asking-questions</guid>
       <description>
-      <![CDATA[Pagination is an important feature for REST API, and is used for many use cases where we want to fetch only a small part of an entire dataset. It might be for performance reasons, and fetch only the data needed at that time. It can also be used by the frontend to display items using a paginated view type of UI such as infinite scrolling.]]>
+      <![CDATA[It has been 6 months since I have started my internship at Lyra Network as a software engineer, and 3 months since my internship turned into a real software engineering job. During this period, you are expected to know little or nothing about the job, and thus, asking questions is mandatory. I would like to share some hints that I have picked up during this period.]]>
       </description>
     </item>
     </channel>
