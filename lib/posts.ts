@@ -60,11 +60,11 @@ export const getAllPostsData = (): Post[] => {
 
     const matterResult = matter(fileContent);
 
-    const { title, priority, tags, author, date } = matterResult.data;
+    const { title, priority, bannerPath, tags, author, date } = matterResult.data;
     const content = md.render(matterResult.content);
     const timeEstimate = computeTimeEstimateInMinutes(content);
 
-    const res = { id, title, priority, tags, author, date , timeEstimate};
+    const res = { id, title, bannerPath, priority, tags, author, date , timeEstimate};
 
     getKeys(res).forEach((key) => res[key] === undefined && delete res[key]);
 
@@ -91,13 +91,14 @@ export const getPostFullData = (id: string): Post => {
   const matterResult = matter(fileContent);
   
   const content = md.render(matterResult.content);
-  const { title, priority, tags, author, date } = matterResult.data;
+  const { title, bannerPath, priority, tags, author, date } = matterResult.data;
   const timeEstimate = computeTimeEstimateInMinutes(content);
 
   const res = {
     content,
     id,
     title,
+    bannerPath,
     priority,
     author,
     tags,

@@ -1,6 +1,7 @@
 ---
 id: build-jar-inside-docker
 title: Build a .jar file inside a Docker container with Maven
+bannerPath: /images/post/build-jar-inside-docker/thumbnail.png
 priority: 2
 tags: ["Java", "Maven", "Docker"]
 author: Gauthier

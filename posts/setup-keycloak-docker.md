@@ -1,6 +1,7 @@
 ---
 id: setup-keycloak-docker
 title: How to set up Keycloak with Docker and PostgreSQL
+bannerPath: /images/post/setup-keycloak-docker/thumbnail.png
 priority: 1
 tags: ["Keycloak", "DevOps"]
 author: Gauthier

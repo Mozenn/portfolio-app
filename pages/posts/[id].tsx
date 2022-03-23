@@ -37,8 +37,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 const PostPage = ({ postFullData }: { postFullData: Post }) => {
   const shareIconSize = "2.5rem";
-  const pageUrl = typeof window !== 'undefined' ? String(window.location) : "";
-  
+  const pageUrl = typeof window !== "undefined" ? String(window.location) : "";
+
   return (
     <Layout>
       <Head>
@@ -59,6 +59,11 @@ const PostPage = ({ postFullData }: { postFullData: Post }) => {
             return <label key={tag}>{tag}</label>;
           })}
         </div>
+        <img
+          src={postFullData.bannerPath}
+          alt='Banner'
+          className={styles.banner}
+        />
         <div
           className={styles.contentText}
           dangerouslySetInnerHTML={{ __html: postFullData.content as string }}
@@ -66,20 +71,17 @@ const PostPage = ({ postFullData }: { postFullData: Post }) => {
         <span className={styles.shareBorder}></span>
         <div className={styles.shareContainer}>
           <label>Share</label>
-          <FacebookShareButton
-            url={pageUrl}
-            quote={postFullData.title}
-          >
-            <FacebookIcon size={shareIconSize}/>
+          <FacebookShareButton url={pageUrl} quote={postFullData.title}>
+            <FacebookIcon size={shareIconSize} />
           </FacebookShareButton>
           <TwitterShareButton url={pageUrl} title={postFullData.title}>
-            <TwitterIcon size={shareIconSize}/>
+            <TwitterIcon size={shareIconSize} />
           </TwitterShareButton>
           <LinkedinShareButton url={pageUrl} title={postFullData.title}>
-            <LinkedinIcon size={shareIconSize}/>
+            <LinkedinIcon size={shareIconSize} />
           </LinkedinShareButton>
           <RedditShareButton url={pageUrl} title={postFullData.title}>
-            <RedditIcon size={shareIconSize}/>
+            <RedditIcon size={shareIconSize} />
           </RedditShareButton>
         </div>
       </div>
