@@ -12,8 +12,17 @@
           <![CDATA[Blog posts about Software Engineering by Gauthier Cassany]]>
         </description>
         <language>en</language>
-        <lastBuildDate>10 March 2022</lastBuildDate>
+        <lastBuildDate>5 April 2022</lastBuildDate>
         
+    <item>
+      <title><![CDATA[Build a Spring Boot REST API with Full-Text Search using Hibernate Search]]></title>
+      <link>https://gauthier-cassany.com/posts/spring-boot-hibernate-search</link>
+      <pubDate>5 April 2022</pubDate>
+      <guid isPermaLink="false">https://gauthier-cassany.com/posts/spring-boot-hibernate-search</guid>
+      <description>
+      <![CDATA[Search is one of the pillars of the web, and full-text search is one of the mandatory features that every website needs.  But implementing such a feature is complex, and lots of skilled engineers have already thought hard about this topic. So let’s not reinvent the wheel, and use the battle-tested Hibernate Search library.]]>
+      </description>
+    </item>
     <item>
       <title><![CDATA[Build a paginated list in React with SWR and Styled Components]]></title>
       <link>https://gauthier-cassany.com/posts/build-paginated-list-react-swr</link>
