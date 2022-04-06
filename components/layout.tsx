@@ -3,9 +3,20 @@ import Link from "next/link";
 import styles from "./layout.module.scss";
 import GoogleAnalytics from "./google-analytics";
 import useLocalStorage from "../hooks/useLocalStorage";
+import { useEffect } from "react";
 
 const Layout = ({ children }: { children: any }) => {
   const [theme, setTheme] = useLocalStorage("theme", "light");
+
+  useEffect(() => {
+    if (
+      theme === "dark" &&
+      !document.documentElement.classList.contains("darkTheme")
+    ) {
+      document.documentElement.classList.toggle("darkTheme");
+      setTheme("dark");
+    }
+  });
 
   const toggleTheme = () => {
     const newTheme = theme == "light" ? "dark" : "light";
@@ -17,7 +28,10 @@ const Layout = ({ children }: { children: any }) => {
     toggleTheme();
   };
 
-  const getTheme = () => (theme === "light" ? styles.light : styles.dark);
+  const getTheme = () => {
+    const res = theme === "light" ? styles.light : styles.dark;
+    return res;
+  };
 
   const getCursorStyle = () =>
     theme === "light" ? styles.lightCursor : styles.darkCursor;
