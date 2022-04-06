@@ -11,7 +11,6 @@ import {
   TwitterIcon,
 } from "react-share";
 import styles from "../../styles/post.module.scss";
-import Layout from "../../components/layout";
 import { getAllPostIds, getPostFullData } from "../../lib/posts";
 import { Post } from "../../types/post";
 import { IdParams } from "../../types/IdParams";
@@ -40,7 +39,7 @@ const PostPage = ({ postFullData }: { postFullData: Post }) => {
   const pageUrl = typeof window !== "undefined" ? String(window.location) : "";
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>{postFullData.title}</title>
       </Head>
@@ -85,7 +84,7 @@ const PostPage = ({ postFullData }: { postFullData: Post }) => {
           </RedditShareButton>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 

@@ -1,17 +1,24 @@
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 0.6rem 1rem;
-  width: auto;
+  width: 40rem;
+  //height: 30rem;
 
   border: 2px solid var(--color-secondary);
   background-color: var(--color-primary);
+}
+
+.capsuleImage {
+
 }
 
 .title {
   text-decoration: underline;
   transition: color 0.3s;
   font-size: 1.5rem;
+  color: var(--color-secondary);
 
   &:hover {
     color: var(--color-secondary-lighter);
@@ -42,4 +49,16 @@
   font-size: 1rem;
   margin-right: 0rem;
   margin-left: auto;
+}
+
+@media only screen and (max-width: 720px) {
+  .container {
+    width: 35rem;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .container {
+    width: 30rem;
+  }
 }

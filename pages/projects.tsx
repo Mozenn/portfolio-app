@@ -1,5 +1,4 @@
-import { GetStaticProps } from 'next'
-import Layout from "../components/layout";
+import { GetStaticProps } from "next";
 import { getAllProjectsData } from "../lib/projects";
 import styles from "../styles/projects.module.scss";
 import ProjectCapsule from "../components/project-capsule";
@@ -14,9 +13,9 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Projects = ({ projects } : {projects: Project[]}) => {
+const Projects = ({ projects }: { projects: Project[] }) => {
   return (
-    <Layout>
+    <>
       <div className={styles.container}>
         {projects.map((project: Project) => {
           return (
@@ -29,7 +28,7 @@ const Projects = ({ projects } : {projects: Project[]}) => {
           );
         })}
       </div>
-    </Layout>
+    </>
   );
 };
 

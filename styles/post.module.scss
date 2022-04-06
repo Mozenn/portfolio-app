@@ -47,9 +47,12 @@
   margin: 3rem 2% 4rem 2%;
   font-size: 1.05rem;
   line-height: 1.5rem;
+  display: flex;
+  flex-direction: column;
 
   img {
     width: 50vw;
+    text-align: center;
   }
 
   a {

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Layout from "../components/layout";
 import { getPostsDataByDate, getAllTagsFromPosts } from "../lib/posts";
 import styles from "../styles/posts.module.scss";
 import { Post } from "../types/post";
@@ -44,7 +43,7 @@ const Posts = ({ posts, tags }: { posts: Post[]; tags: string[] }) => {
   }, [activeTags, posts]);
 
   return (
-    <Layout>
+    <>
       <div className={styles.container}>
         <div className={styles.tagContainer}>
           {tags.map((tag) => {
@@ -57,7 +56,7 @@ const Posts = ({ posts, tags }: { posts: Post[]; tags: string[] }) => {
           })}
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 

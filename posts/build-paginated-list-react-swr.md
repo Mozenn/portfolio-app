@@ -2,7 +2,7 @@
 id: build-paginated-list-react-swr
 title: Build a paginated list in React with SWR and Styled Components
 bannerPath: /images/post/build-paginated-list-react-swr/thumbnail.png
-priority: 2
+priority: 1
 tags: ["React", "Frontend"]
 author: Gauthier
 date: 10 March 2022

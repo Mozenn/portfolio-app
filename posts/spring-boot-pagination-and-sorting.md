@@ -2,7 +2,7 @@
 id: spring-boot-pagination-and-sorting
 title: Build a Spring Boot REST API with Pagination and Sorting
 bannerPath: /images/post/spring-pagination-and-sorting/thumbnail.png
-priority: 2
+priority: 1
 tags: ["Java", "Spring"]
 author: Gauthier
 date: 26 January 2022

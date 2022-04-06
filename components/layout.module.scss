@@ -2,7 +2,7 @@
 
 .headerNavbarContainer {
   margin-left: auto;
-  margin-right: 5%;
+  margin-right: 3%;
 }
 
 .header {
@@ -18,7 +18,7 @@
 }
 
 .headerLogo {
-  height: 4rem;
+  height: 5rem;
   width: auto;
   margin: 0.8rem 0.8rem 0.8rem 2rem;
   cursor: pointer;
@@ -35,26 +35,61 @@
 .headerNavbarElement {
   margin: 0px 1rem 0px 1rem;
   padding: 8px 10px 8px 10px;
+  color: var(--color-primary);
   background-color: var(--color-secondary-dark);
   transition: color 0.5s, background-color 0.5s;
   cursor: pointer;
   text-decoration: none;
   font-size: 1.5rem;
-}
 
-.headerNavbarElement a {
-  text-decoration: none;
-  color: inherit;
-}
+  label {
+    cursor: pointer;
+  }
 
-.headerNavbarElement:hover {
-  color: var(--color-secondary);
-  background-color: var(--color-primary);
-  transition: color 0.5s, background-color 0.5s;
+  &:hover {
+    color: var(--color-secondary);
+    background-color: var(--color-primary);
+  }
 }
 
 .selected {
   text-decoration: underline;
+}
+
+.themeToggleButton {
+  margin-right: 3%;
+  position: relative;
+  padding: 0.3rem;
+
+  transition: background-color 0.3s;
+  background-color: var(--color-primary);
+  border: none;
+  outline: none;
+
+  img {
+    height: 1.3rem;
+    width: 1.3rem;
+  }
+}
+
+.cursor {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  background-color: var(--color-secondary);
+  border: 2px solid var(--color-primary);
+  transition: transform 0.3s; 
+  transform: translateX(0%);
+}
+
+.lightCursor {
+  transform: translateX(0%);
+}
+
+.darkCursor {
+  transform: translateX(100%);
 }
 
 /*  FOOTER */
@@ -96,6 +131,14 @@
   opacity: 0.8;
   margin: 0rem 0.8rem;
   cursor: pointer;
+}
+
+.light {
+  filter: invert(9%) sepia(3%) saturate(715%) hue-rotate(314deg) brightness(90%) contrast(82%);
+}
+
+.dark {
+  filter: invert(100%) sepia(2%) saturate(203%) hue-rotate(299deg) brightness(115%) contrast(81%);
 }
 
 .contactListIcon:hover {

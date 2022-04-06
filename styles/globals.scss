@@ -7,9 +7,15 @@
   --color-secondary-dark: rgb(51, 51, 51);
   --color-secondary-light: rgb(121, 121, 121);
   --color-secondary-lighter: rgb(151, 151, 151);
+}
 
-  background-color: var(--color-background);
-  color: var(--color-primary-dark);
+:root.darkTheme {
+  --color-primary: rgb(48, 48, 48);
+  --color-primary-dark: rgb(41, 41, 41);
+  --color-secondary: rgb(214, 214, 214);
+  --color-secondary-dark: rgb(201, 201, 201);
+  --color-secondary-light: rgb(237, 237, 237);
+  --color-secondary-lighter: rgb(255, 255, 255);
 }
 
 html,
@@ -23,6 +29,8 @@ body {
   font-weight: 400;
   font-display: auto;
   scroll-behavior: smooth;
+
+  transition: background-color 0.3s, color 0.3s;
 }
 
 a {

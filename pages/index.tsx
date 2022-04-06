@@ -1,8 +1,6 @@
-import Head from "next/head";
 import Link from "next/link";
 import { GetStaticProps } from "next";
 import styles from "../styles/home.module.scss";
-import Layout from "../components/layout";
 import ProjectCapsule from "../components/project-capsule";
 import PostCapsule from "../components/posts/post-capsule";
 import { getProjectsDataByPriority } from "../lib/projects";
@@ -30,7 +28,7 @@ const Home = ({
   postsToShow: Post[];
 }) => {
   return (
-    <Layout>
+    <>
       <section className={styles.landing}>
         <div>
           <h1 className={styles.landingName}>Gauthier Cassany</h1>
@@ -97,7 +95,7 @@ const Home = ({
           </Link>
         </div>
       </section>
-    </Layout>
+    </>
   );
 };
 

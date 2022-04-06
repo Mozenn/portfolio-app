@@ -2,7 +2,7 @@
 id: asking-questions
 title: Asking questions as a software engineer
 bannerPath: /images/post/asking-questions-as-se/thumbnail.png
-priority: 1
+priority: 2
 tags: ["Soft Skill"]
 author: Gauthier
 date: 01 September 2021

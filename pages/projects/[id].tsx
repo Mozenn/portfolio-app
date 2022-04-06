@@ -1,7 +1,6 @@
 import Head from "next/head";
-import { GetStaticProps, GetStaticPaths } from 'next'
-import { IdParams } from '../../types/IdParams'
-import Layout from "../../components/layout";
+import { GetStaticProps, GetStaticPaths } from "next";
+import { IdParams } from "../../types/IdParams";
 import AccessLink from "../../components/access-link";
 import { getAllProjectIds, getProjectFullData } from "../../lib/projects";
 import styles from "../../styles/project.module.scss";
@@ -16,7 +15,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const {id} = context.params as IdParams
+  const { id } = context.params as IdParams;
   const projectFullData = getProjectFullData(id);
 
   return {
@@ -26,7 +25,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
   };
 };
 
-export const ProjectPage = ({ projectFullData } : {projectFullData : Project}) => {
+export const ProjectPage = ({
+  projectFullData,
+}: {
+  projectFullData: Project;
+}) => {
   const {
     title,
     priority,
@@ -39,7 +42,7 @@ export const ProjectPage = ({ projectFullData } : {projectFullData : Project}) =
   } = projectFullData;
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>{title}</title>
       </Head>
@@ -55,7 +58,7 @@ export const ProjectPage = ({ projectFullData } : {projectFullData : Project}) =
         <div className={styles.content}>
           <div
             className={styles.contentText}
-            dangerouslySetInnerHTML={{ __html: content as string}}
+            dangerouslySetInnerHTML={{ __html: content as string }}
           />
           <img
             className={styles.contentImage}
@@ -69,7 +72,7 @@ export const ProjectPage = ({ projectFullData } : {projectFullData : Project}) =
           {accessUrl && <AccessLink iconName='link.svg' url={accessUrl} />}
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 

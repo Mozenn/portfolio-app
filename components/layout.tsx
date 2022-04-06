@@ -2,8 +2,26 @@ import Head from "next/head";
 import Link from "next/link";
 import styles from "./layout.module.scss";
 import GoogleAnalytics from "./google-analytics";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 const Layout = ({ children }: { children: any }) => {
+  const [theme, setTheme] = useLocalStorage("theme", "light");
+
+  const toggleTheme = () => {
+    const newTheme = theme == "light" ? "dark" : "light";
+    setTheme(newTheme);
+    document.documentElement.classList.toggle("darkTheme");
+  };
+
+  const onThemeButtonClicked = () => {
+    toggleTheme();
+  };
+
+  const getTheme = () => (theme === "light" ? styles.light : styles.dark);
+
+  const getCursorStyle = () =>
+    theme === "light" ? styles.lightCursor : styles.darkCursor;
+
   return (
     <div>
       {process.env.NODE_ENV === "production" && process.browser && (
@@ -19,29 +37,45 @@ const Layout = ({ children }: { children: any }) => {
           <Link href='/' passHref>
             <img
               className={styles.headerLogo}
-              src='/images/logo.svg'
+              src={`/images/logo-${theme}.png`}
               alt='Logo'
             />
           </Link>
           <nav className={styles.headerNavbarContainer}>
             <ul className={styles.headerNavbar}>
               <li className={styles.headerNavbarElement}>
-                <Link href='/'>
-                  <a>Home</a>
+                <Link href='/' passHref>
+                  <label>Home</label>
                 </Link>
               </li>
               <li className={styles.headerNavbarElement}>
-                <Link href='/projects'>
-                  <a>Projects</a>
+                <Link href='/projects' passHref>
+                  <label>Projects</label>
                 </Link>
               </li>
               <li className={styles.headerNavbarElement}>
-                <Link href='/posts'>
-                  <a>Blog</a>
+                <Link href='/posts' passHref>
+                  <label>Blog</label>
                 </Link>
               </li>
             </ul>
           </nav>
+          <button
+            className={styles.themeToggleButton}
+            onClick={onThemeButtonClicked}
+          >
+            <img
+              src='/images/moon.svg'
+              alt='dark theme icon'
+              className={`${getTheme()}`}
+            />
+            <img
+              src='/images/sun.svg'
+              alt='light theme icon'
+              className={`${getTheme()}`}
+            />
+            <div className={`${styles.cursor} ${getCursorStyle()}`}></div>
+          </button>
         </div>
       </header>
 
@@ -55,7 +89,7 @@ const Layout = ({ children }: { children: any }) => {
             <li>
               <a href='https://github.com/Mozenn'>
                 <img
-                  className={styles.contactListIcon}
+                  className={`${styles.contactListIcon} ${getTheme()}`}
                   src='/images/github.svg'
                   alt='github icon'
                 />
@@ -64,7 +98,7 @@ const Layout = ({ children }: { children: any }) => {
             <li>
               <a href='https://www.linkedin.com/in/gauthier-cassany-8a370b175/'>
                 <img
-                  className={styles.contactListIcon}
+                  className={`${styles.contactListIcon} ${getTheme()}`}
                   src='/images/linkedin.svg'
                   alt='linkedIn icon'
                 />
@@ -73,7 +107,7 @@ const Layout = ({ children }: { children: any }) => {
             <li>
               <a href='https://twitter.com/GCassany'>
                 <img
-                  className={styles.contactListIcon}
+                  className={`${styles.contactListIcon} ${getTheme()}`}
                   src='/images/twitter.svg'
                   alt='twitter icon'
                 />
@@ -82,7 +116,7 @@ const Layout = ({ children }: { children: any }) => {
             <li>
               <Link href='/rss.xml' passHref>
                 <img
-                  className={styles.contactListIcon}
+                  className={`${styles.contactListIcon} ${getTheme()}`}
                   src='/images/rss.svg'
                   alt='rss icon'
                 />

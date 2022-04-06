@@ -2,9 +2,14 @@ import styles from "./post-capsule.module.scss";
 import { Post } from "../../types/post";
 import Link from "next/link";
 
-const PostCapsule = ({postData} : {postData: Post}) => {
+const PostCapsule = ({ postData }: { postData: Post }) => {
   return (
     <div className={styles.container}>
+      <img
+        className={styles.capsuleImage}
+        src={`${postData.bannerPath}`}
+        alt='capsule image'
+      />
       <Link href={`/posts/${postData.id}`}>
         <a>
           <h2 className={styles.title}>{postData.title}</h2>
