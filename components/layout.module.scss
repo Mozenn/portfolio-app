@@ -175,3 +175,41 @@
   filter: grayscale(0%);
   transition: filter 0.5s;
 }
+
+/*   REACTIVE */
+
+@media only screen and (max-width: 720px) {
+
+  .headerNavbarContainer {
+    margin-left: 0;
+  }
+
+  .headerNavbar {
+    margin-right: 0;
+    padding-left: 0;
+  }
+
+  .blogContainer {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+
+  .header {
+    font-size: 0.5rem;
+  }
+
+  .headerNavbar {
+    padding-left: 0;
+  }
+
+  .headerNavbarElement {
+    font-size: 1rem;
+    margin: 0px 0.5rem 0px 0.5rem;
+  }
+
+  .blogContainer {
+    flex-direction: column;
+  }
+}

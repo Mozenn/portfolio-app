@@ -48,13 +48,15 @@ const Layout = ({ children }: { children: any }) => {
 
       <header>
         <div className={`${styles.header} ${styles.sticky}`}>
-          <Link href='/' passHref>
-            <img
-              className={styles.headerLogo}
-              src={`/images/logo-${theme}.png`}
-              alt='Logo'
-            />
-          </Link>
+          {process.browser && (
+            <Link href='/' passHref>
+              <img
+                className={styles.headerLogo}
+                src={`/images/logo-${theme}.png`}
+                alt='Logo'
+              />
+            </Link>
+          )}
           <nav className={styles.headerNavbarContainer}>
             <ul className={styles.headerNavbar}>
               <li className={styles.headerNavbarElement}>
@@ -74,22 +76,24 @@ const Layout = ({ children }: { children: any }) => {
               </li>
             </ul>
           </nav>
-          <button
-            className={styles.themeToggleButton}
-            onClick={onThemeButtonClicked}
-          >
-            <img
-              src='/images/moon.svg'
-              alt='dark theme icon'
-              className={`${getTheme()}`}
-            />
-            <img
-              src='/images/sun.svg'
-              alt='light theme icon'
-              className={`${getTheme()}`}
-            />
-            <div className={`${styles.cursor} ${getCursorStyle()}`}></div>
-          </button>
+          {process.browser && (
+            <button
+              className={styles.themeToggleButton}
+              onClick={onThemeButtonClicked}
+            >
+              <img
+                src='/images/moon.svg'
+                alt='dark theme icon'
+                className={`${getTheme()}`}
+              />
+              <img
+                src='/images/sun.svg'
+                alt='light theme icon'
+                className={`${getTheme()}`}
+              />
+              <div className={`${styles.cursor} ${getCursorStyle()}`}></div>
+            </button>
+          )}
         </div>
       </header>
 
@@ -99,44 +103,49 @@ const Layout = ({ children }: { children: any }) => {
         <span className={styles.footerBorder}></span>
         <div className={styles.informationBox}>
           <p className={styles.emailFooter}>gauthier.cassany@gmail.com</p>
-          <ul className={styles.contactList}>
-            <li>
-              <a href='https://github.com/Mozenn'>
-                <img
-                  className={`${styles.contactListIcon} ${getTheme()}`}
-                  src='/images/github.svg'
-                  alt='github icon'
-                />
-              </a>
-            </li>
-            <li>
-              <a href='https://www.linkedin.com/in/gauthier-cassany-8a370b175/'>
-                <img
-                  className={`${styles.contactListIcon} ${getTheme()}`}
-                  src='/images/linkedin.svg'
-                  alt='linkedIn icon'
-                />
-              </a>
-            </li>
-            <li>
-              <a href='https://twitter.com/GCassany'>
-                <img
-                  className={`${styles.contactListIcon} ${getTheme()}`}
-                  src='/images/twitter.svg'
-                  alt='twitter icon'
-                />
-              </a>
-            </li>
-            <li>
-              <Link href='/rss.xml' passHref>
-                <img
-                  className={`${styles.contactListIcon} ${getTheme()}`}
-                  src='/images/rss.svg'
-                  alt='rss icon'
-                />
-              </Link>
-            </li>
-          </ul>
+          {process.browser && (
+            <div className={styles.contactList}>
+              <li>
+                <Link href='https://github.com/Mozenn' passHref>
+                  <img
+                    className={`${styles.contactListIcon} ${getTheme()}`}
+                    src='/images/github.svg'
+                    alt='github icon'
+                  />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href='https://www.linkedin.com/in/gauthier-cassany-8a370b175/'
+                  passHref
+                >
+                  <img
+                    className={`${styles.contactListIcon} ${getTheme()}`}
+                    src='/images/linkedin.svg'
+                    alt='linkedIn icon'
+                  />
+                </Link>
+              </li>
+              <li>
+                <Link href='https://twitter.com/GCassany' passHref>
+                  <img
+                    className={`${styles.contactListIcon} ${getTheme()}`}
+                    src='/images/twitter.svg'
+                    alt='twitter icon'
+                  />
+                </Link>
+              </li>
+              <li>
+                <Link href='/rss.xml' passHref>
+                  <img
+                    className={`${styles.contactListIcon} ${getTheme()}`}
+                    src='/images/rss.svg'
+                    alt='rss icon'
+                  />
+                </Link>
+              </li>
+            </div>
+          )}
           <h3 className={styles.resumeListText}>Resume</h3>
           <ul className={styles.resumeList}>
             <li className={styles.resumeListIcon}>
