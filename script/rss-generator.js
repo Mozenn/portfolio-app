@@ -1,16 +1,16 @@
-const fs = require("fs");
-const path = require("path");
-const matter = require("gray-matter");
+const fs = require('fs');
+const path = require('path');
+const matter = require('gray-matter');
 
-const postsDirectory = path.join(process.cwd(), "posts");
+const postsDirectory = path.join(process.cwd(), 'posts');
 
 const getAllPostsData = () => {
   const fileNames = fs.readdirSync(postsDirectory);
   return fileNames
     .map((fileName) => {
       const filePath = path.join(postsDirectory, fileName);
-      const fileContent = fs.readFileSync(filePath, "utf8");
-      const id = fileName.replace(/\.md$/, "");
+      const fileContent = fs.readFileSync(filePath, 'utf8');
+      const id = fileName.replace(/\.md$/, '');
 
       const matterResult = matter(fileContent);
 
@@ -39,8 +39,8 @@ const getAllPostsData = () => {
 };
 
 const postsDataToXml = (postsData) => {
-  let latestPostDate = "";
-  let rssItemsXml = "";
+  let latestPostDate = '';
+  let rssItemsXml = '';
   postsData.forEach((postData) => {
     const postDate = Date.parse(postData.date);
     const postHref = `https://gauthier-cassany.com/posts/${postData.id}`;

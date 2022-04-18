@@ -1,8 +1,8 @@
-import { GetStaticProps } from "next";
-import { getAllProjectsData } from "../lib/projects";
-import styles from "../styles/projects.module.scss";
-import ProjectCapsule from "../components/project-capsule";
-import { Project } from "../types/project";
+import { GetStaticProps } from 'next';
+import { getAllProjectsData } from '../lib/projects';
+import styles from '../styles/projects.module.scss';
+import ProjectCapsule from '../components/project-capsule';
+import { Project } from '../types/project';
 
 export const getStaticProps: GetStaticProps = async () => {
   const projects = getAllProjectsData();

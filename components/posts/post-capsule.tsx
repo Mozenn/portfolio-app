@@ -1,6 +1,6 @@
-import styles from "./post-capsule.module.scss";
-import { Post } from "../../types/post";
-import Link from "next/link";
+import styles from './post-capsule.module.scss';
+import { Post } from '../../types/post';
+import Link from 'next/link';
 
 const PostCapsule = ({ postData }: { postData: Post }) => {
   return (
@@ -8,7 +8,7 @@ const PostCapsule = ({ postData }: { postData: Post }) => {
       <img
         className={styles.capsuleImage}
         src={`${postData.bannerPath}`}
-        alt='capsule image'
+        alt="capsule image"
       />
       <Link href={`/posts/${postData.id}`}>
         <a>

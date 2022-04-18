@@ -1,5 +1,5 @@
-import Head from "next/head";
-import { GetStaticProps, GetStaticPaths } from "next";
+import Head from 'next/head';
+import { GetStaticProps, GetStaticPaths } from 'next';
 import {
   FacebookShareButton,
   LinkedinShareButton,
@@ -9,11 +9,11 @@ import {
   LinkedinIcon,
   RedditIcon,
   TwitterIcon,
-} from "react-share";
-import styles from "../../styles/post.module.scss";
-import { getAllPostIds, getPostFullData } from "../../lib/posts";
-import { Post } from "../../types/post";
-import { IdParams } from "../../types/IdParams";
+} from 'react-share';
+import styles from '../../styles/post.module.scss';
+import { getAllPostIds, getPostFullData } from '../../lib/posts';
+import { Post } from '../../types/post';
+import { IdParams } from '../../types/IdParams';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds();
@@ -35,8 +35,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 const PostPage = ({ postFullData }: { postFullData: Post }) => {
-  const shareIconSize = "2.5rem";
-  const pageUrl = typeof window !== "undefined" ? String(window.location) : "";
+  const shareIconSize = '2.5rem';
+  const pageUrl = typeof window !== 'undefined' ? String(window.location) : '';
 
   return (
     <>
@@ -60,7 +60,7 @@ const PostPage = ({ postFullData }: { postFullData: Post }) => {
         </div>
         <img
           src={postFullData.bannerPath}
-          alt='Banner'
+          alt="Banner"
           className={styles.banner}
         />
         <div

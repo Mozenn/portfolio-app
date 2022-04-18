@@ -1,27 +1,27 @@
-import Head from "next/head";
-import Link from "next/link";
-import styles from "./layout.module.scss";
-import GoogleAnalytics from "./google-analytics";
-import useLocalStorage from "../hooks/useLocalStorage";
-import { useEffect } from "react";
+import Head from 'next/head';
+import Link from 'next/link';
+import styles from './layout.module.scss';
+import GoogleAnalytics from './google-analytics';
+import useLocalStorage from '../hooks/useLocalStorage';
+import { useEffect } from 'react';
 
-const Layout = ({ children }: { children: any }) => {
-  const [theme, setTheme] = useLocalStorage("theme", "light");
+const Layout = ({ children }: { children: JSX.Element }) => {
+  const [theme, setTheme] = useLocalStorage('theme', 'light');
 
   useEffect(() => {
     if (
-      theme === "dark" &&
-      !document.documentElement.classList.contains("darkTheme")
+      theme === 'dark' &&
+      !document.documentElement.classList.contains('darkTheme')
     ) {
-      document.documentElement.classList.toggle("darkTheme");
-      setTheme("dark");
+      document.documentElement.classList.toggle('darkTheme');
+      setTheme('dark');
     }
   });
 
   const toggleTheme = () => {
-    const newTheme = theme == "light" ? "dark" : "light";
+    const newTheme = theme == 'light' ? 'dark' : 'light';
     setTheme(newTheme);
-    document.documentElement.classList.toggle("darkTheme");
+    document.documentElement.classList.toggle('darkTheme');
   };
 
   const onThemeButtonClicked = () => {
@@ -29,66 +29,65 @@ const Layout = ({ children }: { children: any }) => {
   };
 
   const getTheme = () => {
-    const res = theme === "light" ? styles.light : styles.dark;
+    const res = theme === 'light' ? styles.light : styles.dark;
     return res;
   };
 
   const getCursorStyle = () =>
-    theme === "light" ? styles.lightCursor : styles.darkCursor;
+    theme === 'light' ? styles.lightCursor : styles.darkCursor;
 
   return (
     <div>
-      {process.env.NODE_ENV === "production" && process.browser && (
-        <GoogleAnalytics />
-      )}
+      {process.env.NODE_ENV === 'production' &&
+        typeof window !== 'undefined' && <GoogleAnalytics />}
       <Head>
         <title>Gauthier Cassany</title>
-        <link rel='icon' href='/favicons/favicon.ico' />
+        <link rel="icon" href="/favicons/favicon.ico" />
       </Head>
 
       <header>
         <div className={`${styles.header} ${styles.sticky}`}>
-          {process.browser && (
-            <Link href='/' passHref>
+          {typeof window !== 'undefined' && (
+            <Link href="/" passHref>
               <img
                 className={styles.headerLogo}
                 src={`/images/logo-${theme}.png`}
-                alt='Logo'
+                alt="Logo"
               />
             </Link>
           )}
           <nav className={styles.headerNavbarContainer}>
             <ul className={styles.headerNavbar}>
               <li className={styles.headerNavbarElement}>
-                <Link href='/' passHref>
+                <Link href="/" passHref>
                   <label>Home</label>
                 </Link>
               </li>
               <li className={styles.headerNavbarElement}>
-                <Link href='/projects' passHref>
+                <Link href="/projects" passHref>
                   <label>Projects</label>
                 </Link>
               </li>
               <li className={styles.headerNavbarElement}>
-                <Link href='/posts' passHref>
+                <Link href="/posts" passHref>
                   <label>Blog</label>
                 </Link>
               </li>
             </ul>
           </nav>
-          {process.browser && (
+          {typeof window !== 'undefined' && (
             <button
               className={styles.themeToggleButton}
               onClick={onThemeButtonClicked}
             >
               <img
-                src='/images/moon.svg'
-                alt='dark theme icon'
+                src="/images/moon.svg"
+                alt="dark theme icon"
                 className={`${getTheme()}`}
               />
               <img
-                src='/images/sun.svg'
-                alt='light theme icon'
+                src="/images/sun.svg"
+                alt="light theme icon"
                 className={`${getTheme()}`}
               />
               <div className={`${styles.cursor} ${getCursorStyle()}`}></div>
@@ -103,44 +102,44 @@ const Layout = ({ children }: { children: any }) => {
         <span className={styles.footerBorder}></span>
         <div className={styles.informationBox}>
           <p className={styles.emailFooter}>gauthier.cassany@gmail.com</p>
-          {process.browser && (
+          {typeof window !== 'undefined' && (
             <div className={styles.contactList}>
               <li>
-                <Link href='https://github.com/Mozenn' passHref>
+                <Link href="https://github.com/Mozenn" passHref>
                   <img
                     className={`${styles.contactListIcon} ${getTheme()}`}
-                    src='/images/github.svg'
-                    alt='github icon'
+                    src="/images/github.svg"
+                    alt="github icon"
                   />
                 </Link>
               </li>
               <li>
                 <Link
-                  href='https://www.linkedin.com/in/gauthier-cassany-8a370b175/'
+                  href="https://www.linkedin.com/in/gauthier-cassany-8a370b175/"
                   passHref
                 >
                   <img
                     className={`${styles.contactListIcon} ${getTheme()}`}
-                    src='/images/linkedin.svg'
-                    alt='linkedIn icon'
+                    src="/images/linkedin.svg"
+                    alt="linkedIn icon"
                   />
                 </Link>
               </li>
               <li>
-                <Link href='https://twitter.com/GCassany' passHref>
+                <Link href="https://twitter.com/GCassany" passHref>
                   <img
                     className={`${styles.contactListIcon} ${getTheme()}`}
-                    src='/images/twitter.svg'
-                    alt='twitter icon'
+                    src="/images/twitter.svg"
+                    alt="twitter icon"
                   />
                 </Link>
               </li>
               <li>
-                <Link href='/rss.xml' passHref>
+                <Link href="/rss.xml" passHref>
                   <img
                     className={`${styles.contactListIcon} ${getTheme()}`}
-                    src='/images/rss.svg'
-                    alt='rss icon'
+                    src="/images/rss.svg"
+                    alt="rss icon"
                   />
                 </Link>
               </li>
@@ -149,18 +148,18 @@ const Layout = ({ children }: { children: any }) => {
           <h3 className={styles.resumeListText}>Resume</h3>
           <ul className={styles.resumeList}>
             <li className={styles.resumeListIcon}>
-              <a href='/data/resume-fr.pdf' target='_blank'>
-                <img src='/images/frflag.svg' alt='French Flag icon' />
+              <a href="/data/resume-fr.pdf" target="_blank">
+                <img src="/images/frflag.svg" alt="French Flag icon" />
               </a>
             </li>
             <li className={styles.resumeListIcon}>
-              <a href='/data/resume-en.pdf' target='_blank'>
-                <img src='/images/ukflag.svg' alt='UK Flag icon' />
+              <a href="/data/resume-en.pdf" target="_blank">
+                <img src="/images/ukflag.svg" alt="UK Flag icon" />
               </a>
             </li>
             <li className={styles.resumeListIcon}>
-              <a href='/data/resume-en-no-picture.pdf' target='_blank'>
-                <img src='/images/ukflag.svg' alt='UK Flag icon' />
+              <a href="/data/resume-en-no-picture.pdf" target="_blank">
+                <img src="/images/ukflag.svg" alt="UK Flag icon" />
               </a>
             </li>
             <li>

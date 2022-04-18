@@ -1,9 +1,14 @@
-import styles from "./access-link.module.scss";
+import styles from './access-link.module.scss';
 
-const AccessLink = ({ iconName , url } : {iconName: string, url: string}) => {
+const AccessLink = ({ iconName, url }: { iconName: string; url: string }) => {
   return (
     <div>
-      <a className={styles.container} href={url} target='_blank' rel='noreferrer'>
+      <a
+        className={styles.container}
+        href={url}
+        target="_blank"
+        rel="noreferrer"
+      >
         <img
           className={styles.icon}
           src={`/images/${iconName}`}

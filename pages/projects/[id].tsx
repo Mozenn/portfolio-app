@@ -1,10 +1,10 @@
-import Head from "next/head";
-import { GetStaticProps, GetStaticPaths } from "next";
-import { IdParams } from "../../types/IdParams";
-import AccessLink from "../../components/access-link";
-import { getAllProjectIds, getProjectFullData } from "../../lib/projects";
-import styles from "../../styles/project.module.scss";
-import { Project } from "../../types/project";
+import Head from 'next/head';
+import { GetStaticProps, GetStaticPaths } from 'next';
+import { IdParams } from '../../types/IdParams';
+import AccessLink from '../../components/access-link';
+import { getAllProjectIds, getProjectFullData } from '../../lib/projects';
+import styles from '../../styles/project.module.scss';
+import { Project } from '../../types/project';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllProjectIds();
@@ -30,16 +30,8 @@ export const ProjectPage = ({
 }: {
   projectFullData: Project;
 }) => {
-  const {
-    title,
-    priority,
-    imageName,
-    iconName,
-    stack,
-    githubUrl,
-    accessUrl,
-    content,
-  } = projectFullData;
+  const { title, imageName, iconName, stack, githubUrl, accessUrl, content } =
+    projectFullData;
 
   return (
     <>
@@ -68,8 +60,8 @@ export const ProjectPage = ({
         </div>
         <div className={styles.links}>
           <p>{`Stack: ${stack}`}</p>
-          {githubUrl && <AccessLink iconName='github.svg' url={githubUrl} />}
-          {accessUrl && <AccessLink iconName='link.svg' url={accessUrl} />}
+          {githubUrl && <AccessLink iconName="github.svg" url={githubUrl} />}
+          {accessUrl && <AccessLink iconName="link.svg" url={accessUrl} />}
         </div>
       </div>
     </>

@@ -3,13 +3,13 @@ id: spring-boot-hibernate-search
 title: Build a Spring Boot REST API with Full-Text Search using Hibernate Search
 bannerPath: /images/post/spring-boot-hibernate-search/thumbnail.png
 priority: 2
-tags: ["Java", "Spring"]
+tags: ['Java', 'Spring']
 author: Gauthier
 date: 5 April 2022
 description: Search is one of the pillars of the web, and full-text search is one of the mandatory features that every website needs.  But implementing such a feature is complex, and lots of skilled engineers have already thought hard about this topic. So let’s not reinvent the wheel, and use the battle-tested Hibernate Search library.
 ---
 
-Search is one of the pillars of the web, and full-text search is one of the mandatory features that every website needs.  But implementing such a feature is complex, and lots of skilled engineers have already thought hard about this topic. So let’s not reinvent the wheel, and use the battle-tested Hibernate Search library.
+Search is one of the pillars of the web, and full-text search is one of the mandatory features that every website needs. But implementing such a feature is complex, and lots of skilled engineers have already thought hard about this topic. So let’s not reinvent the wheel, and use the battle-tested Hibernate Search library.
 
 In this blog post, we are going to learn how to build a simple REST API endpoint in Spring boot with full-text search using Hibernate Search. We will only go through the basics, but Hibernate Search is a feature-rich library with many features going way beyond what we will see in this post. You can check everything that it provides in the official documentation [https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#gettingstarted-framework](https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#gettingstarted-framework).
 
@@ -33,7 +33,7 @@ We package the following dependencies :
 
 ## Hibernate Search Setup
 
-As with many libraries, Spring Boot provides an easy way to integrate Hibernate Search. We just need to add the required dependencies into the pom.xml file.  
+As with many libraries, Spring Boot provides an easy way to integrate Hibernate Search. We just need to add the required dependencies into the pom.xml file.
 
 ```xml
 <properties>
@@ -57,13 +57,13 @@ As with many libraries, Spring Boot provides an easy way to integrate Hibernate 
 </dependencies>
 ```
 
-We are using hibernate search 6 which is the most recent version to date, with Lucene as the backend.  Lucene is an open-source indexing and search engine library, and the default implementation used by Hibernate Search. We could also use different implementations such as ElasticSearch or OpenSearch. 
+We are using hibernate search 6 which is the most recent version to date, with Lucene as the backend. Lucene is an open-source indexing and search engine library, and the default implementation used by Hibernate Search. We could also use different implementations such as ElasticSearch or OpenSearch.
 
 ## **Defining the data model**
 
-The first step is to define the model of the entity on which the search will be done.  
+The first step is to define the model of the entity on which the search will be done.
 
-As an example, we will use a Plant entity, containing the plant's common name, scientific name, family, and date of creation. 
+As an example, we will use a Plant entity, containing the plant's common name, scientific name, family, and date of creation.
 
 ```java
 import lombok.EqualsAndHashCode;
@@ -116,31 +116,31 @@ public class Plant {
 }
 ```
 
-Let’s ignore the JPA and Lombok annotations, and focus on the Hibernate Search-related ones.  
+Let’s ignore the JPA and Lombok annotations, and focus on the Hibernate Search-related ones.
 
 First, the @Index annotation indicates to Hibernate Search that we want to index this entity in order to apply search operation on it.
 
-Second, we annotate the fields we want to search on with the @FullTextField annotation. This annotation works only for string fields, but others exist for fields of different types.  
+Second, we annotate the fields we want to search on with the @FullTextField annotation. This annotation works only for string fields, but others exist for fields of different types.
 
 And ... that’s it! It is as simple as that for a simple case such as ours!
 
-But you can do much more with what the library provides, such as using conditional indexing or tweaking indexing coordination. Once again, check out the official documentation if you want to know more. 
+But you can do much more with what the library provides, such as using conditional indexing or tweaking indexing coordination. Once again, check out the official documentation if you want to know more.
 
 ## **Defining the data layer**
 
-We now need to define our data layer handling the interactions with the database. 
+We now need to define our data layer handling the interactions with the database.
 
-We use Spring Data repositories which build an abstraction around the Hibernate implementation of JPA. It is provided in the `spring-boot-starter-data-jpa` dependency added previously. 
+We use Spring Data repositories which build an abstraction around the Hibernate implementation of JPA. It is provided in the `spring-boot-starter-data-jpa` dependency added previously.
 
-For a basic use case requiring only CRUD operations, we can define a simple repository for the Plant entity and extends the JpaRepository interface directly. 
+For a basic use case requiring only CRUD operations, we can define a simple repository for the Plant entity and extends the JpaRepository interface directly.
 
-But this is not enough for full-text search.  In our case, we would like to add the search features to all repositories we define. For that, we need to add custom methods to the JpaRepository interface, or any interface extending the base `Repository` interface.  
+But this is not enough for full-text search. In our case, we would like to add the search features to all repositories we define. For that, we need to add custom methods to the JpaRepository interface, or any interface extending the base `Repository` interface.
 
-This way, we declare those methods only once and make them available for every repository of every entity of our project. 
+This way, we declare those methods only once and make them available for every repository of every entity of our project.
 
-Let’s see how we can do such a thing. 
+Let’s see how we can do such a thing.
 
-First, we need to create a new generic interface that extends the JpaRepository interface.  
+First, we need to create a new generic interface that extends the JpaRepository interface.
 
 ```java
 @NoRepositoryBean
@@ -150,11 +150,11 @@ public interface SearchRepository<T, ID extends Serializable> extends JpaReposit
 }
 ```
 
-We declare the searchBy function that will be used for full-text search operations. 
+We declare the searchBy function that will be used for full-text search operations.
 
-The @NoRepositoryBean annotation tells spring that this repository interface should not be instantiated like any other bean with the @Repository annotation. 
+The @NoRepositoryBean annotation tells spring that this repository interface should not be instantiated like any other bean with the @Repository annotation.
 
-We use this annotation because the purpose of this interface is not to be used directly, but to be implemented by other repositories. 
+We use this annotation because the purpose of this interface is not to be used directly, but to be implemented by other repositories.
 
 We also need to create the implementation for this interface.
 
@@ -197,17 +197,17 @@ public class SearchRepositoryImpl<T, ID extends Serializable> extends SimpleJpaR
 }
 ```
 
-The searchBy method implementation is where Hibernate Search is used. 
+The searchBy method implementation is where Hibernate Search is used.
 
-The following arguments are passed: 
+The following arguments are passed:
 
 - text: text to search for
 - limit: maximum number of elements to search for
 - fields: name of all the fields to search on
 
-We make use of java varargs to pass all the fields we want to search on. 
+We make use of java varargs to pass all the fields we want to search on.
 
-Here, we use a simple fuzzy algorithm as the full-text matching algorithm, but we can easily make more complex searches using custom analyzers. 
+Here, we use a simple fuzzy algorithm as the full-text matching algorithm, but we can easily make more complex searches using custom analyzers.
 
 From now on, repositories requiring full-text-search just have to implement the SearchRepository interface instead of the standard JpaRepository interface provided by Spring.
 
@@ -224,9 +224,9 @@ public interface PlantRepository extends SearchRepository<Plant, Long> {
 }
 ```
 
-As you can see, all implementation is already done, and we just need to implement the previously created SearchRepository interface to get access to the implementation defined in the SearchRepositoryImpl class. 
+As you can see, all implementation is already done, and we just need to implement the previously created SearchRepository interface to get access to the implementation defined in the SearchRepositoryImpl class.
 
-The final step is to indicate to Spring to detect Jpa Repositories using the SearchRepositoryImpl as the base class. 
+The final step is to indicate to Spring to detect Jpa Repositories using the SearchRepositoryImpl as the base class.
 
 ```java
 package com.mozen.springboothibernatesearch;
@@ -241,11 +241,11 @@ public class ApplicationConfiguration {
 }
 ```
 
-Note that because we do not specify any base package to search into, Spring will use the package where this Configuration is defined as the base package. 
+Note that because we do not specify any base package to search into, Spring will use the package where this Configuration is defined as the base package.
 
 ## **Defining the business layer**
 
-Let’s now create the business code using the data layer we’ve just defined, by declaring a service. 
+Let’s now create the business code using the data layer we’ve just defined, by declaring a service.
 
 ```java
 package com.mozen.springboothibernatesearch.service;
@@ -284,19 +284,19 @@ public class PlantService {
 }
 ```
 
-We tell Spring that this bean is part of the business layer of the application. 
+We tell Spring that this bean is part of the business layer of the application.
 
-It contains a searchPlant function that forwards the call to the searchBy function of the SearchRepository.  
+It contains a searchPlant function that forwards the call to the searchBy function of the SearchRepository.
 
 Before forwarding the call, it validates the provided fields.
 
 Those fields are whitelisted to check that the search will be made only against the desired fields, which are the ones we have annotated with @FullTextField annotation earlier.
 
-We throw an IllegalArgumentException if one of the provided fields is not part of the whitelisted ones. The exception is not handled for the sake of simplicity, but it should be handled properly using one of the many ways provided by spring to handle exceptions.  
+We throw an IllegalArgumentException if one of the provided fields is not part of the whitelisted ones. The exception is not handled for the sake of simplicity, but it should be handled properly using one of the many ways provided by spring to handle exceptions.
 
 ## **Defining the web layer**
 
-The next step is to define the REST API to receive the HTTP request coming from client applications. 
+The next step is to define the REST API to receive the HTTP request coming from client applications.
 
 ```java
 package com.mozen.springboothibernatesearch.controller;
@@ -332,7 +332,7 @@ public class PlantController {
 }
 ```
 
-We use a basic Rest controller with a single GET mapping. Before forwarding the call to the business layer, we log the event to trace the reception of the request to ease the monitoring of the application. It receives the search request using a SearchRequestDTO 
+We use a basic Rest controller with a single GET mapping. Before forwarding the call to the business layer, we log the event to trace the reception of the request to ease the monitoring of the application. It receives the search request using a SearchRequestDTO
 
 ```java
  package com.mozen.springboothibernatesearch.model;
@@ -357,9 +357,9 @@ public class SearchRequestDTO {
 }
 ```
 
-It is a simple POJO containing the parameters used for the search. Once again, we use Javax Bean Validation annotations to ensure the request is valid, as well as Lombok @Data annotation to generate boilerplate code (Getters, Setters, toString(), ...).  
+It is a simple POJO containing the parameters used for the search. Once again, we use Javax Bean Validation annotations to ensure the request is valid, as well as Lombok @Data annotation to generate boilerplate code (Getters, Setters, toString(), ...).
 
-Note that by using a POJO as a single argument for the REST API endpoint, we expect the client to send those parameters as Request Parameter inside the HTTP request. 
+Note that by using a POJO as a single argument for the REST API endpoint, we expect the client to send those parameters as Request Parameter inside the HTTP request.
 
 ## Indexing the data
 
@@ -388,9 +388,9 @@ spring:
                         directory.root: ./data/index
 ```
 
-We indicate the root directory of where the Lucene index is stored. Here, we choose to place it directly in the project folder, but this directory should be carefully chosen when running in production, depending on where your application is deployed. 
+We indicate the root directory of where the Lucene index is stored. Here, we choose to place it directly in the project folder, but this directory should be carefully chosen when running in production, depending on where your application is deployed.
 
-We also create a component to wrap all operations related to the Lucene index. 
+We also create a component to wrap all operations related to the Lucene index.
 
 ```java
 package com.mozen.springboothibernatesearch.index;
@@ -438,11 +438,11 @@ public class Indexer {
 
 For our simple demo application, we only declare a function that builds the index for a given Class using the specified amount of threads in the process.
 
-We now need to call that function passing the previously defined Plant class as an argument. 
+We now need to call that function passing the previously defined Plant class as an argument.
 
-For that purpose, we could also create a new REST Controller containing an endpoint to trigger the indexing via an HTTP request, to be able to rebuild the index at will. 
+For that purpose, we could also create a new REST Controller containing an endpoint to trigger the indexing via an HTTP request, to be able to rebuild the index at will.
 
-But for the sake of this article, we are just going to use an ApplicationRunner that will be called at each startup. 
+But for the sake of this article, we are just going to use an ApplicationRunner that will be called at each startup.
 
 ```java
 @SpringBootApplication
@@ -467,7 +467,7 @@ The buildIndex method takes the Indexer as an argument through dependency inject
 
 ## **Putting it all together**
 
-Let’s first initialize the sample data. 
+Let’s first initialize the sample data.
 
 ```java
 package com.mozen.springboothibernatesearch;
@@ -519,19 +519,19 @@ public class Application {
 }
 ```
 
-We extend the main Application class with a second Bean declaration. It will be run in the same way as the first one, during the application startup. 
+We extend the main Application class with a second Bean declaration. It will be run in the same way as the first one, during the application startup.
 
-Note that we did not declare the data SQL schema anywhere. Because our database is an embedded database, the property spring.jpa.hibernate.ddl-auto is set to create-drop by default, and our database schema is automatically generated, which is neat for simple applications such as this one. 
+Note that we did not declare the data SQL schema anywhere. Because our database is an embedded database, the property spring.jpa.hibernate.ddl-auto is set to create-drop by default, and our database schema is automatically generated, which is neat for simple applications such as this one.
 
-Now, let’s test, by first starting our application. 
+Now, let’s test, by first starting our application.
 
 ```java
 mvn spring-boot:run
 ```
 
-There are multiples ways to test the search endpoint. 
+There are multiples ways to test the search endpoint.
 
-We can use the API Platform Postman : 
+We can use the API Platform Postman :
 
 ![postman.png](/images/post/spring-boot-hibernate-search/postman.png)
 
@@ -541,11 +541,11 @@ Or we can use a simple cUrl command with the required parameters :
 // Search in all fields
 curl -X GET 'http://localhost:9000/plant/search?text=cherry&limit=5'
 
-// Search only in specified fields 
+// Search only in specified fields
 curl -X GET 'http://localhost:9000/plant/search?text=sian p&limit=5&fields=name&fields=scientificName'
 ```
 
-And that’s it! We now have full-text-search implemented through an HTTP endpoint.  
+And that’s it! We now have full-text-search implemented through an HTTP endpoint.
 
 As I’ve said many times during this blog, Hibernate Search provides much more features, and we’ve just scratched the surface here.
 

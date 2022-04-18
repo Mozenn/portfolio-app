@@ -3,7 +3,7 @@ id: build-paginated-list-react-swr
 title: Build a paginated list in React with SWR and Styled Components
 bannerPath: /images/post/build-paginated-list-react-swr/thumbnail.png
 priority: 1
-tags: ["React", "Frontend"]
+tags: ['React', 'Frontend']
 author: Gauthier
 date: 10 March 2022
 description: In a previous blog post, we have learned how to build an API with pagination. In this blog post, we are focusing on how to consume such an API by building a paginated list using React, the most popular javascript frontend framework at the moment.
@@ -25,11 +25,11 @@ Once the project is created, we install the required dependencies using npm :
 npm i swr axios styled-components
 ```
 
-Axios is a popular HTTP client we use to consume the API and get our paginated data. It is a substitute to the fetch API provided by default in most browsers[.](http://browsers.It) It is easy to use and provides useful features out of the box such as automatic JSON transformation or HTTP interceptors. 
+Axios is a popular HTTP client we use to consume the API and get our paginated data. It is a substitute to the fetch API provided by default in most browsers[.](http://browsers.It) It is easy to use and provides useful features out of the box such as automatic JSON transformation or HTTP interceptors.
 
 SWR is a data fetching library created by Vercel, the company behind Next.js. It provides a custom React hook with a whole lot of features and built-in optimization, and is very well documented on top of that [https://swr.vercel.app/](https://swr.vercel.app/).
 
-Styled Components is the most used CSS-in-JS styling library. CSS-in-JS is a styling technique where the styles are written in javascript, and then parsed to generate the CSS. If CSS-in-JS is not to your liking, there are many other ways to style components in React such as utility libraries like Tailwind, CSS modules, or even vanilla CSS.  
+Styled Components is the most used CSS-in-JS styling library. CSS-in-JS is a styling technique where the styles are written in javascript, and then parsed to generate the CSS. If CSS-in-JS is not to your liking, there are many other ways to style components in React such as utility libraries like Tailwind, CSS modules, or even vanilla CSS.
 
 For the purpose of this blog, we are using mockAPI as the backend layer [https://mockapi.io/docs](https://mockapi.io/docs).
 
@@ -64,21 +64,21 @@ The first step is to declare global styles used all across the application :
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 ```
 
-Aside from fonts, the purpose of this file is to declare the colors used in our application. We use CSS custom properties for that purpose so that if one color needs a slight adjustment, it will be applied everywhere, without the need to modify the color in every single place it is used.  
+Aside from fonts, the purpose of this file is to declare the colors used in our application. We use CSS custom properties for that purpose so that if one color needs a slight adjustment, it will be applied everywhere, without the need to modify the color in every single place it is used.
 
 We also edit the default App.js component :
 
 ```jsx
-import styled from "styled-components";
-import PaginatedList from "./Components/PaginatedList";
+import styled from 'styled-components';
+import PaginatedList from './Components/PaginatedList';
 
 const Container = styled.div`
   display: flex;
@@ -116,7 +116,7 @@ const App = () => {
 export default App;
 ```
 
-We keep the layout simple, with only a basic header containing a title and the PaginatedList component. 
+We keep the layout simple, with only a basic header containing a title and the PaginatedList component.
 
 As stated before, we make use of styled component to declare our style directly in the component. In this manner, we keep the styles close to where they are used, and it makes the JSX clear and concise.
 
@@ -124,16 +124,16 @@ As stated before, we make use of styled component to declare our style directly 
 
 We can now build the components using a top-down approach, by implementing the components as we need them.
 
-Let’s start by creating the main component which is the PaginatedList component : 
+Let’s start by creating the main component which is the PaginatedList component :
 
 ```jsx
-import useSWR from "swr";
-import axios from "axios";
-import styled from "styled-components";
-import { useState } from "react";
-import Plant from "./Plant";
-import Pagination from "./Pagination";
-import SortButton from "./SortButton";
+import useSWR from 'swr';
+import axios from 'axios';
+import styled from 'styled-components';
+import { useState } from 'react';
+import Plant from './Plant';
+import Pagination from './Pagination';
+import SortButton from './SortButton';
 
 const fetcher = async (url) => {
   const res = await axios.get(url);
@@ -156,8 +156,8 @@ const PlantContainer = styled.div`
 
 const PaginatedList = () => {
   const [page, setPage] = useState(1);
-  const [sortBy, setSortBy] = useState("name");
-  const [order, setOrder] = useState("desc");
+  const [sortBy, setSortBy] = useState('name');
+  const [order, setOrder] = useState('desc');
   const limit = 5;
 
   const { data, error } = useSWR(
@@ -202,7 +202,7 @@ Using fetching library such as SWR is great because, on top of providing a very 
 Once the data is fetching from MockAPI, we map each fetched plant to a Plant component :
 
 ```jsx
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
@@ -245,12 +245,12 @@ We loop on each property of the plant to display each value alongside its key. W
 
 As you may have noticed, the fetched data is sorted thanks to the sortBy and order query string parameters in the URL. In our simple demo application, the field by which to sort by is hardcoded, but we could create a component to let the user set it dynamically.
 
-To control the order of the list, we define a SortButton component : 
+To control the order of the list, we define a SortButton component :
 
 ```jsx
-import styled from "styled-components";
-import sortasc from "../images/sortasc.svg";
-import sortdesc from "../images/sortdesc.svg";
+import styled from 'styled-components';
+import sortasc from '../images/sortasc.svg';
+import sortdesc from '../images/sortdesc.svg';
 
 const Button = styled.div`
   border-radius: 15px;
@@ -268,18 +268,19 @@ const Button = styled.div`
 
 const Image = styled.img`
   width: 1.5rem;
-  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(175deg)
-    brightness(121%) contrast(114%);
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(175deg) brightness(
+      121%
+    ) contrast(114%);
 `;
 
 const SortButton = ({ order, setOrder }) => {
   return (
     <Button
       onClick={() =>
-        setOrder((previousOrder) => (previousOrder === "desc" ? "asc" : "desc"))
+        setOrder((previousOrder) => (previousOrder === 'desc' ? 'asc' : 'desc'))
       }
     >
-      <Image src={order === "desc" ? sortdesc : sortasc} alt='sort icon' />
+      <Image src={order === 'desc' ? sortdesc : sortasc} alt="sort icon" />
     </Button>
   );
 };
@@ -294,11 +295,11 @@ The order toggles between descending and ascending order each time the button is
 Let’s now checkout the Pagination component, which control everything pagination related :
 
 ```jsx
-import styled from "styled-components";
-import chevronLeft from "../images/chevron-left.svg";
-import chevronsLeft from "../images/chevrons-left.svg";
-import chevronRight from "../images/chevron-right.svg";
-import chevronsRight from "../images/chevrons-right.svg";
+import styled from 'styled-components';
+import chevronLeft from '../images/chevron-left.svg';
+import chevronsLeft from '../images/chevrons-left.svg';
+import chevronRight from '../images/chevron-right.svg';
+import chevronsRight from '../images/chevrons-right.svg';
 
 const PaginationContainer = styled.div`
   display: flex;
@@ -315,8 +316,9 @@ const PaginationButton = styled.button`
   border: none;
   border-radius: 50px;
   img {
-    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(175deg)
-      brightness(121%) contrast(114%);
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(175deg) brightness(
+        121%
+      ) contrast(114%);
   }
   ${(props) => (props.disabled ? disabled : enabled)};
 `;
@@ -364,20 +366,20 @@ const Pagination = ({ page, setPage, total, limit }) => {
         onClick={() => goToFirstPage()}
         disabled={atFirstPage()}
       >
-        <img src={chevronsLeft} alt='go to first page icon' />
+        <img src={chevronsLeft} alt="go to first page icon" />
       </PaginationButton>
       <PaginationButton
         onClick={() => decrementPage()}
         disabled={atFirstPage()}
       >
-        <img src={chevronLeft} alt='go to previous page icon' />
+        <img src={chevronLeft} alt="go to previous page icon" />
       </PaginationButton>
       <PaginationLabel>{page}</PaginationLabel>
       <PaginationButton onClick={incrementPage} disabled={atLastPage()}>
-        <img src={chevronRight} alt='go to next page icon' />
+        <img src={chevronRight} alt="go to next page icon" />
       </PaginationButton>
       <PaginationButton onClick={goToLastPage} disabled={atLastPage()}>
-        <img src={chevronsRight} alt='go to last page icon' />
+        <img src={chevronsRight} alt="go to last page icon" />
       </PaginationButton>
     </PaginationContainer>
   );

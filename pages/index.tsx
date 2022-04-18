@@ -1,12 +1,12 @@
-import Link from "next/link";
-import { GetStaticProps } from "next";
-import styles from "../styles/home.module.scss";
-import ProjectCapsule from "../components/project-capsule";
-import PostCapsule from "../components/posts/post-capsule";
-import { getProjectsDataByPriority } from "../lib/projects";
-import { getPostsDataByPriority } from "../lib/posts";
-import { Project } from "../types/project";
-import { Post } from "../types/post";
+import Link from 'next/link';
+import { GetStaticProps } from 'next';
+import styles from '../styles/home.module.scss';
+import ProjectCapsule from '../components/project-capsule';
+import PostCapsule from '../components/posts/post-capsule';
+import { getProjectsDataByPriority } from '../lib/projects';
+import { getPostsDataByPriority } from '../lib/posts';
+import { Project } from '../types/project';
+import { Post } from '../types/post';
 
 export const getStaticProps: GetStaticProps = async () => {
   const projectsToShow = getProjectsDataByPriority(2);
@@ -38,7 +38,7 @@ const Home = ({
         </div>
       </section>
 
-      <section className={styles.about} id='about'>
+      <section className={styles.about} id="about">
         <h2 className={styles.aboutTitle}>About</h2>
         <div className={styles.aboutStory}>
           <p>
@@ -46,7 +46,7 @@ const Home = ({
             indie game developer living in Toulouse, France. <br />
             I love creating things, from games to software to world bulding and
             much more. <br />I am currently working on a game since more than
-            three years as a solo developer.{" "}
+            three years as a solo developer.{' '}
           </p>
         </div>
         <div className={styles.aboutStack}>
@@ -61,7 +61,7 @@ const Home = ({
         </div>
       </section>
 
-      <section className={styles.projects} id='projects'>
+      <section className={styles.projects} id="projects">
         <h2 className={styles.projectsTitle}>Projects</h2>
         <div className={styles.projectsContainer}>
           {projectsToShow.map((project: Project) => {
@@ -76,13 +76,13 @@ const Home = ({
           })}
         </div>
         <div className={styles.LinkContainer}>
-          <Link href='/projects'>
+          <Link href="/projects">
             <a className={styles.Link}>See more ...</a>
           </Link>
         </div>
       </section>
 
-      <section className={styles.blog} id='blog'>
+      <section className={styles.blog} id="blog">
         <h2 className={styles.blogTitle}>Blog</h2>
         <div className={styles.blogContainer}>
           {postsToShow.map((post: Post) => {
@@ -90,7 +90,7 @@ const Home = ({
           })}
         </div>
         <div className={styles.LinkContainer}>
-          <Link href='/posts'>
+          <Link href="/posts">
             <a className={styles.Link}>See more ...</a>
           </Link>
         </div>

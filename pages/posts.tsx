@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import { getPostsDataByDate, getAllTagsFromPosts } from "../lib/posts";
-import styles from "../styles/posts.module.scss";
-import { Post } from "../types/post";
-import PostTag from "../components/posts/post-tag";
-import PostCapsule from "../components/posts/post-capsule";
+import { useState, useEffect } from 'react';
+import { getPostsDataByDate, getAllTagsFromPosts } from '../lib/posts';
+import styles from '../styles/posts.module.scss';
+import { Post } from '../types/post';
+import PostTag from '../components/posts/post-tag';
+import PostCapsule from '../components/posts/post-capsule';
 
 export const getStaticProps = async () => {
   const posts = getPostsDataByDate();

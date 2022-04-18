@@ -80,7 +80,7 @@
   width: 50%;
   background-color: var(--color-secondary);
   border: 2px solid var(--color-primary);
-  transition: transform 0.3s; 
+  transition: transform 0.3s;
   transform: translateX(0%);
 }
 
@@ -134,11 +134,13 @@
 }
 
 .light {
-  filter: invert(9%) sepia(3%) saturate(715%) hue-rotate(314deg) brightness(90%) contrast(82%);
+  filter: invert(9%) sepia(3%) saturate(715%) hue-rotate(314deg) brightness(90%)
+    contrast(82%);
 }
 
 .dark {
-  filter: invert(100%) sepia(2%) saturate(203%) hue-rotate(299deg) brightness(115%) contrast(81%);
+  filter: invert(100%) sepia(2%) saturate(203%) hue-rotate(299deg)
+    brightness(115%) contrast(81%);
 }
 
 .contactListIcon:hover {
@@ -179,7 +181,6 @@
 /*   REACTIVE */
 
 @media only screen and (max-width: 720px) {
-
   .headerNavbarContainer {
     margin-left: 0;
   }
@@ -195,7 +196,6 @@
 }
 
 @media only screen and (max-width: 440px) {
-
   .header {
     font-size: 0.5rem;
   }

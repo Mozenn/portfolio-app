@@ -3,7 +3,7 @@ id: build-jar-inside-docker
 title: Build a .jar file inside a Docker container with Maven
 bannerPath: /images/post/build-jar-inside-docker/thumbnail.png
 priority: 2
-tags: ["Java", "Maven", "Docker"]
+tags: ['Java', 'Maven', 'Docker']
 author: Gauthier
 date: 15 February 2022
 description: Containers have become very popular during the last few years thanks to the rise of Docker. The most common use case is to run an application in isolation, be it in a development environment or a production environment. But it can also be used for more specific use cases. In this article, we are going to build a jar file inside a docker container.
@@ -15,21 +15,21 @@ In this article, we are going to build a jar file inside a docker container.
 
 Why should we do that you might ask ?
 
-Well, this use case is not very common, but using docker as a wrapper to build an artifact in isolation can be quite handy, the main benefit being to avoid setting a dedicated environment on the host machine to build the artifact. You also avoid filling your host machine by downloading the libraries and packages required by your application. 
+Well, this use case is not very common, but using docker as a wrapper to build an artifact in isolation can be quite handy, the main benefit being to avoid setting a dedicated environment on the host machine to build the artifact. You also avoid filling your host machine by downloading the libraries and packages required by your application.
 
-Now that we know the why, let’s check out the how ! 
+Now that we know the why, let’s check out the how !
 
 ## Project setup
 
-The first step is to generate a toy project for demonstration purposes. 
+The first step is to generate a toy project for demonstration purposes.
 
-As we are using maven as a build tool, we can use the quickstart maven archetype to generate the maven project. 
+As we are using maven as a build tool, we can use the quickstart maven archetype to generate the maven project.
 
 ```bash
 mvn archetype:generate -DgroupId=com.mozen.jardocker -DartifactId=build-jar-inside-docker -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
 
-We get a basic maven project with the following structure : 
+We get a basic maven project with the following structure :
 
 ![project_structure.png](/images/post/build-jar-inside-docker/project_structure.png)
 
@@ -102,11 +102,11 @@ We edit the pom.xml file to generate an executable jar with dependencies :
 </project>
 ```
 
-We have specified the target and source version of the jdk for our project with the properties maven.compiler.source and maven.compiler.target. 
+We have specified the target and source version of the jdk for our project with the properties maven.compiler.source and maven.compiler.target.
 
 The maven-assembly-plugin is used to generate the jar with all required dependencies as well as the manifest file, to indicate the main entry class. It is bound to the package phase so that it is executed during the package phase of the maven lifecycle.
 
-We set the appendAssemblyId element to false to prevent the addition of the “jar-with-dependencies” suffix to the name of our jar, and only rely on the finalName attribute to define it. 
+We set the appendAssemblyId element to false to prevent the addition of the “jar-with-dependencies” suffix to the name of our jar, and only rely on the finalName attribute to define it.
 
 We also specify the maven-jar-plugin, not to generate the jar file but rather to prevent a second jar to be generated. By default, this second jar won’t have any dependencies and manifest, that’s why we prefer to use the maven-assembly-plugin that packages them by default.
 
@@ -124,17 +124,17 @@ COPY . .
 RUN mvn clean package
 ```
 
-As you can see, it is surprisingly short. We base the image from the official maven image available on docker hub [https://hub.docker.com/_/maven?tab=description](https://hub.docker.com/_/maven?tab=description).
+As you can see, it is surprisingly short. We base the image from the official maven image available on docker hub [https://hub.docker.com/\_/maven?tab=description](https://hub.docker.com/_/maven?tab=description).
 
-We use the JDK 11 based image so that it stays consistent with the JDK version used for the previously generated project.  
+We use the JDK 11 based image so that it stays consistent with the JDK version used for the previously generated project.
 
-Then, we copy our project into the container. Here the first ‘.’ defines the source path from our host, which is where the Dockerfile is located, and the second ‘.’ defines the target path in the container, which is the WORKDIR, equal to the root path ‘/’ by default. 
+Then, we copy our project into the container. Here the first ‘.’ defines the source path from our host, which is where the Dockerfile is located, and the second ‘.’ defines the target path in the container, which is the WORKDIR, equal to the root path ‘/’ by default.
 
-To sum up, it means that we take the entire project directory and we copy it inside the container. 
+To sum up, it means that we take the entire project directory and we copy it inside the container.
 
-But wait, did I say the entire project? Wouldn’t it be smart if we prevent copying useless files and folders such as IDE-related files or git-related files? 
+But wait, did I say the entire project? Wouldn’t it be smart if we prevent copying useless files and folders such as IDE-related files or git-related files?
 
-Well, yes it is ! That is why you make use of a .dockerignore file 
+Well, yes it is ! That is why you make use of a .dockerignore file
 
 ```docker
 .idea
@@ -144,7 +144,7 @@ Well, yes it is ! That is why you make use of a .dockerignore file
 README.md
 ```
 
-This file plays the same role as a .gitignore file, meaning that docker will not copy the specified files and folders when the building is done, thus improving the speed performance and decreasing the size of the container. 
+This file plays the same role as a .gitignore file, meaning that docker will not copy the specified files and folders when the building is done, thus improving the speed performance and decreasing the size of the container.
 
 The final step is to create a script that makes the entire build workflow a single command process :
 
@@ -161,13 +161,13 @@ docker cp build-jar-inside-docker:/target ./target
 docker rm -f build-jar-inside-docker
 ```
 
-We first build the docker image from our Dockerfile using the docker build command. The -t is used to specify the image tag, and the ‘.’ to specify where the Dockerfile is located. 
+We first build the docker image from our Dockerfile using the docker build command. The -t is used to specify the image tag, and the ‘.’ to specify where the Dockerfile is located.
 
-We then create a container based on the newly built image. 
+We then create a container based on the newly built image.
 
-The third command will run only once the container has been created and the .jar has been built. It simply copies the /target folder generated during the build from the container to the host.  
+The third command will run only once the container has been created and the .jar has been built. It simply copies the /target folder generated during the build from the container to the host.
 
-The final step is to delete the previously built container, so that our script is idempotent, meaning it will produce the same result each time we execute it. Without this step, we would get an error if we run the script multiple times because the container name “build-jar-inside-docker” would already exist.  
+The final step is to delete the previously built container, so that our script is idempotent, meaning it will produce the same result each time we execute it. Without this step, we would get an error if we run the script multiple times because the container name “build-jar-inside-docker” would already exist.
 
 For the same purpose, we clear the target folder at each execution to avoid any error caused by an already existing target folder.
 

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;600&display=swap');
 
 :root {
   --color-primary: rgb(231, 231, 231);
@@ -22,7 +22,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Raleway", "Roboto", "Arial", sans-serif;
+  font-family: 'Raleway', 'Roboto', 'Arial', sans-serif;
   background-color: var(--color-primary);
   color: var(--color-secondary);
   font-size: 18px;

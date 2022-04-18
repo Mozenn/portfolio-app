@@ -1,7 +1,7 @@
-import Head from "next/head";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
-import { logPageView } from "../lib/google-analytics";
+import Head from 'next/head';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { logPageView } from '../lib/google-analytics';
 
 const GoogleAnalytics = () => {
   const router = useRouter();
@@ -11,16 +11,17 @@ const GoogleAnalytics = () => {
       logPageView(url);
     };
 
-    router.events.on("routeChangeComplete", handleRouteChange);
+    router.events.on('routeChangeComplete', handleRouteChange);
 
     return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
+      router.events.off('routeChangeComplete', handleRouteChange);
     };
   }, [router.events]);
 
   return (
     <>
-      {process.env.NODE_ENV === "production" && process.browser ? (
+      {process.env.NODE_ENV === 'production' &&
+      typeof window !== 'undefined' ? (
         <Head>
           <script
             async
