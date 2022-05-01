@@ -12,8 +12,17 @@
           <![CDATA[Blog posts about Software Engineering by Gauthier Cassany]]>
         </description>
         <language>en</language>
-        <lastBuildDate>5 April 2022</lastBuildDate>
+        <lastBuildDate>2 May 2022</lastBuildDate>
         
+    <item>
+      <title><![CDATA[Why should you be a T-Shaped engineer ?]]></title>
+      <link>https://gauthier-cassany.com/posts/become-t-shaped-engineer</link>
+      <pubDate>2 May 2022</pubDate>
+      <guid isPermaLink="false">https://gauthier-cassany.com/posts/become-t-shaped-engineer</guid>
+      <description>
+      <![CDATA[Being a software engineer in 2022 is demanding. On one side, you have to know more and more technologies and tools. On the other, you need to have a depth of knowledge about the stack you are using daily. We need to find a way to combine those two aspects without neglecting one of the two. And the way is to become a T-shaped engineer.]]>
+      </description>
+    </item>
     <item>
       <title><![CDATA[Build a Spring Boot REST API with Full-Text Search using Hibernate Search]]></title>
       <link>https://gauthier-cassany.com/posts/spring-boot-hibernate-search</link>
