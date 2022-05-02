@@ -8,4 +8,5 @@ export interface Project {
   stack: string;
   githubUrl?: string;
   accessUrl?: string;
+  adaptLogoTheme?: boolean;
 }

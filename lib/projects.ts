@@ -30,34 +30,9 @@ export const getProjectsDataByPriority = (count: number) => {
 export const getAllProjectsData = (): Project[] => {
   const fileNames = fs.readdirSync(projectsDirectory);
   return fileNames.map((fileName: string): Project => {
-    const filePath = path.join(projectsDirectory, fileName);
-    const fileContent = fs.readFileSync(filePath, 'utf8');
     const id = fileName.replace(/\.md$/, '');
 
-    const {
-      title,
-      priority,
-      imageName,
-      iconName,
-      stack,
-      githubUrl,
-      accessUrl,
-    } = matter(fileContent).data;
-
-    const res = {
-      id,
-      title,
-      priority,
-      imageName,
-      iconName,
-      stack,
-      githubUrl,
-      accessUrl,
-    };
-
-    getKeys(res).forEach((key) => res[key] === undefined && delete res[key]);
-
-    return res;
+    return getProjectFullData(id);
   });
 };
 
@@ -68,8 +43,16 @@ export const getProjectFullData = (id: string): Project => {
   const matterResult = matter(fileContent);
 
   const content = md.render(matterResult.content);
-  const { title, priority, imageName, iconName, stack, githubUrl, accessUrl } =
-    matterResult.data;
+  const {
+    title,
+    priority,
+    imageName,
+    iconName,
+    stack,
+    githubUrl,
+    accessUrl,
+    adaptLogoTheme,
+  } = matterResult.data;
 
   const res = {
     content,
@@ -81,6 +64,7 @@ export const getProjectFullData = (id: string): Project => {
     stack,
     githubUrl,
     accessUrl,
+    adaptLogoTheme,
   };
 
   getKeys(res).forEach((key) => res[key] === undefined && delete res[key]);

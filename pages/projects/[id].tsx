@@ -5,6 +5,7 @@ import AccessLink from '../../components/access-link';
 import { getAllProjectIds, getProjectFullData } from '../../lib/projects';
 import styles from '../../styles/project.module.scss';
 import { Project } from '../../types/project';
+import { useTheme } from '../../hooks/useTheme';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllProjectIds();
@@ -30,8 +31,22 @@ export const ProjectPage = ({
 }: {
   projectFullData: Project;
 }) => {
-  const { title, imageName, iconName, stack, githubUrl, accessUrl, content } =
-    projectFullData;
+  const {
+    title,
+    imageName,
+    iconName,
+    stack,
+    githubUrl,
+    accessUrl,
+    content,
+    adaptLogoTheme,
+  } = projectFullData;
+  const { theme } = useTheme();
+
+  const getTheme = () => {
+    const res = theme === 'dark' && adaptLogoTheme ? styles.dark : styles.light;
+    return res;
+  };
 
   return (
     <>
@@ -41,7 +56,7 @@ export const ProjectPage = ({
       <div className={styles.container}>
         <div className={styles.heading}>
           <img
-            className={styles.headingIcon}
+            className={`${styles.headingIcon} ${getTheme()}`}
             src={`/images/${iconName}`}
             alt={`${title.toLowerCase()} icon`}
           />

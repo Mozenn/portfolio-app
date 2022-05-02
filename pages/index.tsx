@@ -95,6 +95,22 @@ const Home = ({
           </Link>
         </div>
       </section>
+      <section className={styles.newsletter} id="newsletter">
+        <h2 className={styles.newsletterTitle}>Newsletter</h2>
+        <iframe
+          className={styles.newsletterContainer}
+          src="https://fbbf7682.sibforms.com/serve/MUIEAL0eqLV1QfEy2tKdTPAytlukUMfKMqjiMLqcbHljqkpqkOaXmsbYjsW5Y0u9mTagIaeE5449rcGlsC9NfGVWhX2pwGG82DwJ93RXgos7A9H6UNtnvC47TtCn8ELfYMWJN5VS33h90xZRZ1Tn4PRVQCDATcDDhe3RxfoDJ1nws1VLYpLrJ3vUrqMVUs3SiQgxwNLar1Ge8Vm5"
+          frameBorder="0"
+          scrolling="auto"
+          allowFullScreen
+          style={{
+            display: 'block',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            maxWidth: '100%',
+          }}
+        ></iframe>
+      </section>
     </>
   );
 };

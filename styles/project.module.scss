@@ -2,6 +2,16 @@
   padding: 0.5rem 5%;
 }
 
+.dark {
+  filter: invert(100%) sepia(2%) saturate(203%) hue-rotate(299deg)
+    brightness(115%) contrast(81%);
+}
+
+.light {
+  filter: invert(9%) sepia(3%) saturate(715%) hue-rotate(314deg) brightness(90%)
+    contrast(82%);
+}
+
 .heading {
   display: flex;
   align-items: center;

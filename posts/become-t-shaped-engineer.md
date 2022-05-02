@@ -1,6 +1,6 @@
 ---
 id: become-t-shaped-engineer
-title: Why should you be a T-Shaped engineer ?
+title: Why you should be a T-Shaped engineer
 bannerPath: /images/post/become-t-shaped-engineer/thumbnail.png
 priority: 2
 tags: ['Software Engineering']
@@ -15,7 +15,7 @@ In short, you have to know a lot.
 
 But you still need to have a depth of knowledge about the stack you are using daily. Learning a little about many things might be fun, but when it comes down to the working environment, shallow knowledge about many things will not help you when you work mostly with the same technical stack every day. Knowing how to build a hello world app in 10 languages might impress your friends, but not so your manager. You often need to have deep knowledge about the stack you are working with to bring real business value.
 
-It is common to find a job offer that asks for X years of experience with a specific language or framework. And even though switching technology is easy as you get more experience, that’s the reality of the job market today, and we have to bend to the rules.
+It is common to find a job offer that asks for X years of experience with a specific language or framework. And even though switching technology is easier as you get more experience, that’s the reality of the job market today, and we have to bend to the rules.
 
 So how do we deal with this discrepancy?
 

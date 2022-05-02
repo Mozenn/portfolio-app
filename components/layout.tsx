@@ -2,11 +2,11 @@ import Head from 'next/head';
 import Link from 'next/link';
 import styles from './layout.module.scss';
 import GoogleAnalytics from './google-analytics';
-import useLocalStorage from '../hooks/useLocalStorage';
 import { useEffect } from 'react';
+import { useTheme } from '../hooks/useTheme';
 
 const Layout = ({ children }: { children: JSX.Element }) => {
-  const [theme, setTheme] = useLocalStorage('theme', 'light');
+  const { theme, setTheme, toggleTheme } = useTheme();
 
   useEffect(() => {
     if (
@@ -17,12 +17,6 @@ const Layout = ({ children }: { children: JSX.Element }) => {
       setTheme('dark');
     }
   });
-
-  const toggleTheme = () => {
-    const newTheme = theme == 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    document.documentElement.classList.toggle('darkTheme');
-  };
 
   const onThemeButtonClicked = () => {
     toggleTheme();
@@ -47,15 +41,14 @@ const Layout = ({ children }: { children: JSX.Element }) => {
 
       <header>
         <div className={`${styles.header} ${styles.sticky}`}>
-          {typeof window !== 'undefined' && (
-            <Link href="/" passHref>
-              <img
-                className={styles.headerLogo}
-                src={`/images/logo-${theme}.png`}
-                alt="Logo"
-              />
-            </Link>
-          )}
+          <Link href="/" passHref>
+            <img
+              className={styles.headerLogo}
+              src={`/images/logo-${theme}.png`}
+              alt="Logo"
+            />
+          </Link>
+
           <nav className={styles.headerNavbarContainer}>
             <ul className={styles.headerNavbar}>
               <li className={styles.headerNavbarElement}>
@@ -75,24 +68,22 @@ const Layout = ({ children }: { children: JSX.Element }) => {
               </li>
             </ul>
           </nav>
-          {typeof window !== 'undefined' && (
-            <button
-              className={styles.themeToggleButton}
-              onClick={onThemeButtonClicked}
-            >
-              <img
-                src="/images/moon.svg"
-                alt="dark theme icon"
-                className={`${getTheme()}`}
-              />
-              <img
-                src="/images/sun.svg"
-                alt="light theme icon"
-                className={`${getTheme()}`}
-              />
-              <div className={`${styles.cursor} ${getCursorStyle()}`}></div>
-            </button>
-          )}
+          <button
+            className={styles.themeToggleButton}
+            onClick={onThemeButtonClicked}
+          >
+            <img
+              src="/images/moon.svg"
+              alt="dark theme icon"
+              className={`${getTheme()}`}
+            />
+            <img
+              src="/images/sun.svg"
+              alt="light theme icon"
+              className={`${getTheme()}`}
+            />
+            <div className={`${styles.cursor} ${getCursorStyle()}`}></div>
+          </button>
         </div>
       </header>
 
@@ -102,49 +93,49 @@ const Layout = ({ children }: { children: JSX.Element }) => {
         <span className={styles.footerBorder}></span>
         <div className={styles.informationBox}>
           <p className={styles.emailFooter}>gauthier.cassany@gmail.com</p>
-          {typeof window !== 'undefined' && (
-            <div className={styles.contactList}>
-              <li>
-                <Link href="https://github.com/Mozenn" passHref>
-                  <img
-                    className={`${styles.contactListIcon} ${getTheme()}`}
-                    src="/images/github.svg"
-                    alt="github icon"
-                  />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://www.linkedin.com/in/gauthier-cassany-8a370b175/"
-                  passHref
-                >
-                  <img
-                    className={`${styles.contactListIcon} ${getTheme()}`}
-                    src="/images/linkedin.svg"
-                    alt="linkedIn icon"
-                  />
-                </Link>
-              </li>
-              <li>
-                <Link href="https://twitter.com/GCassany" passHref>
-                  <img
-                    className={`${styles.contactListIcon} ${getTheme()}`}
-                    src="/images/twitter.svg"
-                    alt="twitter icon"
-                  />
-                </Link>
-              </li>
-              <li>
-                <Link href="/rss.xml" passHref>
-                  <img
-                    className={`${styles.contactListIcon} ${getTheme()}`}
-                    src="/images/rss.svg"
-                    alt="rss icon"
-                  />
-                </Link>
-              </li>
-            </div>
-          )}
+
+          <div className={styles.contactList}>
+            <li>
+              <Link href="https://github.com/Mozenn" passHref>
+                <img
+                  className={`${styles.contactListIcon} ${getTheme()}`}
+                  src="/images/github.svg"
+                  alt="github icon"
+                />
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="https://www.linkedin.com/in/gauthier-cassany-8a370b175/"
+                passHref
+              >
+                <img
+                  className={`${styles.contactListIcon} ${getTheme()}`}
+                  src="/images/linkedin.svg"
+                  alt="linkedIn icon"
+                />
+              </Link>
+            </li>
+            <li>
+              <Link href="https://twitter.com/GCassany" passHref>
+                <img
+                  className={`${styles.contactListIcon} ${getTheme()}`}
+                  src="/images/twitter.svg"
+                  alt="twitter icon"
+                />
+              </Link>
+            </li>
+            <li>
+              <Link href="/rss.xml" passHref>
+                <img
+                  className={`${styles.contactListIcon} ${getTheme()}`}
+                  src="/images/rss.svg"
+                  alt="rss icon"
+                />
+              </Link>
+            </li>
+          </div>
+
           <h3 className={styles.resumeListText}>Resume</h3>
           <ul className={styles.resumeList}>
             <li className={styles.resumeListIcon}>

@@ -5,6 +5,7 @@ imageName: stengine.png
 iconName: stengine-icon.svg
 stack: C++
 githubUrl: https://github.com/Mozenn/ShatteredTextual
+adaptLogoTheme: true
 ---
 
 Shattered Textual is a small textual game engine.  

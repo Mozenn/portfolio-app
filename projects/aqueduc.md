@@ -5,6 +5,7 @@ imageName: aqueduc.png
 iconName: aqueduc-icon.svg
 stack: Python
 githubUrl: https://github.com/Mozenn/Aqueduc
+adaptLogoTheme: true
 ---
 
 Aqueduc is a small script that moves or copies files and folders using JSON configuration files.  

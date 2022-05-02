@@ -5,6 +5,7 @@ imageName: quest-system.png
 iconName: quest-system-icon.png
 stack: Unreal Engine 4, C++
 githubUrl: https://github.com/WiseMooseGames/quest-system-plugin
+adaptLogoTheme: true
 ---
 
 Quest system plugin developped for an upcoming game.
