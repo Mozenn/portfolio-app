@@ -5,6 +5,7 @@ interface ThemeContextInterface {
   theme: any;
   setTheme: any;
   toggleTheme: () => void;
+  getFilterClass: () => string;
 }
 
 const ThemeContext = createContext<ThemeContextInterface | undefined>(
@@ -26,10 +27,15 @@ const ThemeProvider = ({
     document.documentElement.classList.toggle('darkTheme');
   };
 
+  const getFilterClass = () => {
+    return theme === 'light' ? 'lightFilter' : 'darkFilter';
+  };
+
   const value: ThemeContextInterface = {
     theme,
     setTheme,
     toggleTheme,
+    getFilterClass,
   };
 
   return (

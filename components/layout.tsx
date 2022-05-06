@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import { useTheme } from '../hooks/useTheme';
 
 const Layout = ({ children }: { children: JSX.Element }) => {
-  const { theme, setTheme, toggleTheme } = useTheme();
+  const { theme, setTheme, toggleTheme, getFilterClass } = useTheme();
 
   useEffect(() => {
     if (
@@ -22,11 +22,6 @@ const Layout = ({ children }: { children: JSX.Element }) => {
     toggleTheme();
   };
 
-  const getTheme = () => {
-    const res = theme === 'light' ? styles.light : styles.dark;
-    return res;
-  };
-
   const getCursorStyle = () =>
     theme === 'light' ? styles.lightCursor : styles.darkCursor;
 
@@ -37,6 +32,10 @@ const Layout = ({ children }: { children: JSX.Element }) => {
       <Head>
         <title>Gauthier Cassany</title>
         <link rel="icon" href="/favicons/favicon.ico" />
+        <meta
+          name="description"
+          content="Software Engineer, Indie Game Developer"
+        ></meta>
       </Head>
 
       <header>
@@ -75,12 +74,12 @@ const Layout = ({ children }: { children: JSX.Element }) => {
             <img
               src="/images/moon.svg"
               alt="dark theme icon"
-              className={`${getTheme()}`}
+              className={`${getFilterClass()}`}
             />
             <img
               src="/images/sun.svg"
               alt="light theme icon"
-              className={`${getTheme()}`}
+              className={`${getFilterClass()}`}
             />
             <div className={`${styles.cursor} ${getCursorStyle()}`}></div>
           </button>
@@ -98,7 +97,7 @@ const Layout = ({ children }: { children: JSX.Element }) => {
             <li>
               <Link href="https://github.com/Mozenn" passHref>
                 <img
-                  className={`${styles.contactListIcon} ${getTheme()}`}
+                  className={`${styles.contactListIcon} ${getFilterClass()}`}
                   src="/images/github.svg"
                   alt="github icon"
                 />
@@ -110,7 +109,7 @@ const Layout = ({ children }: { children: JSX.Element }) => {
                 passHref
               >
                 <img
-                  className={`${styles.contactListIcon} ${getTheme()}`}
+                  className={`${styles.contactListIcon} ${getFilterClass()}`}
                   src="/images/linkedin.svg"
                   alt="linkedIn icon"
                 />
@@ -119,7 +118,7 @@ const Layout = ({ children }: { children: JSX.Element }) => {
             <li>
               <Link href="https://twitter.com/GCassany" passHref>
                 <img
-                  className={`${styles.contactListIcon} ${getTheme()}`}
+                  className={`${styles.contactListIcon} ${getFilterClass()}`}
                   src="/images/twitter.svg"
                   alt="twitter icon"
                 />
@@ -128,7 +127,7 @@ const Layout = ({ children }: { children: JSX.Element }) => {
             <li>
               <Link href="/rss.xml" passHref>
                 <img
-                  className={`${styles.contactListIcon} ${getTheme()}`}
+                  className={`${styles.contactListIcon} ${getFilterClass()}`}
                   src="/images/rss.svg"
                   alt="rss icon"
                 />

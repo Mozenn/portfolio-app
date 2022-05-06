@@ -1,6 +1,9 @@
+import { useTheme } from '../hooks/useTheme';
 import styles from './access-link.module.scss';
 
 const AccessLink = ({ iconName, url }: { iconName: string; url: string }) => {
+  const { getFilterClass } = useTheme();
+
   return (
     <div>
       <a
@@ -10,11 +13,11 @@ const AccessLink = ({ iconName, url }: { iconName: string; url: string }) => {
         rel="noreferrer"
       >
         <img
-          className={styles.icon}
+          className={`${styles.icon} ${getFilterClass()}`}
           src={`/images/${iconName}`}
           alt={`${iconName} icon`}
         />
-        <p className={styles.link}>{url}</p>
+        <p className={`${styles.link}`}>{url}</p>
       </a>
     </div>
   );

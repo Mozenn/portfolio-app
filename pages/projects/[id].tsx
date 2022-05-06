@@ -41,12 +41,7 @@ export const ProjectPage = ({
     content,
     adaptLogoTheme,
   } = projectFullData;
-  const { theme } = useTheme();
-
-  const getTheme = () => {
-    const res = theme === 'dark' && adaptLogoTheme ? styles.dark : styles.light;
-    return res;
-  };
+  const { getFilterClass } = useTheme();
 
   return (
     <>
@@ -56,7 +51,9 @@ export const ProjectPage = ({
       <div className={styles.container}>
         <div className={styles.heading}>
           <img
-            className={`${styles.headingIcon} ${getTheme()}`}
+            className={`${styles.headingIcon} ${
+              adaptLogoTheme && getFilterClass()
+            }`}
             src={`/images/${iconName}`}
             alt={`${title.toLowerCase()} icon`}
           />

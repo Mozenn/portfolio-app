@@ -135,16 +135,6 @@
   cursor: pointer;
 }
 
-.light {
-  filter: invert(9%) sepia(3%) saturate(715%) hue-rotate(314deg) brightness(90%)
-    contrast(82%);
-}
-
-.dark {
-  filter: invert(100%) sepia(2%) saturate(203%) hue-rotate(299deg)
-    brightness(115%) contrast(81%);
-}
-
 .contactListIcon:hover {
   transform: scale(1.2);
   transition: transform 0.3s, opacity 0.3s;
