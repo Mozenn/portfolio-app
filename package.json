@@ -12,6 +12,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@sentry/nextjs": "^6.19.7",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.4.0",
     "markdown-it": "^12.3.2",
