@@ -69,6 +69,7 @@ const Layout = ({ children }: { children: JSX.Element }) => {
           </nav>
           <button
             className={styles.themeToggleButton}
+            data-testid="theme-button"
             onClick={onThemeButtonClicked}
           >
             <img
