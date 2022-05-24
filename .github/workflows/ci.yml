@@ -21,7 +21,7 @@ jobs:
       SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
       SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
       SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
-      SENTRY_LOG_LEVEL: ${{ secrets.SENTRY_LOG_LEVEL }}
+      SENTRY_LOG_LEVEL: debug
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
