@@ -19,9 +19,9 @@ jobs:
     env:
       SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
       SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
-      SENTRY_ORG: gauthier-cassany
-      SENTRY_PROJECT: gauthier-cassany
-      SENTRY_LOG_LEVEL: debug
+      SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
+      SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
+      SENTRY_LOG_LEVEL: info
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -36,7 +36,7 @@ jobs:
       SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
       SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
       SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
-      SENTRY_LOG_LEVEL: debug
+      SENTRY_LOG_LEVEL: info
     steps:
       - uses: actions/checkout@v3
       - uses: cypress-io/github-action@v2
