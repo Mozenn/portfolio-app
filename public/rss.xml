@@ -12,10 +12,19 @@
           <![CDATA[Blog posts about Software Engineering by Gauthier Cassany]]>
         </description>
         <language>en</language>
-        <lastBuildDate>2 May 2022</lastBuildDate>
+        <lastBuildDate>26 May 2022</lastBuildDate>
         
     <item>
-      <title><![CDATA[Why should you be a T-Shaped engineer ?]]></title>
+      <title><![CDATA[Build a Spring Boot REST API with Paginated Full-Text Search using Hibernate Search]]></title>
+      <link>https://gauthier-cassany.com/posts/spring-boot-paginated-search</link>
+      <pubDate>26 May 2022</pubDate>
+      <guid isPermaLink="false">https://gauthier-cassany.com/posts/spring-boot-paginated-search</guid>
+      <description>
+      <![CDATA[In a previous article, we have learned how to add full-text-search to a Spring Boot Rest API using Hibernate Search. In this article, we are going to build on that, and learn how to add paginated search to our existing REST API.]]>
+      </description>
+    </item>
+    <item>
+      <title><![CDATA[Why you should be a T-Shaped engineer]]></title>
       <link>https://gauthier-cassany.com/posts/become-t-shaped-engineer</link>
       <pubDate>2 May 2022</pubDate>
       <guid isPermaLink="false">https://gauthier-cassany.com/posts/become-t-shaped-engineer</guid>
