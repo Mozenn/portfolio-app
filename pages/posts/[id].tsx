@@ -14,6 +14,7 @@ import styles from '../../styles/post.module.scss';
 import { getAllPostIds, getPostFullData } from '../../lib/posts';
 import { Post } from '../../types/post';
 import { IdParams } from '../../types/IdParams';
+import Newsletter from '../../components/newsletter';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds();
@@ -83,6 +84,7 @@ const PostPage = ({ postFullData }: { postFullData: Post }) => {
             <RedditIcon size={shareIconSize} />
           </RedditShareButton>
         </div>
+        <Newsletter />
       </div>
     </>
   );

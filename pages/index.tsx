@@ -97,6 +97,12 @@ const Home = ({
       </section>
       <section className={styles.newsletter} id="newsletter">
         <h2 className={styles.newsletterTitle}>Newsletter</h2>
+        <div className={styles.newsletterText}>
+          <p>
+            Subscribe below to get notified when I publish a new blog post or
+            when I announce something special.
+          </p>
+        </div>
         <iframe
           className={styles.newsletterContainer}
           src="https://fbbf7682.sibforms.com/serve/MUIEAL0eqLV1QfEy2tKdTPAytlukUMfKMqjiMLqcbHljqkpqkOaXmsbYjsW5Y0u9mTagIaeE5449rcGlsC9NfGVWhX2pwGG82DwJ93RXgos7A9H6UNtnvC47TtCn8ELfYMWJN5VS33h90xZRZ1Tn4PRVQCDATcDDhe3RxfoDJ1nws1VLYpLrJ3vUrqMVUs3SiQgxwNLar1Ge8Vm5"

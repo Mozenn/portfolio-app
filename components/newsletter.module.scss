@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+
+  .sib-form {
+    font-size: 18px;
+  }
+}
+
+.subscribeLabel {
+  margin-bottom: 0.5rem;
+  color: var(--color-secondary-light);
+}
+
+.subscribeInput {
+  font-size: 1rem;
+  background-color: var(--color-secondary-light);
+  color: var(--color-primary);
+  outline: none;
+  border: none;
+  margin-right: 1rem;
+  padding: 0.2rem;
+}
+
+.subscribeButton {
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.4rem;
+  outline: none;
+  border: solid 3px var(--color-secondary-light);
+  transition: background-color 0.2s, color 0.2s;
+
+  &:hover {
+    background-color: var(--color-secondary-light);
+    color: var(--color-primary);
+    cursor: pointer;
+  }
+}
+
+.hidden {
+  display: none;
+}

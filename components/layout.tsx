@@ -93,7 +93,6 @@ const Layout = ({ children }: { children: JSX.Element }) => {
         <span className={styles.footerBorder}></span>
         <div className={styles.informationBox}>
           <p className={styles.emailFooter}>gauthier.cassany@gmail.com</p>
-
           <div className={styles.contactList}>
             <li>
               <Link href="https://github.com/Mozenn" passHref>
