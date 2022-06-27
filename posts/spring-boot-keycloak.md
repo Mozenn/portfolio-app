@@ -5,7 +5,7 @@ bannerPath: /images/post/spring-boot-keycloak/thumbnail.png
 priority: 1
 tags: ['Java', 'Spring', 'Keycloak']
 author: Gauthier
-date: 15 June 2022
+date: 27 June 2022
 description: Security is often overlooked and is seen as a burden that goes against development velocity. But in today’s age, the more secure layers there are, the safer it is. That is what Security in Depth is, and one part is to secure our REST API.
 ---
 
