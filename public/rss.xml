@@ -12,8 +12,26 @@
           <![CDATA[Blog posts about Software Engineering by Gauthier Cassany]]>
         </description>
         <language>en</language>
-        <lastBuildDate>26 May 2022</lastBuildDate>
+        <lastBuildDate>26 July 2022</lastBuildDate>
         
+    <item>
+      <title><![CDATA[Implement Role-based authorization in Spring Boot with Keycloak]]></title>
+      <link>https://gauthier-cassany.com/posts/spring-boot-keycloak-roles</link>
+      <pubDate>26 July 2022</pubDate>
+      <guid isPermaLink="false">https://gauthier-cassany.com/posts/spring-boot-keycloak-roles</guid>
+      <description>
+      <![CDATA[Role-based access control is a must-have for any application dealing with users who can access resources depending on their organization's role. In a previous article, we have learned how to secure our Spring Boot REST API with Keycloak by using the OpenID Connect authentication protocol. In this article, we are going to build on this sample application and add role-based authorization.]]>
+      </description>
+    </item>
+    <item>
+      <title><![CDATA[Secure your Spring Boot Rest API with Keycloak]]></title>
+      <link>https://gauthier-cassany.com/posts/spring-boot-keycloak</link>
+      <pubDate>27 June 2022</pubDate>
+      <guid isPermaLink="false">https://gauthier-cassany.com/posts/spring-boot-keycloak</guid>
+      <description>
+      <![CDATA[Security is often overlooked and is seen as a burden that goes against development velocity. But in today’s age, the more secure layers there are, the safer it is. That is what Security in Depth is, and one part is to secure our REST API.]]>
+      </description>
+    </item>
     <item>
       <title><![CDATA[Build a Spring Boot REST API with Paginated Full-Text Search using Hibernate Search]]></title>
       <link>https://gauthier-cassany.com/posts/spring-boot-paginated-search</link>
