@@ -161,7 +161,6 @@ The delete endpoint can now be used successfully.
 
 And that’s it! We now have Role-Based Authorization.
 
-Note that since the version 5.7.0 of Spring Security, [the WebSecurityConfigurerAdapter is deprecated](https://spring.io/blog/2022/02/21/spring-security-without-the-websecurityconfigureradapter). It is now advized to use the new configuration type following the component-based design. As of now, the Keycloak Spring Boot Adapter has does not support this new configuration type.
-I will try to update this article to support this new configuration type as soon as possible.
+Note that since version 5.7.0 of Spring Security, [the WebSecurityConfigurerAdapter is deprecated](https://spring.io/blog/2022/02/21/spring-security-without-the-websecurityconfigureradapter). It is now advised to use the new configuration type following the component-based design. As of now, the Keycloak Spring Boot Adapter does not support this new configuration type. I will try to update this article to support this new configuration type as soon as possible.
 
 You can access the demo project for this blog post here [https://github.com/Mozenn/spring-boot-keycloak-roles](https://github.com/Mozenn/spring-boot-keycloak-roles).

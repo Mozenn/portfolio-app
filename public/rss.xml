@@ -1,26 +1,23 @@
 <?xml version="1.0" ?>
-  <rss
-    xmlns:dc="http://purl.org/dc/elements/1.1/"
-    xmlns:content="http://purl.org/rss/1.0/modules/content/"
-    xmlns:atom="http://www.w3.org/2005/Atom"
-    version="2.0"
-  >
-    <channel>
-        <title><![CDATA[Software engineering articles by Gauthier Cassany]]></title>
-        <link>https://gauthier-cassany.com</link>
-        <description>
-          <![CDATA[Blog posts about Software Engineering by Gauthier Cassany]]>
-        </description>
-        <language>en</language>
-        <lastBuildDate>26 July 2022</lastBuildDate>
-        
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title><![CDATA[Software engineering articles by Gauthier Cassany]]></title>
+    <link>https://gauthier-cassany.com</link>
+    <description>
+      <![CDATA[Blog posts about Software Engineering by Gauthier Cassany]]>
+    </description>
+    <language>en</language>
+    <lastBuildDate>26 July 2022</lastBuildDate>
+
     <item>
       <title><![CDATA[Implement Role-based authorization in Spring Boot with Keycloak]]></title>
       <link>https://gauthier-cassany.com/posts/spring-boot-keycloak-roles</link>
       <pubDate>26 July 2022</pubDate>
       <guid isPermaLink="false">https://gauthier-cassany.com/posts/spring-boot-keycloak-roles</guid>
       <description>
-      <![CDATA[Role-based access control is a must-have for any application dealing with users who can access resources depending on their organization's role. In a previous article, we have learned how to secure our Spring Boot REST API with Keycloak by using the OpenID Connect authentication protocol. In this article, we are going to build on this sample application and add role-based authorization.]]>
+        <![CDATA[Role-based access control is a must-have for any application dealing with users who can access resources depending on their organization's role. In a previous article, we have learned how to secure our Spring Boot REST API with Keycloak by using the OpenID Connect authentication protocol. In this article, we are going to build on this sample application and add role-based authorization.]]>
       </description>
     </item>
     <item>
@@ -29,7 +26,7 @@
       <pubDate>27 June 2022</pubDate>
       <guid isPermaLink="false">https://gauthier-cassany.com/posts/spring-boot-keycloak</guid>
       <description>
-      <![CDATA[Security is often overlooked and is seen as a burden that goes against development velocity. But in today’s age, the more secure layers there are, the safer it is. That is what Security in Depth is, and one part is to secure our REST API.]]>
+        <![CDATA[Security is often overlooked and is seen as a burden that goes against development velocity. But in today’s age, the more secure layers there are, the safer it is. That is what Security in Depth is, and one part is to secure our REST API.]]>
       </description>
     </item>
     <item>
@@ -38,7 +35,7 @@
       <pubDate>26 May 2022</pubDate>
       <guid isPermaLink="false">https://gauthier-cassany.com/posts/spring-boot-paginated-search</guid>
       <description>
-      <![CDATA[In a previous article, we have learned how to add full-text-search to a Spring Boot Rest API using Hibernate Search. In this article, we are going to build on that, and learn how to add paginated search to our existing REST API.]]>
+        <![CDATA[In a previous article, we have learned how to add full-text-search to a Spring Boot Rest API using Hibernate Search. In this article, we are going to build on that, and learn how to add paginated search to our existing REST API.]]>
       </description>
     </item>
     <item>
@@ -47,7 +44,7 @@
       <pubDate>2 May 2022</pubDate>
       <guid isPermaLink="false">https://gauthier-cassany.com/posts/become-t-shaped-engineer</guid>
       <description>
-      <![CDATA[Being a software engineer in 2022 is demanding. On one side, you have to know more and more technologies and tools. On the other, you need to have a depth of knowledge about the stack you are using daily. We need to find a way to combine those two aspects without neglecting one of the two. And the way is to become a T-shaped engineer.]]>
+        <![CDATA[Being a software engineer in 2022 is demanding. On one side, you have to know more and more technologies and tools. On the other, you need to have a depth of knowledge about the stack you are using daily. We need to find a way to combine those two aspects without neglecting one of the two. And the way is to become a T-shaped engineer.]]>
       </description>
     </item>
     <item>
@@ -56,7 +53,7 @@
       <pubDate>5 April 2022</pubDate>
       <guid isPermaLink="false">https://gauthier-cassany.com/posts/spring-boot-hibernate-search</guid>
       <description>
-      <![CDATA[Search is one of the pillars of the web, and full-text search is one of the mandatory features that every website needs.  But implementing such a feature is complex, and lots of skilled engineers have already thought hard about this topic. So let’s not reinvent the wheel, and use the battle-tested Hibernate Search library.]]>
+        <![CDATA[Search is one of the pillars of the web, and full-text search is one of the mandatory features that every website needs.  But implementing such a feature is complex, and lots of skilled engineers have already thought hard about this topic. So let’s not reinvent the wheel, and use the battle-tested Hibernate Search library.]]>
       </description>
     </item>
     <item>
@@ -65,7 +62,7 @@
       <pubDate>10 March 2022</pubDate>
       <guid isPermaLink="false">https://gauthier-cassany.com/posts/build-paginated-list-react-swr</guid>
       <description>
-      <![CDATA[In a previous blog post, we have learned how to build an API with pagination. In this blog post, we are focusing on how to consume such an API by building a paginated list using React, the most popular javascript frontend framework at the moment.]]>
+        <![CDATA[In a previous blog post, we have learned how to build an API with pagination. In this blog post, we are focusing on how to consume such an API by building a paginated list using React, the most popular javascript frontend framework at the moment.]]>
       </description>
     </item>
     <item>
@@ -74,7 +71,7 @@
       <pubDate>15 February 2022</pubDate>
       <guid isPermaLink="false">https://gauthier-cassany.com/posts/build-jar-inside-docker</guid>
       <description>
-      <![CDATA[Containers have become very popular during the last few years thanks to the rise of Docker. The most common use case is to run an application in isolation, be it in a development environment or a production environment. But it can also be used for more specific use cases. In this article, we are going to build a jar file inside a docker container.]]>
+        <![CDATA[Containers have become very popular during the last few years thanks to the rise of Docker. The most common use case is to run an application in isolation, be it in a development environment or a production environment. But it can also be used for more specific use cases. In this article, we are going to build a jar file inside a docker container.]]>
       </description>
     </item>
     <item>
@@ -83,7 +80,7 @@
       <pubDate>26 January 2022</pubDate>
       <guid isPermaLink="false">https://gauthier-cassany.com/posts/spring-boot-pagination-and-sorting</guid>
       <description>
-      <![CDATA[Pagination is an important feature for REST API, and is used for many use cases where we want to fetch only a small part of an entire dataset. It might be for performance reasons, and fetch only the data needed at that time. It can also be used by the frontend to display items using a paginated view type of UI such as infinite scrolling.]]>
+        <![CDATA[Pagination is an important feature for REST API, and is used for many use cases where we want to fetch only a small part of an entire dataset. It might be for performance reasons, and fetch only the data needed at that time. It can also be used by the frontend to display items using a paginated view type of UI such as infinite scrolling.]]>
       </description>
     </item>
     <item>
@@ -92,7 +89,7 @@
       <pubDate>15 December 2021</pubDate>
       <guid isPermaLink="false">https://gauthier-cassany.com/posts/setup-keycloak-docker</guid>
       <description>
-      <![CDATA[In this blog post, we are going to learn how to run Keycloak inside docker, using a dedicated PostgreSQL database also running in a docker container.]]>
+        <![CDATA[In this blog post, we are going to learn how to run Keycloak inside docker, using a dedicated PostgreSQL database also running in a docker container.]]>
       </description>
     </item>
     <item>
@@ -101,8 +98,8 @@
       <pubDate>01 September 2021</pubDate>
       <guid isPermaLink="false">https://gauthier-cassany.com/posts/asking-questions</guid>
       <description>
-      <![CDATA[It has been 6 months since I have started my internship at Lyra Network as a software engineer, and 3 months since my internship turned into a real software engineering job. During this period, you are expected to know little or nothing about the job, and thus, asking questions is mandatory. I would like to share some hints that I have picked up during this period.]]>
+        <![CDATA[It has been 6 months since I have started my internship at Lyra Network as a software engineer, and 3 months since my internship turned into a real software engineering job. During this period, you are expected to know little or nothing about the job, and thus, asking questions is mandatory. I would like to share some hints that I have picked up during this period.]]>
       </description>
     </item>
-    </channel>
-  </rss>
+  </channel>
+</rss>
