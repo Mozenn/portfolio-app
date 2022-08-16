@@ -5,7 +5,7 @@ bannerPath: /images/post/spring-boot-cli-bootstrap/thumbnail.png
 priority: 2
 tags: ['Java', 'Spring']
 author: Gauthier
-date: 14 August 2022
+date: 16 August 2022
 description: Generating a Spring Boot project can be made through various means, each having its own use case depending on your situation. In this article, we will use the CLI to generate a new Spring Boot Project.
 ---
 
