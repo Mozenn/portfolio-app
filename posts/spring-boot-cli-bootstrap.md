@@ -11,9 +11,9 @@ description: Generating a Spring Boot project can be made through various means,
 
 Generating a Spring Boot project can be made through various means, each having its own use case depending on your situation.
 
-You can use [the Spring Initializr web UI](<[https://start.spring.io/](https://start.spring.io/)>) which is beginner-friendly and perfect to get an overview of what is available.
+You can use [the Spring Initializr web UI](https://start.spring.io/) which is beginner-friendly and perfect to get an overview of what is available.
 
-You can also generate your project inside your favorite IDE like [Eclipse](<[https://www.eclipse.org/community/eclipse_newsletter/2018/february/springboot.php](https://www.eclipse.org/community/eclipse_newsletter/2018/february/springboot.php)>) or [Intellij](<[https://www.jetbrains.com/help/idea/spring-boot.html](https://www.jetbrains.com/help/idea/spring-boot.html)>) by using plugins.
+You can also generate your project inside your favorite IDE like [Eclipse](https://www.eclipse.org/community/eclipse_newsletter/2018/february/springboot.php) or [Intellij](https://www.jetbrains.com/help/idea/spring-boot.html) by using plugins.
 
 And finally, you can generate your project without leaving your shell with the Spring CLI, and that is what we are going to do.
 
@@ -23,7 +23,7 @@ In this article, we will use the CLI to generate a new Spring Boot Project.
 
 Before generating anything, we need to install the Spring CLI on our machine.
 
-For that, you can check out Spring official documentation [https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started.html#getting-started.installing.cli](https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started.html#getting-started.installing.cli).
+For that, you can check out [Spring official documentation](https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started.html#getting-started.installing.cli).
 
 It shows how to install the CLI manually or by using sdkman. Do as you want, but I strongly advise you to use sdkman!
 
