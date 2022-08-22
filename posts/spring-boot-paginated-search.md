@@ -194,7 +194,7 @@ public class PlantService {
         List<String> fieldsToSearchBy = getFieldsToSearchBy(fields);
 
         return plantRepository.searchPageBy(
-                text, limit, pageOffset, fieldsToSearchBy.toArray(new String[0]));
+                text, limit, pageOffset*limit, fieldsToSearchBy.toArray(new String[0]));
     }
 
 		// We extract the common logic in a separate function
