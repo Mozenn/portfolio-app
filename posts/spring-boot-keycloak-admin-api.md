@@ -1,6 +1,6 @@
 ---
 id: spring-boot-keycloak-admin-api
-title: Setup Keycloak in Spring Boot using the Keycloak Admin API
+title: Set up Keycloak in Spring Boot using the Keycloak Admin API
 bannerPath: /images/post/spring-boot-keycloak-admin-api/thumbnail.png
 priority: 2
 tags: ['Java', 'Spring', 'Keycloak']
