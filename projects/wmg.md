@@ -1,6 +1,6 @@
 ---
 title: Wise Moose Games Website
-priority: 2
+priority: 1
 imageName: wmg.png
 iconName: wmg-icon.png
 stack: Next.js, Vercel

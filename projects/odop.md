@@ -1,6 +1,6 @@
 ---
 title: OneDayOnePlant
-priority: 1
+priority: 2
 imageName: odop.png
 iconName: odop-icon.png
 stack: React, Node.js, MongoDB, Docker, Nginx, Digital Ocean

@@ -46,7 +46,7 @@ const Home = ({
             indie game developer living in Toulouse, France. <br />
             I love creating things, from games to software to world bulding and
             much more. <br />I am currently working on a game since more than
-            three years as a solo developer.{' '}
+            four years as a solo developer.{' '}
           </p>
         </div>
         <div className={styles.aboutStack}>
@@ -55,8 +55,7 @@ const Home = ({
             T-shaped engineer. I am currently more focused on backend
             technologies like the Java ecosystem, DevOps technologies and
             practices such as CI/CD or automation, and Cloud Native
-            Applications, but I am ready to work my way through any interesting
-            challenge.
+            Applications.
           </p>
         </div>
       </section>
