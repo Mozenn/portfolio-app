@@ -45,8 +45,7 @@ const Home = ({
             I am Gauthier, a 24 years old software engineer at Lyra Network and
             indie game developer living in Toulouse, France. <br />
             I love creating things, from games to software to world building and
-            much more. <br />I am currently working on a game since more than
-            four years as a solo developer.{' '}
+            much more. <br />
           </p>
         </div>
         <div className={styles.aboutStack}>
