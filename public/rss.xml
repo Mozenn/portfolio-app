@@ -12,8 +12,35 @@
           <![CDATA[Blog posts about Software Engineering by Gauthier Cassany]]>
         </description>
         <language>en</language>
-        <lastBuildDate>16 August 2022</lastBuildDate>
+        <lastBuildDate>13 December 2022</lastBuildDate>
         
+    <item>
+      <title><![CDATA[Deploy your Next.js application to Vercel using Sentry and Github Actions]]></title>
+      <link>https://gauthier-cassany.com/posts/prod-ready-nextjs-sentry</link>
+      <pubDate>13 December 2022</pubDate>
+      <guid isPermaLink="false">https://gauthier-cassany.com/posts/prod-ready-nextjs-sentry</guid>
+      <description>
+      <![CDATA[In this blog post, we are going to go from bootstrapping a Next.js application to deploying it on Vercel. We will use Github Action to handle the Continuous Integration and Sentry to monitor the application once it is deployed to be warned of any problems as soon as it arrives.]]>
+      </description>
+    </item>
+    <item>
+      <title><![CDATA[Implement Conditional Indexing in Hibernate Search using Spring Boot]]></title>
+      <link>https://gauthier-cassany.com/posts/spring-boot-hibernate-search-conditional-indexing</link>
+      <pubDate>15 Octobre 2022</pubDate>
+      <guid isPermaLink="false">https://gauthier-cassany.com/posts/spring-boot-hibernate-search-conditional-indexing</guid>
+      <description>
+      <![CDATA[As we have seen in a previous blog post, Hibernate Search can be easily set up in a Spring Boot application to implement Full-Text Search through an HTTP endpoint. But we have only gone across the most basic features of what Hibernate Search provides. In this blog post, we are going to implement Conditional Indexing to skip Plant belonging to a specific family.]]>
+      </description>
+    </item>
+    <item>
+      <title><![CDATA[Set up Keycloak in Spring Boot using the Keycloak Admin API]]></title>
+      <link>https://gauthier-cassany.com/posts/spring-boot-keycloak-admin-api</link>
+      <pubDate>14 September 2022</pubDate>
+      <guid isPermaLink="false">https://gauthier-cassany.com/posts/spring-boot-keycloak-admin-api</guid>
+      <description>
+      <![CDATA[The goal of this article is to set up our Keycloak realm once through the Keycloak Admin Console and then recreate this setup at will, without doing all the manual setup all over again. For that, we are going to automate this process using Spring Boot and the java Keycloak Admin API client.]]>
+      </description>
+    </item>
     <item>
       <title><![CDATA[Quickly bootstrap a new Spring Boot project with the Spring CLI]]></title>
       <link>https://gauthier-cassany.com/posts/spring-boot-cli-bootstrap</link>
