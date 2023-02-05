@@ -11,9 +11,7 @@ const PostCapsule = ({ postData }: { postData: Post }) => {
         alt="capsule image"
       />
       <Link href={`/posts/${postData.id}`}>
-        <a>
-          <h2 className={styles.title}>{postData.title}</h2>
-        </a>
+        <h2 className={styles.title}>{postData.title}</h2>
       </Link>
       <div className={styles.bottomContainer}>
         <div className={styles.tagContainer}>

@@ -74,8 +74,8 @@ const Home = ({
           })}
         </div>
         <div className={styles.LinkContainer}>
-          <Link href="/projects">
-            <a className={styles.Link}>See more ...</a>
+          <Link href="/projects" className={styles.Link}>
+            See more ...
           </Link>
         </div>
       </section>
@@ -88,8 +88,8 @@ const Home = ({
           })}
         </div>
         <div className={styles.LinkContainer}>
-          <Link href="/posts">
-            <a className={styles.Link}>See more ...</a>
+          <Link href="/posts" className={styles.Link}>
+            See more ...
           </Link>
         </div>
       </section>

@@ -13,9 +13,7 @@ export default function ProjectCapsule({
   return (
     <div className={styles.capsule}>
       <Link href={`/projects/${id}`}>
-        <a>
-          <h3 className={styles.capsuleTitle}>{title}</h3>
-        </a>
+        <h3 className={styles.capsuleTitle}>{title}</h3>
       </Link>
       <img
         className={styles.capsuleImage}
