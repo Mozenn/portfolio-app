@@ -42,7 +42,7 @@ const Home = ({
         <h2 className={styles.aboutTitle}>About</h2>
         <div className={styles.aboutStory}>
           <p>
-            I am Gauthier, a 24 years old software engineer at Lyra Network and
+            I am Gauthier, a 25 years old software engineer at Lyra Network and
             indie game developer living in Toulouse, France. <br />
             I love creating things, from games to software to world building and
             much more. <br />
@@ -50,11 +50,11 @@ const Home = ({
         </div>
         <div className={styles.aboutStack}>
           <p>
-            I have tinkered with many technologies and can be defined as a
-            T-shaped engineer. I am currently more focused on backend
-            technologies like the Java ecosystem, DevOps technologies and
-            practices such as CI/CD or automation, and Cloud Native
-            Applications.
+            I have tinkered with many technologies and can be defined as a jack
+            of all trades. I worked primarily on web backend technologies like
+            the Java ecosystem, DevOps technologies and practices such as CI/CD
+            or automation, and Cloud Native Applications, but I am currently
+            shifting from web development to game development.
           </p>
         </div>
       </section>
