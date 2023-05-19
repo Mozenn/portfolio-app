@@ -12,12 +12,12 @@
           <![CDATA[Blog posts about Software Engineering by Gauthier Cassany]]>
         </description>
         <language>en</language>
-        <lastBuildDate>13 December 2022</lastBuildDate>
+        <lastBuildDate>29 December 2022</lastBuildDate>
         
     <item>
       <title><![CDATA[Deploy your Next.js application to Vercel using Sentry and Github Actions]]></title>
       <link>https://gauthier-cassany.com/posts/prod-ready-nextjs-sentry</link>
-      <pubDate>13 December 2022</pubDate>
+      <pubDate>29 December 2022</pubDate>
       <guid isPermaLink="false">https://gauthier-cassany.com/posts/prod-ready-nextjs-sentry</guid>
       <description>
       <![CDATA[In this blog post, we are going to go from bootstrapping a Next.js application to deploying it on Vercel. We will use Github Action to handle the Continuous Integration and Sentry to monitor the application once it is deployed to be warned of any problems as soon as it arrives.]]>
@@ -78,15 +78,6 @@
       </description>
     </item>
     <item>
-      <title><![CDATA[Why you should be a T-Shaped engineer]]></title>
-      <link>https://gauthier-cassany.com/posts/become-t-shaped-engineer</link>
-      <pubDate>2 May 2022</pubDate>
-      <guid isPermaLink="false">https://gauthier-cassany.com/posts/become-t-shaped-engineer</guid>
-      <description>
-      <![CDATA[Being a software engineer in 2022 is demanding. On one side, you have to know more and more technologies and tools. On the other, you need to have a depth of knowledge about the stack you are using daily. We need to find a way to combine those two aspects without neglecting one of the two. And the way is to become a T-shaped engineer.]]>
-      </description>
-    </item>
-    <item>
       <title><![CDATA[Build a Spring Boot REST API with Full-Text Search using Hibernate Search]]></title>
       <link>https://gauthier-cassany.com/posts/spring-boot-hibernate-search</link>
       <pubDate>5 April 2022</pubDate>
@@ -129,15 +120,6 @@
       <guid isPermaLink="false">https://gauthier-cassany.com/posts/setup-keycloak-docker</guid>
       <description>
       <![CDATA[In this blog post, we are going to learn how to run Keycloak inside docker, using a dedicated PostgreSQL database also running in a docker container.]]>
-      </description>
-    </item>
-    <item>
-      <title><![CDATA[Asking questions as a software engineer]]></title>
-      <link>https://gauthier-cassany.com/posts/asking-questions</link>
-      <pubDate>01 September 2021</pubDate>
-      <guid isPermaLink="false">https://gauthier-cassany.com/posts/asking-questions</guid>
-      <description>
-      <![CDATA[It has been 6 months since I have started my internship at Lyra Network as a software engineer, and 3 months since my internship turned into a real software engineering job. During this period, you are expected to know little or nothing about the job, and thus, asking questions is mandatory. I would like to share some hints that I have picked up during this period.]]>
       </description>
     </item>
     </channel>

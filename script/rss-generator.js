@@ -9,6 +9,9 @@ const getAllPostsData = () => {
   return fileNames
     .map((fileName) => {
       const filePath = path.join(postsDirectory, fileName);
+
+      if (fs.lstatSync(filePath).isDirectory()) return undefined;
+
       const fileContent = fs.readFileSync(filePath, 'utf8');
       const id = fileName.replace(/\.md$/, '');
 
@@ -17,7 +20,15 @@ const getAllPostsData = () => {
       const { title, priority, tags, author, date, description } =
         matterResult.data;
 
-      const res = { id, title, priority, tags, author, date, description };
+      const res = {
+        id,
+        title,
+        priority,
+        tags,
+        author,
+        date,
+        description,
+      };
 
       Object.keys(res).forEach(
         (key) => res[key] === undefined && delete res[key]
@@ -25,6 +36,7 @@ const getAllPostsData = () => {
 
       return res;
     })
+    .filter((p) => p)
     .sort((pa, pb) => {
       const dateA = new Date(pa.date);
       const dateB = new Date(pb.date);

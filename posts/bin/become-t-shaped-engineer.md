@@ -7,6 +7,7 @@ tags: ['Software Engineering']
 author: Gauthier
 date: 2 May 2022
 description: Being a software engineer in 2022 is demanding. On one side, you have to know more and more technologies and tools. On the other, you need to have a depth of knowledge about the stack you are using daily. We need to find a way to combine those two aspects without neglecting one of the two. And the way is to become a T-shaped engineer.
+ignore: true
 ---
 
 Being a software engineer in 2022 is demanding. On one side, you have to know more and more technology to be a so-called full-stack developer and be knowledgeable both on front-end and backend. You also need to have some knowledge of the DevOps practice and tools to know how your application goes from your local environment to production in an automated manner. You have to be comfortable with your development environment and know the tips and tricks that will make you productive.

@@ -54,33 +54,39 @@ export const getPostsDataByDate = () => {
 
 export const getAllPostsData = (): Post[] => {
   const fileNames = fs.readdirSync(postsDirectory);
-  return fileNames.map((fileName: string): Post => {
-    const filePath = path.join(postsDirectory, fileName);
-    const fileContent = fs.readFileSync(filePath, 'utf8');
-    const id = fileName.replace(/\.md$/, '');
+  return fileNames
+    .filter((fileName) => {
+      const filePath = path.join(postsDirectory, fileName);
+      return !fs.lstatSync(filePath).isDirectory();
+    })
+    .map((fileName: string): Post => {
+      const filePath = path.join(postsDirectory, fileName);
+      const fileContent = fs.readFileSync(filePath, 'utf8');
+      const id = fileName.replace(/\.md$/, '');
 
-    const matterResult = matter(fileContent);
+      const matterResult = matter(fileContent);
 
-    const { title, priority, bannerPath, tags, author, date } =
-      matterResult.data;
-    const content = md.render(matterResult.content);
-    const timeEstimate = computeTimeEstimateInMinutes(content);
+      const { title, priority, bannerPath, tags, author, date, ignore } =
+        matterResult.data;
+      const content = md.render(matterResult.content);
+      const timeEstimate = computeTimeEstimateInMinutes(content);
 
-    const res = {
-      id,
-      title,
-      bannerPath,
-      priority,
-      tags,
-      author,
-      date,
-      timeEstimate,
-    };
+      const res = {
+        id,
+        title,
+        bannerPath,
+        priority,
+        tags,
+        author,
+        date,
+        timeEstimate,
+        ignore,
+      };
 
-    getKeys(res).forEach((key) => res[key] === undefined && delete res[key]);
+      getKeys(res).forEach((key) => res[key] === undefined && delete res[key]);
 
-    return res;
-  });
+      return res;
+    });
 };
 
 export const getAllTagsFromPosts = (posts: Post[]) => {
