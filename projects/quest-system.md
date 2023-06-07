@@ -4,7 +4,7 @@ priority: 2
 imageName: quest-system.png
 iconName: quest-system-icon.png
 stack: Unreal Engine 4, C++
-githubUrl: https://github.com/WiseMooseGames/quest-system-plugin
+githubUrl: https://github.com/WildMooseGames/quest-system-plugin
 adaptLogoTheme: true
 ---
 
