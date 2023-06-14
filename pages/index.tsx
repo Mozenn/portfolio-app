@@ -54,7 +54,8 @@ const Home = ({
             of all trades. I worked primarily on web backend technologies like
             the Java ecosystem, DevOps technologies and practices such as CI/CD
             or automation, and Cloud Native Applications, but I am currently
-            shifting from web development to game development.
+            shifting from web development to game development, with a focus on
+            engine and graphics programming.
           </p>
         </div>
       </section>
