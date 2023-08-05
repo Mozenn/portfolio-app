@@ -33,7 +33,7 @@ const Home = ({
         <div>
           <h1 className={styles.landingName}>Gauthier Cassany</h1>
           <h2 className={styles.landingSubtitle}>
-            Software Engineer, Indie Game Developer
+            Software Engineer, Game Developer
           </h2>
         </div>
       </section>
@@ -42,19 +42,17 @@ const Home = ({
         <h2 className={styles.aboutTitle}>About</h2>
         <div className={styles.aboutStory}>
           <p>
-            I am Gauthier, a 25 years old software engineer at Lyra Network and
-            indie game developer living in Toulouse, France. <br />
-            I love creating things and solving problems, from games to software
-            to world building and much more. <br />
+            25 years old software engineer at Lyra Network and game developer
+            living in Toulouse, France. <br />
+            Passionate about creation, innovation, and problem-solving <br />
           </p>
         </div>
         <div className={styles.aboutStack}>
           <p>
-            I have tinkered with many technologies and can be defined as a jack
-            of all trades. I worked primarily on web backend technologies like
-            the Java ecosystem, DevOps technologies and practices such as CI/CD
-            or automation, and Cloud Native Applications, but I am currently
-            shifting to game development, with a focus on engine and graphics
+            I worked primarily on web backend technologies like the Java
+            ecosystem, DevOps technologies and practices such as CI/CD or
+            automation, and Cloud Native Applications. I am currently shifting
+            to game development, with a focus on engine and graphics
             programming.
           </p>
         </div>
