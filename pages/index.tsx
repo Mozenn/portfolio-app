@@ -51,8 +51,7 @@ const Home = ({
           <p>
             I worked primarily on web backend technologies like the Java
             ecosystem, DevOps technologies and practices such as CI/CD or
-            automation, and Cloud Native Applications. I am currently shifting
-            to game development.
+            automation, and Cloud Native Applications.
           </p>
         </div>
       </section>
