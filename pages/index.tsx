@@ -42,9 +42,10 @@ const Home = ({
         <h2 className={styles.aboutTitle}>About</h2>
         <div className={styles.aboutStory}>
           <p>
-            25 years old software engineer at Lyra Network and game developer
-            living in Toulouse, France. <br />
-            Passionate about creation, innovation, and problem-solving <br />
+            25 years old software engineer and game developer living in
+            Toulouse, France. <br />
+            Lifelong learner passionate about creation and problem-solving{' '}
+            <br />
           </p>
         </div>
         <div className={styles.aboutStack}>
@@ -52,8 +53,8 @@ const Home = ({
             I worked primarily on web backend technologies like the Java
             ecosystem, DevOps technologies and practices such as CI/CD or
             automation, and Cloud Native Applications. <br />I also have some
-            experience in frontend with technologies such as JS Vanilla,
-            Typescript, React.
+            experience in frontend with technologies such as Javascript,
+            Typescript, and React.
           </p>
         </div>
       </section>
