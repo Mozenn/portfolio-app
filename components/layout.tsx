@@ -22,6 +22,10 @@ const Layout = ({ children }: { children: JSX.Element }) => {
     toggleTheme();
   };
 
+  const onLanguageButtonClicked = () => {
+    toggleLanguage();
+  };
+
   const getCursorStyle = () =>
     theme === 'light' ? styles.lightCursor : styles.darkCursor;
 
@@ -80,6 +84,23 @@ const Layout = ({ children }: { children: JSX.Element }) => {
             <img
               src="/images/sun.svg"
               alt="light theme icon"
+              className={`${getFilterClass()}`}
+            />
+            <div className={`${styles.cursor} ${getCursorStyle()}`}></div>
+          </button>
+          <button
+            className={styles.languageToggleButton}
+            data-testid="language-button"
+            onClick={onLanguageButtonClicked}
+          >
+            <img
+              src="/images/frflag.svg"
+              alt="france flag icon"
+              className={`${getFilterClass()}`}
+            />
+            <img
+              src="/images/ukflag.svg"
+              alt="uk flag icon"
               className={`${getFilterClass()}`}
             />
             <div className={`${styles.cursor} ${getCursorStyle()}`}></div>
