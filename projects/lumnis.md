@@ -1,6 +1,6 @@
 ---
 title: Lumnis
-priority: 1
+priority: 3
 imageName: game.png
 iconName: game-icon.png
 stack: UE4, C++, Blender, Substance, Krita, ...

@@ -13,9 +13,7 @@ Containers have become very popular during the last few years thanks to the rise
 
 In this article, we are going to build a jar file inside a docker container.
 
-Why should we do that you might ask ?
-
-Well, this use case is not very common, but using docker as a wrapper to build an artifact in isolation can be quite handy, the main benefit being to avoid setting a dedicated environment on the host machine to build the artifact. You also avoid filling your host machine by downloading the libraries and packages required by your application.
+This use case is not very common, but using docker as a wrapper to build an artifact in isolation can be quite handy, the main benefit being to avoid setting a dedicated environment on the host machine to build the artifact. You also avoid filling your host machine by downloading the libraries and packages required by your application.
 
 Now that we know the why, let’s check out the how !
 
@@ -132,9 +130,9 @@ Then, we copy our project into the container. Here the first ‘.’ defines the
 
 To sum up, it means that we take the entire project directory and we copy it inside the container.
 
-But wait, did I say the entire project? Wouldn’t it be smart if we prevent copying useless files and folders such as IDE-related files or git-related files?
+But it would be smart if we prevent copying useless files and folders such as IDE-related files or git-related files.
 
-Well, yes it is ! That is why you make use of a .dockerignore file
+That is why you make use of a .dockerignore file :
 
 ```docker
 .idea

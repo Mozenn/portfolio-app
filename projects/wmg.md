@@ -7,4 +7,4 @@ stack: Next.js, Vercel
 accessUrl: https://wildmoosegames.com
 ---
 
-Official website for Wild Moose Games, my game development studio.
+Official website for the game studio Wild Moose Games.

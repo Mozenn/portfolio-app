@@ -8,5 +8,5 @@ githubUrl: https://github.com/WildMooseGames/quest-system-plugin
 adaptLogoTheme: true
 ---
 
-Quest system plugin developped for an upcoming game.
+Quest system plugin developped for the game Lumnis.
 It includes a quest event system and narrative image-based dialogue system, with a custom asset and a custom node editor.
