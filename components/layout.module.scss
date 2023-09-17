@@ -57,7 +57,7 @@
   text-decoration: underline;
 }
 
-.themeToggleButton {
+.toggleButton {
   margin-right: 3%;
   position: relative;
   padding: 0.3rem;
@@ -85,11 +85,11 @@
   transform: translateX(0%);
 }
 
-.lightCursor {
+.cursorLeft {
   transform: translateX(0%);
 }
 
-.darkCursor {
+.cursorRight {
   transform: translateX(100%);
 }
 

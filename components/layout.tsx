@@ -4,9 +4,13 @@ import styles from './layout.module.scss';
 import GoogleAnalytics from './google-analytics';
 import { useEffect } from 'react';
 import { useTheme } from '../hooks/useTheme';
+import { useLocale } from '../hooks/useLocale';
+import { useTranslation } from 'next-i18next';
 
 const Layout = ({ children }: { children: JSX.Element }) => {
   const { theme, setTheme, toggleTheme, getFilterClass } = useTheme();
+  const { locale, setLocale, toggleLocale } = useLocale();
+  const { t, i18n } = useTranslation('home');
 
   useEffect(() => {
     if (
@@ -16,6 +20,12 @@ const Layout = ({ children }: { children: JSX.Element }) => {
       document.documentElement.classList.toggle('darkTheme');
       setTheme('dark');
     }
+
+    if (!locale) {
+      setLocale(i18n.language);
+    } else if (locale !== i18n.language) {
+      i18n.changeLanguage(locale);
+    }
   });
 
   const onThemeButtonClicked = () => {
@@ -23,11 +33,14 @@ const Layout = ({ children }: { children: JSX.Element }) => {
   };
 
   const onLanguageButtonClicked = () => {
-    toggleLanguage();
+    toggleLocale();
   };
 
-  const getCursorStyle = () =>
-    theme === 'light' ? styles.lightCursor : styles.darkCursor;
+  const getThemeCursorStyle = () =>
+    theme === 'light' ? styles.cursorLeft : styles.cursorRight;
+
+  const getLocaleCursorStyle = () =>
+    locale === 'en' ? styles.cursorLeft : styles.cursorRight;
 
   return (
     <div>
@@ -72,7 +85,7 @@ const Layout = ({ children }: { children: JSX.Element }) => {
             </ul>
           </nav>
           <button
-            className={styles.themeToggleButton}
+            className={styles.toggleButton}
             data-testid="theme-button"
             onClick={onThemeButtonClicked}
           >
@@ -86,24 +99,16 @@ const Layout = ({ children }: { children: JSX.Element }) => {
               alt="light theme icon"
               className={`${getFilterClass()}`}
             />
-            <div className={`${styles.cursor} ${getCursorStyle()}`}></div>
+            <div className={`${styles.cursor} ${getThemeCursorStyle()}`}></div>
           </button>
           <button
-            className={styles.languageToggleButton}
+            className={styles.toggleButton}
             data-testid="language-button"
             onClick={onLanguageButtonClicked}
           >
-            <img
-              src="/images/frflag.svg"
-              alt="france flag icon"
-              className={`${getFilterClass()}`}
-            />
-            <img
-              src="/images/ukflag.svg"
-              alt="uk flag icon"
-              className={`${getFilterClass()}`}
-            />
-            <div className={`${styles.cursor} ${getCursorStyle()}`}></div>
+            <img src="/images/frflag.svg" alt="france flag icon" />
+            <img src="/images/ukflag.svg" alt="uk flag icon" />
+            <div className={`${styles.cursor} ${getLocaleCursorStyle()}`}></div>
           </button>
         </div>
       </header>
@@ -178,7 +183,7 @@ const Layout = ({ children }: { children: JSX.Element }) => {
             </li>
           </ul>
         </div>
-        <p>© Copyright 2022 Gauthier Cassany</p>
+        <p>© Copyright 2023 Gauthier Cassany</p>
       </footer>
     </div>
   );

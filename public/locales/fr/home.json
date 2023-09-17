@@ -1,0 +1,13 @@
+{
+  "subtitle": "Développeur Full Stack, Développeur Jeux Vidéo",
+  "about": "À propos",
+  "about-story-1": "Développeur Full Stack de 25 ans, basé à Toulouse, France",
+  "about-story-2": "En apprentissage permanent, je suis passionné par la création et la résolution de problèmes.",
+  "about-stack-1": "Je travaille principalement sur des technologies backend comme l'écosystème Java, les technologies et pratiques DevOps, telles que CI/CD ou l'automatisation, et les applications Cloud Native.",
+  "about-stack-2": "J'ai également de l'expérience en frontend avec des technologies telles que JS Vanilla, Typescript et React.",
+  "projects": "Projets",
+  "more": "Voir plus ...",
+  "blog": "Blog",
+  "newsletter": "Newsletter",
+  "newsletter-text": "Inscrivez-vous ci-dessous pour recevoir une notification lorsque je publie un nouvel article ou lorsque j'annonce quelque chose de spécial."
+}

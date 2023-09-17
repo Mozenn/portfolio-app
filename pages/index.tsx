@@ -7,13 +7,18 @@ import { getProjectsDataByPriority } from '../lib/projects';
 import { getPostsDataByPriority } from '../lib/posts';
 import { Project } from '../types/project';
 import { Post } from '../types/post';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async (context) => {
   const projectsToShow = getProjectsDataByPriority(2);
   const postsToShow = getPostsDataByPriority(2);
 
+  const locale = context.locale || 'en';
+
   return {
     props: {
+      ...(await serverSideTranslations(locale, ['home'], null, ['en', 'fr'])),
       projectsToShow,
       postsToShow,
     },
@@ -27,40 +32,36 @@ const Home = ({
   projectsToShow: Project[];
   postsToShow: Post[];
 }) => {
+  const { t } = useTranslation('home');
+
   return (
     <>
       <section className={styles.landing}>
         <div>
           <h1 className={styles.landingName}>Gauthier Cassany</h1>
-          <h2 className={styles.landingSubtitle}>
-            Software Engineer, Game Developer
-          </h2>
+          <h2 className={styles.landingSubtitle}>{t('subtitle')}</h2>
         </div>
       </section>
 
       <section className={styles.about} id="about">
-        <h2 className={styles.aboutTitle}>About</h2>
+        <h2 className={styles.aboutTitle}>{t('about')}</h2>
         <div className={styles.aboutStory}>
           <p>
-            25 years old software engineer and game developer living in
-            Toulouse, France. <br />
-            Lifelong learner passionate about creation and problem-solving{' '}
+            {t('about-story-1')}
+            <br />
+            {t('about-story-2')}
             <br />
           </p>
         </div>
         <div className={styles.aboutStack}>
           <p>
-            I worked primarily on web backend technologies like the Java
-            ecosystem, DevOps technologies and practices such as CI/CD or
-            automation, and Cloud Native Applications. <br />I also have some
-            experience in frontend with technologies such as Javascript,
-            Typescript, and React.
+            {t('about-stack-1')} <br /> {t('about-stack-2')}
           </p>
         </div>
       </section>
 
       <section className={styles.projects} id="projects">
-        <h2 className={styles.projectsTitle}>Projects</h2>
+        <h2 className={styles.projectsTitle}>{t('projects')}</h2>
         <div className={styles.projectsContainer}>
           {projectsToShow.map((project: Project) => {
             return (
@@ -75,13 +76,13 @@ const Home = ({
         </div>
         <div className={styles.LinkContainer}>
           <Link href="/projects" className={styles.Link}>
-            See more ...
+            {t('more')}
           </Link>
         </div>
       </section>
 
       <section className={styles.blog} id="blog">
-        <h2 className={styles.blogTitle}>Blog</h2>
+        <h2 className={styles.blogTitle}>{t('blog')}</h2>
         <div className={styles.blogContainer}>
           {postsToShow.map((post: Post) => {
             return <PostCapsule key={post.id} postData={post} />;
@@ -89,17 +90,14 @@ const Home = ({
         </div>
         <div className={styles.LinkContainer}>
           <Link href="/posts" className={styles.Link}>
-            See more ...
+            {t('more')}
           </Link>
         </div>
       </section>
       <section className={styles.newsletter} id="newsletter">
-        <h2 className={styles.newsletterTitle}>Newsletter</h2>
+        <h2 className={styles.newsletterTitle}>{t('newsletter')}</h2>
         <div className={styles.newsletterText}>
-          <p>
-            Subscribe below to get notified when I publish a new blog post or
-            when I announce something special.
-          </p>
+          <p>{t('newsletter-text')}</p>
         </div>
         <iframe
           className={styles.newsletterContainer}
