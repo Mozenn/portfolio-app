@@ -18,7 +18,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['home'], null, ['en', 'fr'])),
+      ...(await serverSideTranslations(locale, ['home', 'layout'], null, [
+        'en',
+        'fr',
+      ])),
       projectsToShow,
       postsToShow,
     },

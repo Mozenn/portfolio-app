@@ -10,7 +10,7 @@ import { useTranslation } from 'next-i18next';
 const Layout = ({ children }: { children: JSX.Element }) => {
   const { theme, setTheme, toggleTheme, getFilterClass } = useTheme();
   const { locale, setLocale, toggleLocale } = useLocale();
-  const { t, i18n } = useTranslation('home');
+  const { t, i18n } = useTranslation('layout');
 
   useEffect(() => {
     if (
@@ -69,17 +69,17 @@ const Layout = ({ children }: { children: JSX.Element }) => {
             <ul className={styles.headerNavbar}>
               <li className={styles.headerNavbarElement}>
                 <Link href="/" passHref>
-                  <label>Home</label>
+                  <label>{t('home')}</label>
                 </Link>
               </li>
               <li className={styles.headerNavbarElement}>
                 <Link href="/projects" passHref>
-                  <label>Projects</label>
+                  <label>{t('projects')}</label>
                 </Link>
               </li>
               <li className={styles.headerNavbarElement}>
                 <Link href="/posts" passHref>
-                  <label>Blog</label>
+                  <label>{t('blog')}</label>
                 </Link>
               </li>
             </ul>
@@ -161,7 +161,7 @@ const Layout = ({ children }: { children: JSX.Element }) => {
             </li>
           </div>
 
-          <h3 className={styles.resumeListText}>Resume</h3>
+          <h3 className={styles.resumeListText}>{t('resume')}</h3>
           <ul className={styles.resumeList}>
             <li className={styles.resumeListIcon}>
               <a href="/data/resume-fr.pdf" target="_blank">
@@ -179,7 +179,7 @@ const Layout = ({ children }: { children: JSX.Element }) => {
               </a>
             </li>
             <li>
-              <label>without picture</label>
+              <label>{t('without-picture')}</label>
             </li>
           </ul>
         </div>
