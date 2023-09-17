@@ -6,22 +6,27 @@ import { getAllProjectIds, getProjectFullData } from '../../lib/projects';
 import styles from '../../styles/project.module.scss';
 import { Project } from '../../types/project';
 import { useTheme } from '../../hooks/useTheme';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { addLocalesToPaths } from '../../lib/local';
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async (context) => {
   const paths = getAllProjectIds();
-  return {
-    paths,
-    fallback: false,
-  };
+
+  return addLocalesToPaths(paths, context.locales);
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { id } = context.params as IdParams;
   const projectFullData = getProjectFullData(id);
+  const locale = context.locale || 'en';
 
   return {
     props: {
       projectFullData,
+      ...(await serverSideTranslations(locale, ['home', 'layout'], null, [
+        'en',
+        'fr',
+      ])),
     },
   };
 };

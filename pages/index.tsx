@@ -13,7 +13,6 @@ import { useTranslation } from 'next-i18next';
 export const getStaticProps: GetStaticProps = async (context) => {
   const projectsToShow = getProjectsDataByPriority(2);
   const postsToShow = getPostsDataByPriority(2);
-
   const locale = context.locale || 'en';
 
   return {

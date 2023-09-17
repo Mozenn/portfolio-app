@@ -4,12 +4,17 @@ import styles from '../styles/posts.module.scss';
 import { Post } from '../types/post';
 import PostTag from '../components/posts/post-tag';
 import PostCapsule from '../components/posts/post-capsule';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { GetStaticProps } from 'next';
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async (context) => {
   const posts = getPostsDataByDate();
   const tags = getAllTagsFromPosts(posts);
+  const locale = context.locale || 'en';
+
   return {
     props: {
+      ...(await serverSideTranslations(locale, ['layout'], null, ['en', 'fr'])),
       posts,
       tags,
     },

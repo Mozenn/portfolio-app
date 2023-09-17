@@ -1,13 +1,17 @@
-import { GetStaticProps } from 'next';
 import { getAllProjectsData } from '../lib/projects';
 import styles from '../styles/projects.module.scss';
 import ProjectCapsule from '../components/project-capsule';
 import { Project } from '../types/project';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { GetStaticProps } from 'next';
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async (context) => {
   const projects = getAllProjectsData();
+  const locale = context.locale || 'en';
+
   return {
     props: {
+      ...(await serverSideTranslations(locale, ['layout'], null, ['en', 'fr'])),
       projects,
     },
   };

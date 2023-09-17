@@ -15,21 +15,27 @@ import { getAllPostIds, getPostFullData } from '../../lib/posts';
 import { Post } from '../../types/post';
 import { IdParams } from '../../types/IdParams';
 import Newsletter from '../../components/newsletter';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { addLocalesToPaths } from '../../lib/local';
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async (context) => {
   const paths = getAllPostIds();
-  return {
-    paths,
-    fallback: false,
-  };
+
+  return addLocalesToPaths(paths, context.locales);
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { id } = context.params as IdParams;
   const postFullData = getPostFullData(id);
 
+  const locale = context.locale || 'en';
+
   return {
     props: {
+      ...(await serverSideTranslations(locale, ['home', 'layout'], null, [
+        'en',
+        'fr',
+      ])),
       postFullData,
     },
   };
