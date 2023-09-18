@@ -15,7 +15,7 @@
     "cypress:run": "cypress run"
   },
   "dependencies": {
-    "@sentry/nextjs": "^7.36.0",
+    "@sentry/nextjs": "^7.69.0",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.4.0",
     "i18next": "^23.5.1",
