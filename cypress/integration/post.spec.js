@@ -7,12 +7,14 @@ describe('Post', () => {
 
   it('should display the post page', () => {
     cy.get('label').contains('Blog').click();
-    cy.contains('Asking');
+    cy.contains('How to set up Keycloak with Docker and PostgreSQL');
   });
 
   it('should display blog post', () => {
     cy.get('label').contains('Blog').click();
-    cy.contains('Asking').scrollIntoView().click();
+    cy.contains('How to set up Keycloak with Docker and PostgreSQL')
+      .scrollIntoView()
+      .click();
     cy.get('h1').should('be.visible');
   });
 });

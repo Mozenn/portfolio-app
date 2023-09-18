@@ -14,4 +14,12 @@ describe('App Features', () => {
         expect(localStorage.getItem('theme')).to.equal('"dark"');
       });
   });
+
+  it('should switch language', () => {
+    cy.get('[data-testid="language-button"]')
+      .click()
+      .should(() => {
+        expect(localStorage.getItem('language')).to.not.be.undefined;
+      });
+  });
 });
