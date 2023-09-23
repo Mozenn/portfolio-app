@@ -9,7 +9,7 @@ interface LocaleContextInterface {
 }
 
 const LocaleContext = createContext<LocaleContextInterface | undefined>(
-  undefined
+  undefined,
 );
 
 const LocaleProvider = ({
@@ -36,7 +36,7 @@ const LocaleProvider = ({
         query: router.query,
       },
       router.asPath,
-      { locale }
+      { locale },
     );
   };
 

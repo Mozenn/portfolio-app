@@ -9,7 +9,7 @@ interface ThemeContextInterface {
 }
 
 const ThemeContext = createContext<ThemeContextInterface | undefined>(
-  undefined
+  undefined,
 );
 
 const ThemeProvider = ({

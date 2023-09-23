@@ -42,7 +42,7 @@ const Posts = ({ posts, tags }: { posts: Post[]; tags: string[] }) => {
       setFilteredPosts(
         posts.filter((post) => {
           return post.tags.some((tag) => activeTags.includes(tag));
-        })
+        }),
       );
     }
   }, [activeTags, posts]);

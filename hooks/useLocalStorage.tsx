@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 const useLocalStorage = (
   key: string,
   initialValue: any,
-  shouldUseEffect?: boolean
+  shouldUseEffect?: boolean,
 ) => {
   const [storedValue, setStoredValue] = useState(() => {
     if (shouldUseEffect) {

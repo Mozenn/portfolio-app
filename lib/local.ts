@@ -4,7 +4,7 @@ export const addLocalesToPaths = (
       id: string;
     };
   }[],
-  locales: string[] | undefined
+  locales: string[] | undefined,
 ) => {
   if (!locales) {
     return {

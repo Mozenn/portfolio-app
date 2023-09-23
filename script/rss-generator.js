@@ -31,7 +31,7 @@ const getAllPostsData = () => {
       };
 
       Object.keys(res).forEach(
-        (key) => res[key] === undefined && delete res[key]
+        (key) => res[key] === undefined && delete res[key],
       );
 
       return res;

@@ -162,7 +162,7 @@ const PaginatedList = () => {
 
   const { data, error } = useSWR(
     `${process.env.REACT_APP_API_URL}/plant?page=${page}&limit=${limit}&sortBy=${sortBy}&order=${order}`,
-    fetcher
+    fetcher,
   );
 
   if (!data || !data.items) {

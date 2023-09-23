@@ -95,7 +95,7 @@ export const getAllTagsFromPosts = (posts: Post[]) => {
       const tags: Array<string> = post.tags;
       return [...acc, ...tags];
     },
-    []
+    [],
   );
 
   return [...new Set(unfilteredTags)];
@@ -153,7 +153,7 @@ const computeTimeEstimateInMinutes = (content: string): number => {
   }).length;
 
   const timeMinutes = Math.ceil(
-    wordCount / wordsPerMinute + imageTimeMinutes * imageCount
+    wordCount / wordsPerMinute + imageTimeMinutes * imageCount,
   );
 
   return timeMinutes;

@@ -38,7 +38,9 @@
   padding: 8px 10px 8px 10px;
   color: var(--color-primary);
   background-color: var(--color-secondary-dark);
-  transition: color 0.5s, background-color 0.5s;
+  transition:
+    color 0.5s,
+    background-color 0.5s;
   cursor: pointer;
   text-decoration: none;
   font-size: 1.5rem;
@@ -136,7 +138,9 @@
 
 .contactListIcon {
   width: 2.5rem;
-  transition: transform 0.3s, opacity 0.3s;
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
   opacity: 0.8;
   margin: 0rem 0.8rem;
   cursor: pointer;
@@ -144,7 +148,9 @@
 
 .contactListIcon:hover {
   transform: scale(1.2);
-  transition: transform 0.3s, opacity 0.3s;
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
   opacity: 1;
 }
 
