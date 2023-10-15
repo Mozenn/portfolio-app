@@ -49,10 +49,7 @@ const Layout = ({ children }: { children: JSX.Element }) => {
       <Head>
         <title>Gauthier Cassany</title>
         <link rel="icon" href="/favicons/favicon.ico" />
-        <meta
-          name="description"
-          content="Software Engineer, Indie Game Developer"
-        ></meta>
+        <meta name="description" content="Software Engineer"></meta>
       </Head>
 
       <header>
@@ -172,14 +169,6 @@ const Layout = ({ children }: { children: JSX.Element }) => {
               <a href="/data/resume-en.pdf" target="_blank">
                 <img src="/images/ukflag.svg" alt="UK Flag icon" />
               </a>
-            </li>
-            <li className={styles.resumeListIcon}>
-              <a href="/data/resume-en-no-picture.pdf" target="_blank">
-                <img src="/images/ukflag.svg" alt="UK Flag icon" />
-              </a>
-            </li>
-            <li>
-              <label>{t('without-picture')}</label>
             </li>
           </ul>
         </div>
