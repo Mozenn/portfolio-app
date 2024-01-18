@@ -4,12 +4,12 @@ title: Implement Conditional Indexing in Hibernate Search using Spring Boot
 bannerPath: /images/post/spring-boot-hibernate-search-conditional-indexing/thumbnail.png
 priority: 2
 tags: ['Java', 'Spring']
-author: Gauthier
+author: Mozenn
 date: 15 Octobre 2022
 description: As we have seen in a previous blog post, Hibernate Search can be easily set up in a Spring Boot application to implement Full-Text Search through an HTTP endpoint. But we have only gone across the most basic features of what Hibernate Search provides. In this blog post, we are going to implement Conditional Indexing to skip Plant belonging to a specific family.
 ---
 
-As we have seen in a [previous blog post](<[https://gauthier-cassany.com/posts/spring-boot-hibernate-search](https://gauthier-cassany.com/posts/spring-boot-hibernate-search)>), Hibernate Search can be easily set up in a Spring Boot application to implement Full-Text Search through an HTTP endpoint.
+As we have seen in a [previous blog post](<[https://mozenn.com/posts/spring-boot-hibernate-search](https://mozenn.com/posts/spring-boot-hibernate-search)>), Hibernate Search can be easily set up in a Spring Boot application to implement Full-Text Search through an HTTP endpoint.
 
 But we have only gone across the most basic features of what Hibernate Search provides.
 
@@ -17,7 +17,7 @@ Let’s imagine a use case where we want to index only a part of the indexed ent
 
 For that, we can use a more advanced feature of Hibernate Search called Conditional Indexing, which is implemented using [Routing Bridges](https://docs.jboss.org/hibernate/stable/search/reference/en-US/html_single/#mapper-orm-bridge-routingkeybridge).
 
-In this blog post, we are going to use the final project from the [previous blog post](https://gauthier-cassany.com/posts/spring-boot-hibernate-search) as a starting point, and implement Conditional Indexing to skip Plant belonging to a specific family.
+In this blog post, we are going to use the final project from the [previous blog post](https://mozenn.com/posts/spring-boot-hibernate-search) as a starting point, and implement Conditional Indexing to skip Plant belonging to a specific family.
 
 ## Implementation
 
@@ -121,7 +121,7 @@ public class Plant {
 
 We do that through the @Indexed annotation by adding the reference of the previously defined PlantRoutingBinder.
 
-And that it is!
+And that's it !
 
 Now, let’s test this.
 

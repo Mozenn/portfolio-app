@@ -4,7 +4,7 @@ title: Deploy your Next.js application to Vercel using Sentry and Github Actions
 bannerPath: /images/post/prod-ready-nextjs-sentry/thumbnail.png
 priority: 1
 tags: ['Netx.js', 'DevOps']
-author: Gauthier
+author: Mozenn
 date: 29 December 2022
 description: In this blog post, we are going to go from bootstrapping a Next.js application to deploying it on Vercel. We will use Github Action to handle the Continuous Integration and Sentry to monitor the application once it is deployed to be warned of any problems as soon as it arrives.
 ---

@@ -4,7 +4,7 @@ title: Set up Keycloak in Spring Boot using the Keycloak Admin API
 bannerPath: /images/post/spring-boot-keycloak-admin-api/thumbnail.png
 priority: 2
 tags: ['Java', 'Spring', 'Keycloak']
-author: Gauthier
+author: Mozenn
 date: 14 September 2022
 description: The goal of this article is to set up our Keycloak realm once through the Keycloak Admin Console and then recreate this setup at will, without doing all the manual setup all over again. For that, we are going to automate this process using Spring Boot and the java Keycloak Admin API client.
 ---
@@ -19,11 +19,11 @@ On top of that, we are going to make this process idempotent, so that we can res
 
 Let’s first set up the project.
 
-In a previous post, we have already learned [how to set up Keycloak using Docker](https://gauthier-cassany.com/posts/setup-keycloak-docker), and we are going to use this setup as a starting point.
+In a previous post, we have already learned [how to set up Keycloak using Docker](https://mozenn.com/posts/setup-keycloak-docker), and we are going to use this setup as a starting point.
 
 Of course, you can set up your Keycloak instance however you want. The only requirement is to have a running Keycloak instance.
 
-We generate the Spring boot application using the Spring CLI as explained in [a previous blog post](https://gauthier-cassany.com/posts/spring-boot-cli-bootstrap).
+We generate the Spring boot application using the Spring CLI as explained in [a previous blog post](https://mozenn.com/posts/spring-boot-cli-bootstrap).
 
 To sum up, it all comes down to executing this command in our terminal.
 
@@ -391,7 +391,7 @@ And If we go back to the Keycloak Admin console, we can see that our configurati
 
 ## Initializing Keycloak using HTTP endpoints
 
-This is all great, but what if we want to initialize or reset our Keycloak configuration at runtime, without restarting our application?
+But what if we want to initialize or reset our Keycloak configuration at runtime, without restarting our application?
 
 For that, we can build an HTTP endpoint that we can query each time we want to trigger the initialization process.
 

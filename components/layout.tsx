@@ -47,7 +47,7 @@ const Layout = ({ children }: { children: JSX.Element }) => {
       {process.env.NODE_ENV === 'production' &&
         typeof window !== 'undefined' && <GoogleAnalytics />}
       <Head>
-        <title>Gauthier Cassany</title>
+        <title>Mozenn</title>
         <link rel="icon" href="/favicons/favicon.ico" />
         <meta name="description" content="Software Engineer"></meta>
       </Head>
@@ -172,7 +172,7 @@ const Layout = ({ children }: { children: JSX.Element }) => {
             </li>
           </ul>
         </div>
-        <p>© Copyright 2023 Gauthier Cassany</p>
+        <p>© Copyright 2024 Mozenn</p>
       </footer>
     </div>
   );

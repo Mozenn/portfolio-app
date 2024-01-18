@@ -4,7 +4,7 @@ title: How to set up Keycloak with Docker and PostgreSQL
 bannerPath: /images/post/setup-keycloak-docker/thumbnail.png
 priority: 3
 tags: ['Keycloak', 'DevOps']
-author: Gauthier
+author: Mozenn
 date: 15 December 2021
 description: In this blog post, we are going to learn how to run Keycloak inside docker, using a dedicated PostgreSQL database also running in a docker container.
 ---
@@ -123,7 +123,7 @@ POSTGRES_PASSWORD="pwd"
 
 In addition, we define a pgAdmin service. It provides an easy-to-use User Interface and prevents entering the container directly to query the database using the command line.
 
-We just need to add two new environment variables to define the default login to access the UI.
+We need to add two new environment variables to define the default login to access the UI.
 
 ```json
 POSTGRES_USER="dev"
@@ -215,7 +215,7 @@ Finally, we specify that the Keycloak service depends on the PostgreSQL one, or 
 
 Now that we have created all the necessary declarations, it is time to run our setup.
 
-Docker-compose make it easy by using a single command that bootstrap all services
+Docker-compose provides a single command that bootstrap all services
 
 ```
 docker-compose up -d

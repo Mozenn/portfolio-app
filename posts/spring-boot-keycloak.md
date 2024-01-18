@@ -4,7 +4,7 @@ title: Secure your Spring Boot Rest API with Keycloak
 bannerPath: /images/post/spring-boot-keycloak/thumbnail.png
 priority: 1
 tags: ['Java', 'Spring', 'Keycloak']
-author: Gauthier
+author: Mozenn
 date: 27 June 2022
 description: Security is often overlooked and is seen as a burden that goes against development velocity. But in today’s age, the more secure layers there are, the safer it is. That is what Security in Depth is, and one part is to secure our REST API.
 ---
@@ -15,7 +15,7 @@ In this blog post, we are going to learn how to add authentication to a Spring B
 
 And instead of building a brittle custom implementation that might contain security issues, it is better to rely on battle-tested solutions. One of them is Keycloak, an open-source identity, and management solution developed by Red Hat.
 
-In a previous post, we have already learned [how to set up Keycloak using Docker](https://gauthier-cassany.com/posts/setup-keycloak-docker), and we are going to use this setup as a starting point.
+In a previous post, we have already learned [how to set up Keycloak using Docker](https://mozenn.com/posts/setup-keycloak-docker), and we are going to use this setup as a starting point.
 
 Of course, you can set up your Keycloak instance however you want. The only requirement is to have a running Keycloak instance.
 
@@ -228,7 +228,7 @@ public class PlantController {
 }
 ```
 
-If you want more details on this implementation, I have made a similar application in a [previous blog](https://gauthier-cassany.com/posts/spring-boot-pagination-and-sorting) where I go into more details on the how and why of this implementation.
+If you want more details on this implementation, I have made a similar application in a [previous blog](https://mozenn.com/posts/spring-boot-pagination-and-sorting) where I go into more details on the how and why of this implementation.
 
 ## Keycloak configuration
 

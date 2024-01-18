@@ -4,7 +4,7 @@ title: Build a .jar file inside a Docker container with Maven
 bannerPath: /images/post/build-jar-inside-docker/thumbnail.png
 priority: 2
 tags: ['Java', 'Maven', 'Docker']
-author: Gauthier
+author: Mozenn
 date: 15 February 2022
 description: Containers have become very popular during the last few years thanks to the rise of Docker. The most common use case is to run an application in isolation, be it in a development environment or a production environment. But it can also be used for more specific use cases. In this article, we are going to build a jar file inside a docker container.
 ---
@@ -130,9 +130,7 @@ Then, we copy our project into the container. Here the first ‘.’ defines the
 
 To sum up, it means that we take the entire project directory and we copy it inside the container.
 
-But it would be smart if we prevent copying useless files and folders such as IDE-related files or git-related files.
-
-That is why you make use of a .dockerignore file :
+We also make use of a .dockerignore file to prevent copying useless files and folders such as IDE-related files or git-related files:
 
 ```docker
 .idea
@@ -171,7 +169,7 @@ For the same purpose, we clear the target folder at each execution to avoid any 
 
 ## Building the jar
 
-We can finally build our jar using a single command line :
+We can finally build our jar using a single command line :s
 
 ```bash
 sh build.sh
