@@ -15,30 +15,30 @@
     "cypress:run": "cypress run"
   },
   "dependencies": {
-    "@sentry/nextjs": "^7.70.0",
+    "@sentry/nextjs": "^7.98.0",
     "gray-matter": "^4.0.3",
-    "highlight.js": "^11.8.0",
-    "i18next": "^23.5.1",
-    "markdown-it": "^13.0.1",
-    "next": "^13.5.2",
+    "highlight.js": "^11.9.0",
+    "i18next": "^23.8.1",
+    "markdown-it": "^14.0.0",
+    "next": "^13.5.6",
     "next-i18next": "^14.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-i18next": "^13.2.2",
+    "react-i18next": "^13.5.0",
     "react-share": "^4.4.1",
-    "sass": "^1.68.0"
+    "sass": "^1.70.0"
   },
   "devDependencies": {
-    "@types/markdown-it": "^13.0.1",
-    "@types/node": "^20.6.3",
-    "@types/react": "^18.2.22",
-    "@typescript-eslint/eslint-plugin": "^6.7.2",
-    "cypress": "^13.2.0",
-    "eslint": "^8.50.0",
-    "eslint-config-next": "^13.5.2",
-    "eslint-config-prettier": "^9.0.0",
+    "@types/markdown-it": "^13.0.7",
+    "@types/node": "^20.11.10",
+    "@types/react": "^18.2.48",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "cypress": "^13.6.3",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^13.5.6",
+    "eslint-config-prettier": "^9.1.0",
     "husky": "^8.0.3",
-    "prettier": "^3.0.3",
-    "typescript": "^5.2.2"
+    "prettier": "^3.2.4",
+    "typescript": "^5.3.3"
   }
 }

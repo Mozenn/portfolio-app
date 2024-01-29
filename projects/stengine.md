@@ -9,4 +9,4 @@ adaptLogoTheme: true
 ---
 
 Shattered Textual is a small textual game engine.  
-It allows fast bootstraping of small textual game even though functionalities are limited for now.
+It allows fast bootstraping of small textual game.

@@ -14,13 +14,13 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "downlevelIteration": true,
-    "incremental": true
+    "incremental": true,
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "script/rss-generator.js"
+    "script/rss-generator.js",
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
 }
