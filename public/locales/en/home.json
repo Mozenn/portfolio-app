@@ -1,9 +1,9 @@
 {
   "subtitle": "Software Engineer",
   "about": "About",
-  "about-story-1": "26 years old software engineer living in Toulouse, France.",
+  "about-story-1": "26 years old software engineer living in France.",
   "about-story-2": "Lifelong learner passionate about creation and problem-solving.",
-  "about-stack-1": "I worked primarily on web backend technologies like the Java ecosystem, DevOps technologies and practices such as CI/CD or automation, and Cloud Native Applications.",
+  "about-stack-1": "I worked primarily on web backend technologies like the Java or Node.js ecosystem, DevOps technologies and practices such as CI/CD or automation, and Cloud Native Applications.",
   "about-stack-2": "I also have some experience in frontend with technologies such as Javascript, Typescript, and React.",
   "projects": "Projects",
   "more": "See more ...",

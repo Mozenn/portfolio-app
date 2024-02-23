@@ -1,9 +1,9 @@
 {
   "subtitle": "Développeur Full Stack",
   "about": "À propos",
-  "about-story-1": "Développeur Full Stack de 26 ans, basé à Toulouse, France",
+  "about-story-1": "Développeur Full Stack de 26 ans, basé en France",
   "about-story-2": "En apprentissage permanent et passionné par la création et la résolution de problèmes.",
-  "about-stack-1": "Je travaille principalement sur des technologies backend comme l'écosystème Java, les technologies et pratiques DevOps, telles que CI/CD ou l'automatisation, et les applications Cloud Native.",
+  "about-stack-1": "Je travaille principalement sur des technologies backend comme l'écosystème Java ou Node.js, les technologies et pratiques DevOps, telles que CI/CD ou l'automatisation, et les applications Cloud Native.",
   "about-stack-2": "J'ai également de l'expérience en frontend avec des technologies telles que JS Vanilla, Typescript et React.",
   "projects": "Projets",
   "more": "Voir plus ...",
