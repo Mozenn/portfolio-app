@@ -1,6 +1,6 @@
 ---
 title: Save to Drive
-priority: 1
+priority: 2
 imageName: save-to-drive.png
 iconName: save-to-drive-icon.svg
 stack: Node.js, Google Drive API, Google Cloud
