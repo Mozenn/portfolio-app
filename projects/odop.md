@@ -1,11 +1,11 @@
 ---
-title: OneDayOnePlant
+title: One Day One Plant
 priority: 1
 imageName: odop.png
 iconName: odop-icon.png
-stack: React, Node.js, MongoDB, Docker, Nginx, Digital Ocean
-githubUrl: https://github.com/Mozenn/OneDayOnePlant
-accessUrl: https://onedayoneplant.net/
+stack: React, Next.js, Nest.js, TailwindCSS, Cypress, PostgreSQL, Docker, Nginx, OVH, Github Actions
+githubUrl: https://github.com/Mozenn/one-day-one-plant-v2
+accessUrl: https://onedayoneplant.com/
 ---
 
 Grow your plant collection and learn about Earth flora.
