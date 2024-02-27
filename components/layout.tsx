@@ -104,7 +104,7 @@ const Layout = ({ children }: { children: JSX.Element }) => {
             onClick={onLanguageButtonClicked}
           >
             <img src="/images/frflag.svg" alt="france flag icon" />
-            <img src="/images/ukflag.svg" alt="uk flag icon" />
+            <img src="/images/usaflag.svg" alt="uk flag icon" />
             <div className={`${styles.cursor} ${getLocaleCursorStyle()}`}></div>
           </button>
         </div>
@@ -167,7 +167,7 @@ const Layout = ({ children }: { children: JSX.Element }) => {
             </li>
             <li className={styles.resumeListIcon}>
               <a href="/data/resume-en.pdf" target="_blank">
-                <img src="/images/ukflag.svg" alt="UK Flag icon" />
+                <img src="/images/usaflag.svg" alt="UK Flag icon" />
               </a>
             </li>
           </ul>
