@@ -103,8 +103,8 @@ const Layout = ({ children }: { children: JSX.Element }) => {
             data-testid="language-button"
             onClick={onLanguageButtonClicked}
           >
-            <img src="/images/frflag.svg" alt="france flag icon" />
-            <img src="/images/usaflag.svg" alt="uk flag icon" />
+            <label className={styles.languageLabel}>FR</label>
+            <label className={styles.languageLabel}>EN</label>
             <div className={`${styles.cursor} ${getLocaleCursorStyle()}`}></div>
           </button>
         </div>
