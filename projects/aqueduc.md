@@ -4,7 +4,7 @@ priority: 2
 imageName: aqueduc.png
 iconName: aqueduc-icon.svg
 stack: Python
-githubUrl: https://github.com/Mozenn/Aqueduc
+githubUrl: https://github.com/Mozenn/aqueduc
 adaptLogoTheme: true
 ---
 
