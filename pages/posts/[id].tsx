@@ -77,7 +77,7 @@ const PostPage = ({ postFullData }: { postFullData: Post }) => {
         <span className={styles.shareBorder}></span>
         <div className={styles.shareContainer}>
           <label>Share</label>
-          <FacebookShareButton url={pageUrl} quote={postFullData.title}>
+          <FacebookShareButton url={pageUrl}>
             <FacebookIcon size={shareIconSize} />
           </FacebookShareButton>
           <TwitterShareButton url={pageUrl} title={postFullData.title}>

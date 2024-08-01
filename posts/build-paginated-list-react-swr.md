@@ -64,9 +64,9 @@ The first step is to declare global styles used all across the application :
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -268,9 +268,8 @@ const Button = styled.div`
 
 const Image = styled.img`
   width: 1.5rem;
-  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(175deg) brightness(
-      121%
-    ) contrast(114%);
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(175deg)
+    brightness(121%) contrast(114%);
 `;
 
 const SortButton = ({ order, setOrder }) => {
@@ -316,9 +315,8 @@ const PaginationButton = styled.button`
   border: none;
   border-radius: 50px;
   img {
-    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(175deg) brightness(
-        121%
-      ) contrast(114%);
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(175deg)
+      brightness(121%) contrast(114%);
   }
   ${(props) => (props.disabled ? disabled : enabled)};
 `;
