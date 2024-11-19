@@ -8,4 +8,4 @@ githubUrl: https://github.com/Mozenn/save-to-drive
 adaptLogoTheme: true
 ---
 
-A small CLI application to upload files and folders to google drive.
+A CLI application to upload files and folders to google drive.

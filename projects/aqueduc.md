@@ -8,5 +8,5 @@ githubUrl: https://github.com/Mozenn/aqueduc
 adaptLogoTheme: true
 ---
 
-Aqueduc is a small script that moves or copies files and folders using JSON configuration files.  
+Aqueduc is a script that moves or copies files and folders using JSON configuration files.  
 It can be used to automate recurring file transfers for example.

@@ -8,5 +8,5 @@ githubUrl: https://github.com/Mozenn/ShatteredTextual
 adaptLogoTheme: true
 ---
 
-Shattered Textual is a small textual game engine.  
+Shattered Textual is a textual game engine.  
 It allows fast bootstraping of small textual game.
