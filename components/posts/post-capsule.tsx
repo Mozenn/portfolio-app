@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const PostCapsule = ({ postData }: { postData: Post }) => {
   return (
-    <div className={`${styles.container} ${capsuleStyles.container}`}>
+    <article className={`${styles.container} ${capsuleStyles.container}`}>
       <Link href={`/posts/${postData.id}`}>
         <div className={capsuleStyles.capsuleImageContainer}>
           <img
@@ -24,7 +24,7 @@ const PostCapsule = ({ postData }: { postData: Post }) => {
           <label className={styles.date}>{postData.date}</label>
         </div>
       </Link>
-    </div>
+    </article>
   );
 };
 
