@@ -49,3 +49,7 @@
   filter: grayscale(40%);
   transition: filter 0.5s;
 }
+
+.scrollSnap {
+  scroll-snap-align: center;
+}

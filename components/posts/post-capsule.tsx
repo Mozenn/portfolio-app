@@ -3,9 +3,17 @@ import capsuleStyles from '../capsule.module.scss';
 import { Post } from '../../types/post';
 import Link from 'next/link';
 
-const PostCapsule = ({ postData }: { postData: Post }) => {
+const PostCapsule = ({
+  postData,
+  scrollSnapEnabled = true,
+}: {
+  postData: Post;
+  scrollSnapEnabled?: boolean;
+}) => {
   return (
-    <div className={`${styles.container} ${capsuleStyles.container}`}>
+    <article
+      className={`${styles.container} ${capsuleStyles.container} ${scrollSnapEnabled && capsuleStyles.scrollSnap}`}
+    >
       <Link href={`/posts/${postData.id}`}>
         <div className={capsuleStyles.capsuleImageContainer}>
           <img
@@ -24,7 +32,7 @@ const PostCapsule = ({ postData }: { postData: Post }) => {
           <label className={styles.date}>{postData.date}</label>
         </div>
       </Link>
-    </div>
+    </article>
   );
 };
 

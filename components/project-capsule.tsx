@@ -12,7 +12,7 @@ export default function ProjectCapsule({
   imageName: string;
 }) {
   return (
-    <div className={`${styles.capsule} ${capsuleStyles.container}`}>
+    <article className={`${styles.capsule} ${capsuleStyles.container}`}>
       <Link href={`/projects/${id}`}>
         <h2 className={styles.capsuleTitle}>{title}</h2>
         <div className={capsuleStyles.capsuleImageContainer}>
@@ -23,6 +23,6 @@ export default function ProjectCapsule({
           />
         </div>
       </Link>
-    </div>
+    </article>
   );
 }

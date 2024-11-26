@@ -87,7 +87,13 @@ const Home = ({
         <h2 className={styles.blogTitle}>{t('blog')}</h2>
         <div className={styles.blogContainer}>
           {postsToShow.map((post: Post) => {
-            return <PostCapsule key={post.id} postData={post} />;
+            return (
+              <PostCapsule
+                key={post.id}
+                postData={post}
+                scrollSnapEnabled={false}
+              />
+            );
           })}
         </div>
         <div className={styles.LinkContainer}>

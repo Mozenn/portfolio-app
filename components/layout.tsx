@@ -2,15 +2,35 @@ import Head from 'next/head';
 import Link from 'next/link';
 import styles from './layout.module.scss';
 import GoogleAnalytics from './google-analytics';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useTheme } from '../hooks/useTheme';
 import { useLocale } from '../hooks/useLocale';
 import { useTranslation } from 'next-i18next';
+import { usePathname } from 'next/navigation';
+import { useTimeout } from '../hooks/useTimeout';
+import { useRouter } from 'next/router';
 
 const Layout = ({ children }: { children: JSX.Element }) => {
   const { theme, setTheme, toggleTheme, getFilterClass } = useTheme();
   const { locale, setLocale, toggleLocale } = useLocale();
   const { t, i18n } = useTranslation('layout');
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const [enableFooterScrollSnap, setEnableFooterScrollSnap] = useState(false);
+
+  useTimeout(
+    () => {
+      if (pathname === '/posts') {
+        setEnableFooterScrollSnap(true);
+      }
+    },
+    1000,
+    router.asPath,
+    () => {
+      setEnableFooterScrollSnap(false);
+    },
+  );
 
   useEffect(() => {
     if (
@@ -112,7 +132,9 @@ const Layout = ({ children }: { children: JSX.Element }) => {
 
       <main>{children}</main>
 
-      <footer className={styles.footer}>
+      <footer
+        className={`${styles.footer} ${pathname == '/posts' && enableFooterScrollSnap && styles.footerScrollSnap}`}
+      >
         <span className={styles.footerBorder}></span>
         <div className={styles.informationBox}>
           <p className={styles.emailFooter}>gauthier.cassany@gmail.com</p>

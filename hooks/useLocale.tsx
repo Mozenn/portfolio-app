@@ -29,7 +29,6 @@ const LocaleProvider = ({
   };
 
   const changeLocale = (locale: string) => {
-    console.log('router' + router);
     router.push(
       {
         pathname: router.pathname,

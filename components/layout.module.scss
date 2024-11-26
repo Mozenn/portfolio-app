@@ -113,6 +113,10 @@
   background-color: var(--color-primary);
 }
 
+.footerScrollSnap {
+  scroll-snap-align: start;
+}
+
 .footerBorder {
   border-top: 2px solid var(--color-secondary);
   width: 25%;

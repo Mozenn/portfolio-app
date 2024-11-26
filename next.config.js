@@ -11,6 +11,9 @@ const { i18n } = require('./next-i18next.config');
 const moduleExports = {
   // Your existing module.exports
   i18n,
+  compiler: {
+    removeConsole: process.env.NODE_ENV == 'production',
+  },
 };
 
 const sentryWebpackPluginOptions = {

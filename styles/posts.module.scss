@@ -30,9 +30,11 @@ div.tagContainer > button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  // margin-top: 10rem;
+  // height: 100vh;
 }
 
-div.postContainer > div {
+div.postContainer > article {
   margin-top: 4rem;
 }
 
@@ -47,6 +49,7 @@ div.postContainer > div {
     align-items: center;
     justify-content: center;
     width: 60%;
+    scroll-snap-align: end;
   }
 
   div.tagContainer > button {
