@@ -4,7 +4,7 @@ title: How to set up Keycloak with Docker and PostgreSQL
 bannerPath: /images/post/setup-keycloak-docker/thumbnail.png
 priority: 3
 tags: ['Keycloak', 'DevOps']
-author: Mozenn
+author: Gauthier
 date: 15 December 2021
 description: In this blog post, we are going to learn how to run Keycloak inside docker, using a dedicated PostgreSQL database also running in a docker container.
 ---

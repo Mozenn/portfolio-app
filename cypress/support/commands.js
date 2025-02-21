@@ -10,7 +10,7 @@
 
 Cypress.Commands.add('visitLandingPage', () => {
   cy.visit('/');
-  cy.get('h1').contains('Mozenn');
+  cy.get('h1').contains('Gauthier');
 });
 
 // -- This is a parent command --

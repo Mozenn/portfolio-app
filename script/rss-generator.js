@@ -55,7 +55,7 @@ const postsDataToXml = (postsData) => {
   let rssItemsXml = '';
   postsData.forEach((postData) => {
     const postDate = Date.parse(postData.date);
-    const postHref = `https://mozenn.com/posts/${postData.id}`;
+    const postHref = `https://gauthier-cassany.com/posts/${postData.id}`;
 
     if (!latestPostDate || postDate > Date.parse(latestPostDate)) {
       latestPostDate = postData.date;
@@ -89,10 +89,10 @@ const getRssXml = (postsData) => {
     version="2.0"
   >
     <channel>
-        <title><![CDATA[Software engineering articles by Mozenn]]></title>
-        <link>https://mozenn.com</link>
+        <title><![CDATA[Software engineering articles by Gauthier Cassany]]></title>
+        <link>https://gauthier-cassany.com</link>
         <description>
-          <![CDATA[Blog posts about Software Engineering by Mozenn]]>
+          <![CDATA[Blog posts about Software Engineering by Gauthier Cassany]]>
         </description>
         <language>en</language>
         <lastBuildDate>${latestPostDate}</lastBuildDate>

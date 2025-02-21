@@ -4,7 +4,7 @@ title: Build a paginated list in React with SWR and Styled Components
 bannerPath: /images/post/build-paginated-list-react-swr/thumbnail.png
 priority: 1
 tags: ['React', 'Frontend']
-author: Mozenn
+author: Gauthier
 date: 10 March 2022
 description: In a previous blog post, we have learned how to build an API with pagination. In this blog post, we are focusing on how to consume such an API by building a paginated list using React, the most popular javascript frontend framework at the moment.
 ---

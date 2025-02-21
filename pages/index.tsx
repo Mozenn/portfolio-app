@@ -40,7 +40,7 @@ const Home = ({
     <>
       <section className={styles.landing}>
         <div>
-          <h1 className={styles.landingName}>Mozenn</h1>
+          <h1 className={styles.landingName}>Gauthier Cassany</h1>
           <h2 className={styles.landingSubtitle}>{t('subtitle')}</h2>
         </div>
       </section>

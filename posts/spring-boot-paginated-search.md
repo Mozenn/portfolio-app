@@ -4,12 +4,12 @@ title: Build a Spring Boot REST API with Paginated Full-Text Search using Hibern
 bannerPath: /images/post/spring-boot-paginated-search/thumbnail.png
 priority: 2
 tags: ['Java', 'Spring']
-author: Mozenn
+author: Gauthier
 date: 26 May 2022
 description: In a previous article, we have learned how to add full-text-search to a Spring Boot Rest API using Hibernate Search. In this article, we are going to build on that, and learn how to add paginated search to our existing REST API.
 ---
 
-In a [previous article](https://mozenn.com/posts/spring-boot-hibernate-search), we have learned how to add full-text-search to a Spring Boot Rest API using Hibernate Search.
+In a [previous article](https://gauthier-cassany.com/posts/spring-boot-hibernate-search), we have learned how to add full-text-search to a Spring Boot Rest API using Hibernate Search.
 
 In this article, we are going to build on that, and learn how to add paginated search to our existing REST API.
 

@@ -4,7 +4,7 @@ title: Build a .jar file inside a Docker container with Maven
 bannerPath: /images/post/build-jar-inside-docker/thumbnail.png
 priority: 2
 tags: ['Java', 'Maven', 'Docker']
-author: Mozenn
+author: Gauthier
 date: 15 February 2022
 description: Containers have become very popular during the last few years thanks to the rise of Docker. The most common use case is to run an application in isolation, be it in a development environment or a production environment. But it can also be used for more specific use cases. In this article, we are going to build a jar file inside a docker container.
 ---

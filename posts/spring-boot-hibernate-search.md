@@ -4,7 +4,7 @@ title: Build a Spring Boot REST API with Full-Text Search using Hibernate Search
 bannerPath: /images/post/spring-boot-hibernate-search/thumbnail.png
 priority: 2
 tags: ['Java', 'Spring']
-author: Mozenn
+author: Gauthier
 date: 5 April 2022
 description: Search is one of the pillars of the web, and full-text search is one of the mandatory features that every website needs.  But implementing such a feature is complex, and lots of skilled engineers have already thought hard about this topic. So let’s not reinvent the wheel, and use the battle-tested Hibernate Search library.
 ---

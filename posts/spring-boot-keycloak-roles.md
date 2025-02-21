@@ -4,14 +4,14 @@ title: Implement Role-based authorization in Spring Boot with Keycloak
 bannerPath: /images/post/spring-boot-keycloak-roles/thumbnail.png
 priority: 1
 tags: ['Java', 'Spring', 'Keycloak']
-author: Mozenn
+author: Gauthier
 date: 26 July 2022
 description: Role-based access control is a must-have for any application dealing with users who can access resources depending on their organization's role. In a previous article, we have learned how to secure our Spring Boot REST API with Keycloak by using the OpenID Connect authentication protocol. In this article, we are going to build on this sample application and add role-based authorization.
 ---
 
 Role-based access control is a must-have for any application dealing with users who can access resources depending on their organization's role.
 
-In a previous [article](https://mozenn.com/posts/spring-boot-keycloak), we have learned how to secure our Spring Boot REST API with Keycloak by using the OpenID Connect authentication protocol.
+In a previous [article](https://gauthier-cassany.com/posts/spring-boot-keycloak), we have learned how to secure our Spring Boot REST API with Keycloak by using the OpenID Connect authentication protocol.
 
 In this article, we are going to build on this sample application and add role-based authorization.
 
