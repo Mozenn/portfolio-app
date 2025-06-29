@@ -1,6 +1,6 @@
 ---
 title: One Day One Plant
-priority: 1
+priority: 2
 imageName: odop.png
 iconName: odop-icon.png
 stack: React, Next.js, Nest.js, TailwindCSS, Cypress, PostgreSQL, Docker, Nginx, OVH, Github Actions
