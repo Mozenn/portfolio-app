@@ -182,14 +182,14 @@ const Layout = ({ children }: { children: JSX.Element }) => {
 
           <h3 className={styles.resumeListText}>{t('resume')}</h3>
           <ul className={styles.resumeList}>
-            <li className={styles.resumeListIcon}>
+            <li className={styles.resumeListElement}>
               <a href="/data/resume-fr.pdf" target="_blank">
-                <img src="/images/frflag.svg" alt="French Flag icon" />
+                <label className={styles.resumeListIcon}>FR</label>
               </a>
             </li>
-            <li className={styles.resumeListIcon}>
+            <li className={styles.resumeListElement}>
               <a href="/data/resume-en.pdf" target="_blank">
-                <img src="/images/usaflag.svg" alt="UK Flag icon" />
+                <label className={styles.resumeListIcon}>EN</label>
               </a>
             </li>
           </ul>
