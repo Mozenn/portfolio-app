@@ -194,7 +194,7 @@ const Layout = ({ children }: { children: JSX.Element }) => {
             </li>
           </ul>
         </div>
-        <p>© Copyright 2025 Gauthier Cassany</p>
+        <p>© Copyright 2026 Gauthier Cassany</p>
       </footer>
     </div>
   );
