@@ -8,10 +8,10 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
-          node-version: '18'
+          node-version: '24'
       - run: npm ci
       - run: npm run lint
   build:
@@ -23,10 +23,10 @@ jobs:
       SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
       SENTRY_LOG_LEVEL: info
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
-          node-version: '18'
+          node-version: '24'
       - run: npm ci
       - run: npm run build
   test:
@@ -38,8 +38,8 @@ jobs:
       SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
       SENTRY_LOG_LEVEL: info
     steps:
-      - uses: actions/checkout@v3
-      - uses: cypress-io/github-action@v6
+      - uses: actions/checkout@v6
+      - uses: cypress-io/github-action@v7
         with:
           browser: chrome
           build: npm run build
