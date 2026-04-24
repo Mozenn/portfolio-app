@@ -39,8 +39,20 @@ jobs:
       SENTRY_LOG_LEVEL: info
     steps:
       - uses: actions/checkout@v6
+      - name: Install pnpm
+        uses: pnpm/action-setup@v5
+        with:
+          version: 10
+      - name: Install Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: 'pnpm'
+          cache-dependency-path: cache/basic-pnpm/pnpm-lock.yaml
       - uses: cypress-io/github-action@v7
         with:
+          package-manager-cache: false
+          working-directory: cache/basic-pnpm
           browser: chrome
           build: npm run build
           start: npm start
