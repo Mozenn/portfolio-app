@@ -5,7 +5,7 @@ import GoogleAnalytics from './google-analytics';
 import { useEffect, useState } from 'react';
 import { useTheme } from '../hooks/useTheme';
 import { useLocale } from '../hooks/useLocale';
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 import { usePathname } from 'next/navigation';
 import { useTimeout } from '../hooks/useTimeout';
 import { useRouter } from 'next/router';

@@ -15,7 +15,7 @@ import { getAllPostIds, getPostFullData } from '../../lib/posts';
 import { Post } from '../../types/post';
 import { IdParams } from '../../types/IdParams';
 import Newsletter from '../../components/newsletter';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import { addLocalesToPaths } from '../../lib/local';
 
 export const getStaticPaths: GetStaticPaths = async (context) => {

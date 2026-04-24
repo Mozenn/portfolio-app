@@ -6,7 +6,7 @@ import { getAllProjectIds, getProjectFullData } from '../../lib/projects';
 import styles from '../../styles/project.module.scss';
 import { Project } from '../../types/project';
 import { useTheme } from '../../hooks/useTheme';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import { addLocalesToPaths } from '../../lib/local';
 
 export const getStaticPaths: GetStaticPaths = async (context) => {

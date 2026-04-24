@@ -7,8 +7,8 @@ import { getProjectsDataByPriority } from '../lib/projects';
 import { getPostsDataByPriority } from '../lib/posts';
 import { Project } from '../types/project';
 import { Post } from '../types/post';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
+import { useTranslation } from 'next-i18next/pages';
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const projectsToShow = getProjectsDataByPriority(2);

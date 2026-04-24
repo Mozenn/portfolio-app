@@ -4,7 +4,7 @@ import styles from '../styles/posts.module.scss';
 import { Post } from '../types/post';
 import PostTag from '../components/posts/post-tag';
 import PostCapsule from '../components/posts/post-capsule';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import { GetStaticProps } from 'next';
 
 export const getStaticProps: GetStaticProps = async (context) => {

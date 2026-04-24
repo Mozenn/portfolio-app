@@ -4,7 +4,7 @@ import type { AppProps } from 'next/app';
 import Layout from '../components/layout';
 import { ThemeProvider } from '../hooks/useTheme';
 import { LocaleProvider } from '../hooks/useLocale';
-import { appWithTranslation } from 'next-i18next';
+import { appWithTranslation } from 'next-i18next/pages';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
